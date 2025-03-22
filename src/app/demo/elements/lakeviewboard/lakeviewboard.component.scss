@@ -1,0 +1,31 @@
+.card-body {
+  padding: 5px !important;
+  h5 {
+    padding: 5px;
+  }
+}
+
+.no-board {
+  min-height: 60px;
+}
+
+.card {
+  margin-bottom: 8px;
+}
+
+.runs-btn {
+  button {
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+  .ti-arrow-back-up {
+    font-size: 30px;
+  }
+  .undo-btn {
+    padding: 2px 5px;
+  }
+}
+
+.clear-btn {
+  width: 150px;
+}

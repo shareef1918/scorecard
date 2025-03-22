@@ -1,0 +1,9 @@
+<div>
+  @if (liveMatch$ | async) {
+    <app-scoreboard></app-scoreboard>
+  } @else {
+    <div class="no-board text-center">Loading...</div>
+  }
+  <app-matches-card></app-matches-card>
+  <app-teams></app-teams>
+</div>

@@ -1,0 +1,212 @@
+/*
+I usually add this class to a file called _extensions.scss 
+then extend whatever I want to have this background as per this example
+*/
+.parrallelogram-background {
+  > * {
+    z-index: 2;
+  }
+  &:before {
+    background: linear-gradient(180deg, rgba(103, 101, 102, 1) 0%, rgba(39, 84, 58, 1) 70%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff47e', endColorstr='#ff977c', GradientType=1 );
+    content: '';
+    height: 70px;
+    width: 100%;
+    display: block;
+    transform: skew(-18deg);
+    z-index: 1;
+    position: absolute;
+    left: -27px;
+    top: 0;
+  }
+}
+
+.banner-2 {
+  width: 35.5%;
+  margin-right: -30px;
+  .boundaries {
+    text-align: left;
+    font-size: 0.7rem;
+  }
+
+  .score-board {
+    text-shadow: 2px 2px 2px #000;
+    color: #fff;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-right: 40px;
+    .score {
+      font-size: 1.8rem;
+    }
+    .details {
+    }
+  }
+  > div {
+    height: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    img {
+      margin-bottom: 0.5em;
+    }
+    p {
+      color: white;
+      margin: 0;
+    }
+    p.number-roll {
+      font-size: 3em;
+      font-weight: 900;
+    }
+    @extend .parrallelogram-background;
+  }
+}
+
+.main-logo {
+  width: 80px;
+  height: 80px;
+}
+
+.master {
+  height: 70px;
+}
+
+.banner-1 {
+  display: inline-block;
+  clip-path: polygon(0 0, 100% 0%, calc(100% - 32px) 100%, 0% 100%);
+  background: rgba(255, 244, 126, 1);
+  background: linear-gradient(90deg, rgba(242, 153, 80, 1) 0%, rgba(135, 4, 0, 1) 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff47e', endColorstr='#ff977c', GradientType=1 );
+  content: '';
+  height: 100%;
+  width: 32%;
+}
+
+.batter-names {
+  text-shadow: 1px 1px 1px #000;
+  width: 100%;
+  margin-right: 10%;
+  margin-left: 20px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  div {
+    padding-right: 10px;
+    // padding-bottom: 4px;
+  }
+}
+
+.ball {
+  color: #000;
+  background-color: #fff;
+  padding: 2px;
+  text-shadow: none;
+  margin-left: 10px;
+  border-radius: 30%;
+  min-width: 28px;
+  min-height: 25px;
+}
+
+.opp-img {
+  position: relative;
+  left: 50%;
+  width: 75px;
+  height: 75px;
+}
+
+.opp-team-name {
+  text-align: left;
+  margin-left: -20px;
+}
+.banner-3 {
+  width: 40%;
+  margin-left: -11px;
+  .balls-div {
+    margin-left: -40px;
+    margin-top: 14px;
+  }
+  .score-board {
+    text-shadow: 2px 2px 2px #000;
+    color: #fff;
+    width: 100%;
+    text-transform: uppercase;
+    height: 70px;
+    font-weight: bold;
+    padding-right: 60px;
+    padding-left: 15%;
+    .score {
+      font-size: 0.7rem !important;
+    }
+  }
+  > div {
+    clip-path: polygon(0 100%, 271px calc(100% - 900px), 100% 0, 100% 100%);
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    img {
+      margin-bottom: 0.5em;
+    }
+    p {
+      color: white;
+      margin: 0;
+    }
+    p.number-roll {
+      font-size: 3em;
+      font-weight: 900;
+    }
+    @extend .bowling-background;
+  }
+}
+
+.bowling-background {
+  > * {
+    z-index: 2;
+  }
+  &:before {
+    background: linear-gradient(180deg, rgba(80, 133, 242, 1) 0%, rgba(0, 44, 135, 1) 50%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff47e', endColorstr='#ff977c', GradientType=1 );
+    content: '';
+    height: 70px;
+    width: 110%;
+    display: block;
+    transform: skew(-10deg);
+    z-index: 1;
+    position: absolute;
+    left: 0px;
+    top: 0;
+  }
+}
+
+/////////////////
+.header {
+  padding: 10px;
+  .lv-logo {
+  }
+
+  #lv-name {
+    font-size: 4rem;
+    margin-left: 20px;
+  }
+}
+.content {
+  height: 70vh;
+  padding: 10px 15px;
+  margin-top: 20px;
+  background-color: aqua;
+}
+
+nav {
+  .active {
+    font-weight: bold;
+  }
+}
+
+.non-striker {
+  padding-left: 18px;
+}
+
+.names {
+  text-align: right;
+}

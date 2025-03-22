@@ -1,0 +1,163 @@
+.runs {
+    // font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.left-div {
+    min-width: 700px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+}
+
+.runs-div {
+    div {
+        min-width: 30px;
+        text-align: right;
+    }
+
+    .runs {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .balls {
+        padding-top: 6px;
+        font-size: 0.8rem !important;
+    }
+}
+
+.batter-runs {
+    width: 70px;
+    padding-right: 10px;
+}
+
+.caught {
+    font-size: 1rem !important;
+    font-weight: normal !important;
+}
+
+
+.not-out {
+    td{
+        color: #fff !important;
+    }
+    background: linear-gradient(90deg, rgba(232, 39, 14, 1) 0%, rgba(236, 122, 31, 1) 35%, rgba(255, 0, 52, 1) 100%) !important;
+}
+
+.venue {
+    font-weight: bold;
+    color: #fff;
+    padding-left: 30px;
+}
+
+.date{
+    font-weight: bold;
+    color: #fff;
+    padding-left: 30px;
+}
+
+table {
+    tr {
+        border-bottom: 1px solid silver;
+        border-top: 1px solid silver;
+        td {
+            padding-left: 20px;
+            font-size: 1rem;
+            text-transform: capitalize;
+        }
+    }
+}
+
+.normal{
+    background: linear-gradient(279deg, rgba(245,244,243,0.2665441176470589) 0%, rgba(255,255,255,1) 91%, rgba(245,244,243,1) 100%) !important;
+    color: #000 !important;
+}
+.scorecard {
+    // background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    font-weight: bold;
+    color: #fff;
+    padding: 15px;
+}
+.main-div{
+    background-image: url('../../../../assets/images/summary-bg.jpg');
+    background-size: cover ;
+    height: 100vh;
+}
+
+.table {
+    background-color: green !important;
+}
+
+.total-score {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.scorecard-footer{
+    background: linear-gradient(180deg, rgba(242,63,63,1) 0%, rgba(227,19,34,1) 46%, rgba(252,93,75,1) 100%) !important;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.overs {
+    border-right: 4px solid silver;
+    padding-right: 10px;
+    padding-top: 5px;
+    font-size: 1.1rem;
+}
+
+.team-logo {
+    width: 60px;
+    height: 60px;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+.batting-team {
+    font-weight: bold;
+}
+
+.teams-details {
+    padding-left: 20px;
+    padding-top:5px;
+    font-size: 2rem;
+    div {
+        margin-right: 20px;
+    }
+}
+
+.banner {
+    background: rgb(5, 3, 145);
+    background: linear-gradient(180deg, rgba(5, 3, 145, 1) 0%, rgba(21, 19, 227, 1) 46%, rgba(12, 28, 123, 1) 100%);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.player-pic {
+    img {
+        width: 200px;
+        height: 400px;
+    }
+}
+
+.boundaries {
+    margin-top: 5px;
+
+    div {
+        background-color: orange;
+        color: #000;
+        padding: 7px;
+        margin-right: 10px;
+    }
+}
+
+
+.out {
+    background: linear-gradient(90deg, rgba(9, 79, 215, 1) 0%, rgba(10, 10, 152, 1) 35%, rgba(21, 33, 229, 1) 100%);
+}
+
+.top-scorer-div {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    padding-left: 10px;
+}

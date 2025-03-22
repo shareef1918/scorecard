@@ -1,0 +1,402 @@
+@if (innings$ | async; as innings) {
+  <div class="sticky">
+    <app-banner-theme-a></app-banner-theme-a>
+  </div>
+
+  @if (innings?.currentBatsman?.length) {
+    <div class="card">
+      <div class="card-body d-flex justify-content-between board-div">
+        <div class="col-md-7 score-board">
+          <div class="runs-btn" [ngClass]="disableScoreBoard ? 'disable-buttons' : ''">
+            <div>
+              <button type="button" class="btn btn-primary btns" (click)="addRuns(0)">0</button>
+              <button type="button" class="btn btn-primary btns" (click)="addRuns(1)">1</button>
+              <button type="button" class="btn btn-primary btns" (click)="addRuns(2)">2</button>
+              <button type="button" class="btn btn-primary btns" (click)="addRuns(3)">3</button>
+              <button type="button" class="btn btn-primary btns" (click)="addRuns(4)">4</button>
+              <button type="button" class="btn btn-primary btns" (click)="addRuns(5)">5</button>
+              <button type="button" class="btn btn-primary btns" (click)="addRuns(6)">6</button>
+              <button type="button" class="btn btn-danger undo-btn" (click)="undoLastBall()" [disabled]="disableUndo()">Undo</button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-danger btns" (click)="addWides(1, true)">WD</button>
+              <button type="button" class="btn btn-danger btns" (click)="addWides(2, true)">WD+1</button>
+              <button type="button" class="btn btn-danger btns" (click)="addWides(3, true)">WD+2</button>
+              <button type="button" class="btn btn-danger btns" (click)="addWides(4, true)">WD+3</button>
+              <button type="button" class="btn btn-danger btns" (click)="addWides(5, true)">WD+4</button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-success btns" (click)="addWides(1, false, false, true)">BYE(1)</button>
+              <button type="button" class="btn btn-success btns" (click)="addWides(2, false, false, true)">BYE(2)</button>
+              <button type="button" class="btn btn-success btns" (click)="addWides(3, false, false, true)">BYE(3)</button>
+              <button type="button" class="btn btn-success btns" (click)="addWides(4, false, false, true)">BYE(4)</button>
+              <button type="button" class="btn btn-success btns" (click)="addWides(5, false, false, true)">BYE(5)</button>
+            </div>
+
+            <div>
+              <button type="button" class="btn btn-warning btns" (click)="addWides(1, false, true, false)">NB</button>
+              <button type="button" class="btn btn-warning btns" (click)="addWides(2, false, true, false)">NB+1</button>
+              <button type="button" class="btn btn-warning btns" (click)="addWides(3, false, true, false)">NB+2</button>
+              <button type="button" class="btn btn-warning btns" (click)="addWides(4, false, true, false)">NB+3</button>
+              <button type="button" class="btn btn-warning btns" (click)="addWides(5, false, true, false)">NB+4</button>
+              <button type="button" class="btn btn-warning btns" (click)="addWides(6, false, true, false)">NB+5</button>
+              <button type="button" class="btn btn-warning btns" (click)="addWides(7, false, true, false)">NB+6</button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-danger btns" (click)="playerOut(1)">Bowled</button>
+              <button type="button" class="btn btn-danger btns" (click)="playerOut(2)">Caught</button>
+              <button type="button" class="btn btn-danger btns" (click)="playerOut(3)">Stumped</button>
+              <button type="button" class="btn btn-danger btns" (click)="playerOut(4)">Run Out</button>
+              <button type="button" class="btn btn-danger btns" (click)="playerOut(5)">Hit Wicket</button>
+              <button type="button" class="btn btn-danger btns" (click)="playerOut(6)">Retired</button>
+            </div>
+            <div>
+              <button type="button" class="btn btn-warning btns" (click)="addWides(2, false, true, true)">N+B(1)</button>
+              <button type="button" class="btn btn-warning btns" (click)="addWides(3, false, true, true)">N+B(2)</button>
+              <button type="button" class="btn btn-warning btns" (click)="addWides(4, false, true, true)">N+B(3)</button>
+              <button type="button" class="btn btn-warning btns" (click)="addWides(5, false, true, true)">N+B(4)</button>
+              <button type="button" class="btn btn-danger btns" (click)="changeStrikerBatsman()">Change Striker</button>
+            </div>
+          </div>
+          <div>
+            @if (liveMatch?.firstInnings) {
+              <button type="button" class="btn btn-primary mt-2 mx-3 w-75" (click)="endInnings()">
+                End Innings({{ getBattersListToPlay(innings?.players?.batters)?.length }})
+              </button>
+            } @else if (!liveMatch?.outCome?.by) {
+              <button type="button" class="btn btn-primary mt-2 mx-3 w-75" (click)="endMatch()">End Match</button>
+            }
+          </div>
+        </div>
+        <div class="col-md-5 balls-details bg-gradient-green overflow-auto white-text">
+          <div class="p-2 d-flex flex-column align-content-end">
+            @if (disableEndInnings || disableEndMatch) {
+              <div [ngClass]="!disableEndMatch ? 'd-none' : ''">
+                @if (currentInnings.currentBall === 6 && !liveMatch?.outCome) {
+                  <div class="next-bowler-div" [ngClass]="!disableBoard() ? 'd-none' : ''">
+                    <div>
+                      <h3>Select Next Bowler</h3>
+                    </div>
+                    <div class="overflow-auto" [formGroup]="nextPlayer">
+                      @for (bowler of getNextBowlerList(innings?.players?.bowlers); track bowler; let index = $index) {
+                        <div class="form-check bowler">
+                          <input class="form-check-input" [value]="bowler?.id" type="radio" formControlName="id" [id]="bowler?.id" />
+                          <label class="form-check-label fw-bold" for="flexRadioDefault1">
+                            {{ bowler?.name }}
+                          </label>
+                        </div>
+                      }
+                      <form [formGroup]="addPlayerForm">
+                        <div class="col-6">
+                          <div class="form-floating">
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="floatingInput"
+                              placeholder="New Player Name"
+                              formControlName="name"
+                            />
+                            <label for="floatingInput">New Bowler Name</label>
+                          </div>
+                        </div>
+                        <button
+                          type="button"
+                          class="btn btn-primary"
+                          (click)="addNewPlayer(otherInningsId, 2)"
+                          [disabled]="addPlayerForm.invalid"
+                        >
+                          Add
+                        </button>
+                      </form>
+                      @if (innings?.players?.bowlers?.length) {
+                        <button type="button" class="btn btn-primary mt-2" [disabled]="nextPlayer.invalid" (click)="startNextOver()">
+                          Start Over
+                        </button>
+                      }
+                    </div>
+                  </div>
+                } @else if (showPlayerOut) {
+                  <div class="d-flex flex-wrap">
+                    @if (outType === 2 || outType === 3 || outType === 4) {
+                      @if (outType === 4) {
+                        <div class="px-2">
+                          <div class="card">
+                            <div class="card-body">
+                              <h3>Run Out Batsman</h3>
+                              <div [formGroup]="runOutPlayerForm">
+                                @for (batter of getCurrentPlayingBatsman(); track batter; let index = $index) {
+                                  <div class="form-check bowler">
+                                    <input
+                                      class="form-check-input"
+                                      [value]="batter?.id"
+                                      type="radio"
+                                      formControlName="id"
+                                      [id]="batter?.id"
+                                    />
+                                    <label class="form-check-label fw-bold" for="flexRadioDefault1">
+                                      {{ getPlayerName(batter?.id) }}
+                                    </label>
+                                  </div>
+                                }
+                                <div class="w-50">
+                                  <h4>Runs:</h4>
+                                  <div class="form-floating">
+                                    <input
+                                      type="number"
+                                      min="0"
+                                      max="5"
+                                      formControlName="runs"
+                                      class="form-control"
+                                      id="runs"
+                                      placeholder="Venue"
+                                    />
+                                    <label for="floatingInput">Runs:</label>
+                                  </div>
+                                </div>
+                                <div class="d-flex justify-content-around">
+                                  <div class="w-75">
+                                    <h4>Extras:</h4>
+                                    <div class="d-flex justify-content-around w-100 extras-div">
+                                      <div>
+                                        <input class="form-check-input" value="true" type="checkbox" formControlName="isWide" id="isWide" />
+                                        <label class="form-check-label fw-bold" for="flexRadioDefault1">Wide</label>
+                                      </div>
+                                      <div>
+                                        <input class="form-check-input" value="true" type="checkbox" formControlName="isNb" id="isNb" />
+                                        <label class="form-check-label fw-bold" for="flexRadioDefault1">Nb</label>
+                                      </div>
+                                      <div>
+                                        <input class="form-check-input" value="true" type="checkbox" formControlName="isBye" id="isBye" />
+                                        <label class="form-check-label fw-bold" for="flexRadioDefault1">Bye</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      }
+                    }
+                    @if (outType === 4 || outType === 3) {
+                      <div class="px-2">
+                        <div class="card">
+                          <div class="card-body">
+                            <div>
+                              <h3>{{ getOutTitle(outType) }}</h3>
+                            </div>
+                            <div class="overflow-auto" [formGroup]="fielderForm">
+                              @for (fielder of sort(innings?.players?.bowlers); track fielder; let index = $index) {
+                                <div class="form-check bowler">
+                                  <input
+                                    class="form-check-input"
+                                    [value]="fielder?.id"
+                                    type="radio"
+                                    formControlName="id"
+                                    [id]="fielder?.id"
+                                  />
+                                  <label class="form-check-label fw-bold" for="flexRadioDefault1">
+                                    {{ index + 1 }}. {{ fielder?.name }}
+                                  </label>
+                                </div>
+                              }
+                            </div>
+                            <form [formGroup]="addPlayerForm">
+                              <div>
+                                <div class="form-floating">
+                                  <input
+                                    type="email"
+                                    class="form-control"
+                                    id="floatingInput"
+                                    placeholder="New Player Name"
+                                    formControlName="name"
+                                  />
+                                  <label for="floatingInput">New Player Name</label>
+                                </div>
+                              </div>
+                              <button
+                                type="button"
+                                class="btn btn-primary"
+                                (click)="addNewPlayer(otherInningsId, 2)"
+                                [disabled]="addPlayerForm.invalid"
+                              >
+                                Add
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    }
+                    @if (getBattersListToPlay(innings?.players?.batters)?.length) {
+                      <div class="px-2">
+                        <div class="card">
+                          <div class="card-body">
+                            <div>
+                              <h3>Select Next Batsman</h3>
+                            </div>
+                            <div class="overflow-auto" [formGroup]="nextPlayer">
+                              @for (batter of getNextBattersList(innings?.players?.batters); track batter; let index = $index) {
+                                <div class="form-check bowler">
+                                  <input
+                                    class="form-check-input"
+                                    [value]="batter?.id"
+                                    type="radio"
+                                    formControlName="id"
+                                    [id]="batter?.id"
+                                  />
+                                  <label class="form-check-label fw-bold" for="flexRadioDefault1">
+                                    {{ index + 1 }}. {{ batter?.name }}
+                                  </label>
+                                </div>
+                              }
+                              <form [formGroup]="addPlayerForm">
+                                <div>
+                                  <div>
+                                    <div class="form-floating">
+                                      <input
+                                        type="email"
+                                        class="form-control"
+                                        id="floatingInput"
+                                        placeholder="New Player Name"
+                                        formControlName="name"
+                                      />
+                                      <label for="floatingInput">New Player Name</label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <button
+                                  type="button"
+                                  class="btn btn-primary"
+                                  (click)="addNewPlayer(innings.id, 1)"
+                                  [disabled]="addPlayerForm.invalid"
+                                >
+                                  Add
+                                </button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    }
+                    @if (outType === 2) {
+                      <div class="px-2">
+                        <div class="card">
+                          <div class="card-body">
+                            <div>
+                              <h3>{{ getOutTitle(outType) }}</h3>
+                            </div>
+                            <div class="overflow-auto" [formGroup]="fielderForm">
+                              @for (fielder of sort(innings?.players?.bowlers); track fielder; let index = $index) {
+                                <div class="form-check bowler">
+                                  <input
+                                    class="form-check-input"
+                                    [value]="fielder?.id"
+                                    type="radio"
+                                    formControlName="id"
+                                    [id]="fielder?.id"
+                                  />
+                                  <label class="form-check-label fw-bold" for="flexRadioDefault1">
+                                    {{ index + 1 }}. {{ fielder?.name }}
+                                  </label>
+                                </div>
+                              }
+                            </div>
+                            <form [formGroup]="addPlayerForm">
+                              <div>
+                                <div class="form-floating">
+                                  <input
+                                    type="email"
+                                    class="form-control"
+                                    id="floatingInput"
+                                    placeholder="New Player Name"
+                                    formControlName="name"
+                                  />
+                                  <label for="floatingInput">New Player Name</label>
+                                </div>
+                              </div>
+                              <button
+                                type="button"
+                                class="btn btn-primary"
+                                (click)="addNewPlayer(otherInningsId, 2)"
+                                [disabled]="addPlayerForm.invalid"
+                              >
+                                Add
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    }
+                  </div>
+                  <div class="mt-auto">
+                    <div class="text-center">
+                      <div class="text-center">
+                        <button type="button" class="btn btn-primary mt-2 w-75" [disabled]="checkForContinue()" (click)="continueScoring()">
+                          Continue
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                }
+              </div>
+              <div class="next-bowler-div">
+                @if (
+                  (currentInnings?.currentBall !== 6 && !showPlayerOut) || !disableEndInnings || !disableEndMatch || liveMatch?.outCome
+                ) {
+                  <h3>Last Balls</h3>
+                  @if (getBalls().length) {
+                    @for (ball of getBalls(); track index; let index = $index) {
+                      <div class="d-flex justify-content-left px-2 balls-row fw-bold">
+                        <div class="px-2 ball">
+                          <span>{{ ball.over }}.</span>
+                          <span>{{ ball?.runs?.extras && (ball?.isNb || ball?.isWide) ? ball?.ball + 1 : ball?.ball }}</span>
+                        </div>
+                        <div [ngClass]="ball?.runs?.extras ? 'wide-ball' : ''">{{ getMessage(ball) }}</div>
+                      </div>
+                    }
+                  } @else {
+                    <div class="px-3">Waiting for the bowler to bowl...</div>
+                  }
+                }
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+      <!-- Change Bowler Modal-->
+      <button class="btn btn-warning d-none" data-bs-toggle="modal" data-bs-target="#changeBowlerModal" #changeBowlerModal>
+        Change Bowler
+      </button>
+      <div class="modal fade" id="changeBowlerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollabl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-2" id="addPlayerForm">Select Next Bowler</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #closeChangeBowlerModal></button>
+            </div>
+            <form [formGroup]="nextPlayer">
+              <div class="modal-body">
+                <div class="d-flex justify-content-between">
+                  <div class="col-md-5">
+                    <div class="form-floating mb-3">
+                      <select formControlName="id" class="form-select" aria-label="Default select example">
+                        <option value="">Select Bowler</option>
+                        @for (bowler of getBowlersList(); track index; let index = $index) {
+                          <option [value]="bowler.id">{{ bowler.name }}</option>
+                        }
+                      </select>
+                      <label for="floatingInput">Select Bowler</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="startNextOver()" [disabled]="nextPlayer.invalid">Start Over2</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+}

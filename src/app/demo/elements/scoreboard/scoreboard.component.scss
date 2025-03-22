@@ -1,0 +1,77 @@
+.runs-btn {
+  div {
+    .btn {
+      margin: 5px 8px;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
+}
+.sticky {
+  position: sticky;
+  top:0px;
+  z-index:999;
+}
+
+.board-div {
+  padding: 5px;
+  min-height: 372px;
+}
+
+.balls-details {
+  max-height: 440px !important;
+  overflow-y: auto !important;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  .balls-row {
+    padding-bottom: 10px;
+    color: #fff;
+    .ball {
+      font-weight: bold;
+    }
+  }
+}
+
+.bg-gradient-green {
+  background: linear-gradient(
+    180deg,
+    rgba(28, 204, 15, 1) 0%,
+    rgba(15, 131, 27, 1) 33%,
+    rgba(13, 123, 28, 1) 40%,
+    rgba(6, 89, 34, 1) 70%,
+    rgba(6, 89, 34, 1) 74%
+  );
+}
+
+.bowler {
+  label {
+    display: inline;
+  }
+}
+
+.disable-buttons {
+  .btns {
+    pointer-events: none;
+    background-color: lightgray;
+  }
+}
+
+.white-text {
+  color: #fff;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+  .px-2 {
+    width: 50%;
+    input {
+      margin-right: 5px;
+    }
+  }
+}
+
+.wide-ball {
+  background-color: red;
+  padding: 0px 4px;
+}

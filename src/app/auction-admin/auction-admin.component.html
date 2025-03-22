@@ -1,0 +1,326 @@
+<div>
+    <div class="card matches-card">
+        <div class="card-body d-flex p-1">
+            <div class="col-xl-4 col-md-6 p-2">
+                <div class="card earning-card bg-gradient-blue text-white overflow-hidden">
+                    <span class="round secondary-round small"></span>
+                    <span class="round secondary-round big"></span>
+                    <div class="card-body">
+                        <div class="fs-3">Auction Details</div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 p-2">
+                <div class="card earning-card bg-gradient-red text-white overflow-hidden">
+                    <span class="round secondary-round small"></span>
+                    <span class="round secondary-round big"></span>
+                    <div class="card-body">
+                        <div class="fs-3">Team Details</div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 p-2">
+                <div class="card earning-card bg-gradient-green text-white overflow-hidden">
+                    <span class="round secondary-round small"></span>
+                    <span class="round secondary-round big"></span>
+                    <div class="card-body">
+                        <div class="fs-3">Player Details</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Match Modal-->
+        <div class="modal fade" id="startMatchModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollabl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-2" id="addPlayerForm">Start A Match</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            #closeStartMatchModal></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Batters Modal-->
+        <div class="modal fade" id="addBattersModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollabl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-2" id="addBatsmanForm">Add Batsman and Bowler</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            #closeStartScoringModal></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------->
+    <div>
+        <div class="card">
+            <div class="card-body admin-list">
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    id="icon-tab-0"
+                    data-bs-toggle="tab"
+                    href="#icon-tabpanel-0"
+                    role="tab"
+                    aria-controls="icon-tabpanel-0"
+                    aria-selected="true"
+                  >
+                    <i class="ti ti-brand-teams"></i>
+                    Teams
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="icon-tab-1"
+                    data-bs-toggle="tab"
+                    href="#icon-tabpanel-1"
+                    role="tab"
+                    aria-controls="icon-tabpanel-1"
+                    aria-selected="false"
+                  >
+                    <i class="ti ti-play-volleyball"></i>
+                    Players
+                  </a>
+                </li>
+              </ul>
+              <div class="tab-content pt-1" id="tab-content">
+                <div class="tab-pane active" id="icon-tabpanel-0" role="tabpanel" aria-labelledby="icon-tab-0">
+                  <div class="d-flex justify-content-end">
+                    <div class="add-team d-flex">
+                      <div class="players-count">
+                        <div>Total Teams:</div>
+                      </div>
+                      <div>
+                        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addTeamModal">Add Team</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- @if (teams$ | async; as teams) {
+                    @if (teams.length) {
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th class="pl-20">Sno</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Created On</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @for (team of teams; track index; let index = $index) {
+                            <tr>
+                              <td class="pl-20">{{ index + 1 }}</td>
+                              <td>{{ team?.name }}</td>
+                              <td>{{ team?.location }}</td>
+                              <td>{{ generateTimeFormat(team?.createdOn) }}</td>
+                              <td>
+                                <button
+                                  class="btn btn-primary"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#deleteTeamModal"
+                                  (click)="setDeleteTeamId(team.id)"
+                                >
+                                  <i class="ti ti-pencil-star"></i>
+                                </button>
+                                &nbsp;&nbsp;
+                                <button
+                                  class="btn btn-danger"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#deleteTeamModal"
+                                  (click)="setDeleteTeamId(team.id)"
+                                >
+                                  <i class="ti ti-trash"></i>
+                                </button>
+                              </td>
+                            </tr>
+                          }
+                        </tbody>
+                      </table>
+                    } @else {
+                      <div class="p-3">No Teams Available.</div>
+                    }
+                  } -->
+                </div>
+                <div class="tab-pane" id="icon-tabpanel-1" role="tabpanel" aria-labelledby="icon-tab-1">
+                  <div class="d-flex justify-content-end">
+                    <div class="add-team d-flex">
+                      <div class="players-count">
+                        <div>Total Players: </div>
+                      </div>
+                      <!-- <div class="mx-2" [formGroup]="PlayersFilterForm">
+                        <select formControlName="id" class="form-select" aria-label="Default select example" (ngModelChange)="updatePlayersFilter()">
+                          <option value="">All Teams</option>
+                          @for (team of teamsList; track index; let index = $index) {
+                            <option [value]="team.id">{{ team.name }}</option>
+                          }
+                        </select>
+                      </div> -->
+                      <div>
+                        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addPlayerModal">Add Player</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- @if (allPlayers; as players) {
+                    @if (players.length) {
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th class="pl-20">Sno</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Team</th>
+                            <th scope="col">Created On</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @for (player of players; track index; let index = $index) {
+                            <tr>
+                              <td class="pl-20">{{ index + 1 }}</td>
+                              <td>{{ player.name }}</td>
+                              <td>{{ getTeamName(player.team) }}</td>
+                              <td>{{ generateTimeFormat(player.createdOn) }}</td>
+                              <td>
+                                <button
+                                  class="btn btn-primary"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#deletePlayerModal"
+                                  (click)="setDeletePlayerId(player.id)"
+                                >
+                                  <i class="ti ti-pencil-star"></i>
+                                </button>
+                                &nbsp;&nbsp;
+                                <button
+                                  class="btn btn-danger"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#deletePlayerModal"
+                                  (click)="setDeletePlayerId(player.id)"
+                                >
+                                  <i class="ti ti-trash"></i>
+                                </button>
+                              </td>
+                            </tr>
+                          }
+                        </tbody>
+                      </table>
+                    } @else {
+                      <div class="p-3">No Players Available.</div>
+                    }
+                  } -->
+                </div>
+              </div>
+            </div>
+            <!-- Add Team Modal-->
+            <div class="modal fade" id="addTeamModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-2" id="addTeamForm">Add New Team</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #closeAddTeamModal></button>
+                  </div>
+                  <!-- <form [formGroup]="addTeamForm">
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="Team Name" formControlName="name" />
+                            <label for="floatingInput">Team Name</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="Location" formControlName="location" />
+                        <label for="floatingInput">Team Location</label>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" (click)="addNewTeam()" [disabled]="addTeamForm.invalid">Save</button>
+                    </div>
+                  </form> -->
+                </div>
+              </div>
+            </div>
+            <!-- Add Player Modal-->
+            <div class="modal fade" id="addPlayerModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-2" id="addPlayerForm">Add New Player</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #closeAddPlayerModal></button>
+                  </div>
+                  <!-- <form [formGroup]="addPlayerForm">
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="Player Name" formControlName="name" />
+                            <label for="floatingInput">Player Name</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <select formControlName="team" class="form-select" aria-label="Default select example">
+                          <option value="">Select Team</option>
+                          @for (team of teams$ | async; track index; let index = $index) {
+                            <option [value]="team?.id">{{ team?.name }}</option>
+                          }
+                        </select>
+                        <label for="floatingInput">Team</label>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" (click)="addNewPlayer()" [disabled]="addPlayerForm.invalid">Save</button>
+                    </div>
+                  </form> -->
+                </div>
+              </div>
+            </div>
+            <!-- Delete Team Modal-->
+            <!-- <div class="modal fade" id="deleteTeamModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #deleteTeamModal></button>
+                  </div>
+                  <div class="modal-body fs-2">Are you sure to delete this team?</div>
+                  <div class="modal-footer">
+                    <button class="btn btn-danger" (click)="deleteTeam(1)">Confirm</button>
+                    <button class="btn btn-primary" (click)="deleteTeam(0)">No</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- Delete Player Modal-->
+            <!-- <div class="modal fade" id="deletePlayerModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #deletePlayerModal></button>
+                  </div>
+                  <div class="modal-body fs-2">Are you sure to delete this player?</div>
+                  <div class="modal-footer">
+                    <button class="btn btn-danger" (click)="deletePlayer(1)">Confirm</button>
+                    <button class="btn btn-primary" (click)="deletePlayer(0)">No</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>          
+    </div>
+</div>

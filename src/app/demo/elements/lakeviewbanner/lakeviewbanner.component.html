@@ -1,0 +1,86 @@
+<div class="master d-flex flex-row bd-highlight justify-content-between">
+  <div class="banner-1 bd-highlight">
+    <div class="d-flex flex-row bd-highlight justify-content-between">
+      <div class="batter-names bd-highlight">
+        <div class="team-name">{{ playingTeams?.team1 }}</div>
+        <div class="d-flex flex-row justify-content-between">
+          <div class="names">
+            @if (currentPlayers?.player1?.striker) {
+              <i class="ti ti-cricket"></i>
+            }
+            @if (!currentPlayers?.player1?.striker) {
+              <span style="padding: 0px 8px"></span>
+            }
+            &nbsp;{{ currentPlayers?.player1?.name }}
+          </div>
+          <div class="d-flex b-scores">
+            <div class="runs">{{ currentPlayers?.player1?.runs }}</div>
+            <div class="balls">{{ currentPlayers?.player1?.balls }}</div>
+          </div>
+        </div>
+        <div class="d-flex flex-row justify-content-between">
+          <div class="names">
+            @if (currentPlayers?.player2?.striker) {
+              <i class="ti ti-cricket"></i>
+            }
+            @if (!currentPlayers?.player2?.striker) {
+              <span style="padding: 0px 8px"></span>
+            }
+            &nbsp;{{ currentPlayers?.player2?.name }}
+          </div>
+          <div class="d-flex b-scores">
+            <div class="runs">{{ currentPlayers?.player2?.runs }}</div>
+            <div class="balls">{{ currentPlayers?.player2?.balls }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="banner-2 bd-highlight">
+    <div>
+      <div class="score-board">
+        <div class="d-flex flex-row justify-content-between details">
+          <div>
+            <div>Run rate</div>
+            <div>{{ scoreDetails?.runRate > 0 ? scoreDetails?.runRate : 0.0 }}</div>
+          </div>
+          <div>
+            <p class="score">{{ scoreDetails.runs }} / {{ scoreDetails.wickets }}</p>
+          </div>
+          <div>
+            <div>{{ scoreDetails.overs }}.{{ scoreDetails.balls }}</div>
+            <div>Overs</div>
+          </div>
+        </div>
+        <div class="boundaries">
+          <span>Target : 119</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="banner-3 bd-highlight">
+    <div>
+      <div class="score-board">
+        <div class="opp-team-name">
+          {{ playingTeams?.team2 }} &nbsp;
+          @if (currentBowler?.name) {
+            <span class="score">
+              {{ currentBowler?.name }} {{ currentBowler?.runs }}/{{ currentBowler?.wickets }} ({{ currentBowler?.overs }}.{{
+                currentBowler?.balls
+              }})
+            </span>
+          }
+        </div>
+        <div class="d-flex flex-row justify-content-between details">
+          <!-- <div></div>
+        </div> -->
+          <div class="balls-div d-flex flex-row">
+            @for (ball of lastBalls; track $index) {
+              <div class="ball">{{ ball }}</div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
