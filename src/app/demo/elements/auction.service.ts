@@ -1,8 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MatchesUrls, InningsUrl, MatchInfoUrl } from './matches.interface';
-import { UtilsService } from './utils.service';
-import { of, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +7,8 @@ import { of, Subject } from 'rxjs';
 export class AuctionService {
   public playersUrl = 'http://localhost:3000/auctionPlayers';
   public teamsUrl = 'http://localhost:3000/auctionTeams';
+  public auctionInfo = 'http://localhost:3000/auctionInfo';
+
   constructor(private readonly httpClient: HttpClient) {}
 
   getAuctionPlayers() {
@@ -30,5 +29,19 @@ export class AuctionService {
 
   deleteAuctionPlayer({ playerId }) {
     return this.httpClient.delete(`${this.playersUrl}/${playerId}`);
+  }
+
+  loadAuctionInfo() {
+    return this.httpClient.get(`${this.auctionInfo}`);
+  }
+  createAuction({ auction }) {
+    return this.httpClient.post(this.auctionInfo, auction);
+  }
+  addAuctionTeam({ team }) {
+    console.log(team);
+    return this.httpClient.post(`${this.teamsUrl}`, team);
+  }
+  addAuctionPlayer({ player }) {
+    return this.httpClient.post(`${this.playersUrl}`, player);
   }
 }

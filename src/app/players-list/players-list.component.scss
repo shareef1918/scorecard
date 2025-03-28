@@ -1,0 +1,65 @@
+.main-div {
+  background: url('../../assets/images/players-list.jpg');
+  background-size: cover;
+  height: 100vh;
+  .header {
+    .title {
+      font-size: 80px;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .sub-title {
+      font-size: 20px;
+      color: lightyellow;
+      font-weight: bold;
+      position: relative;
+      bottom: 20px;
+      span {
+        position: relative;
+        left: 100px;
+      }
+      background: -moz-linear-gradient(90deg, rgba(186, 35, 16, 1) 48%, rgba(245, 216, 222, 1) 100%);
+      background: -webkit-linear-gradient(90deg, rgba(186, 35, 16, 1) 48%, rgba(245, 216, 222, 1) 100%);
+      background: linear-gradient(90deg, rgba(186, 35, 16, 1) 48%, rgba(245, 216, 222, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ba2310",endColorstr="#f5d8de",GradientType=1);
+      padding: 5px 10px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+  }
+  .players-card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background: -moz-linear-gradient(180deg, rgba(84, 9, 106, 0.711922268907563) 48%, rgba(148, 6, 35, 1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(84, 9, 106, 0.711922268907563) 48%, rgba(148, 6, 35, 1) 100%);
+    background: linear-gradient(180deg, rgba(84, 9, 106, 0.711922268907563) 48%, rgba(148, 6, 35, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#54096a",endColorstr="#940623",GradientType=1);
+    padding: 10px;
+    .team-div {
+      .team-name {
+        background: #df5a25;
+        background: linear-gradient(to right, #df5a25 34%, #3f0944 74%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 26px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .players-list {
+        margin-right: 40px;
+        .player-name {
+          font-size: 14px;
+          color: #fff;
+          font-weight: bold;
+          border-bottom: 2px solid #fff;
+          text-transform: uppercase;
+          padding: 5px;
+          min-width: 300px;
+        }
+      }
+    }
+  }
+}

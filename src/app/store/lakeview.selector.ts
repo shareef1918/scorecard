@@ -8,6 +8,8 @@ export const matchInfo = createFeatureSelector<any>('matchInfo');
 export const auctionPlayers = createFeatureSelector<any>('auctionPlayers');
 export const auctionTeams = createFeatureSelector<any>('auctionTeams');
 export const undoList = createFeatureSelector<any>('undoList');
+//Auction
+export const auctionInfo = createFeatureSelector<any>('auctionInfo');
 
 export const getTeams = createSelector(teams, (teams) => teams);
 
@@ -23,3 +25,5 @@ export const teamPlayers = (id) => createSelector(players, (players) => players.
 export const currentInningsSelector = createSelector(innings, (innings) => innings?.find((inning) => inning.currentInnings));
 export const inningsSelector = createSelector(innings, (innings) => innings);
 export const getMatchSelector = createSelector(matchInfo, (matchInfo) => matchInfo);
+//Auction
+export const getAuctionInfo = createSelector(auctionInfo, (auctionInfo) => auctionInfo);

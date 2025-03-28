@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './theme/layout/admin/admin.component';
-import { GuestComponent } from './theme/layout/guest/guest.component';
 import LakeviewbannerComponent from './demo/elements/lakeviewbanner/lakeviewbanner.component';
 import { BannerThemeAComponent } from './demo/elements/banner-theme-a/banner-theme-a.component';
 
@@ -39,10 +38,10 @@ const routes: Routes = [
         path: 'aucklandboard',
         loadComponent: () => import('./demo/elements/aucklandboard/aucklandboard.component')
       },
-      // {
-      //   path: 'lakeviewbanner',
-      //   loadComponent: () => import('./demo/elements/lakeviewbanner/lakeviewbanner.component')
-      // },
+      {
+        path: 'players',
+        loadComponent: () => import('./players-list/players-list.component')
+      },
       {
         path: 'color',
         loadComponent: () => import('./demo/elements/element-color/element-color.component')
@@ -67,4 +66,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -24,7 +24,10 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
   public teamsList = [];
   public bothInnings = [];
 
-  constructor(private readonly store: Store, public readonly teams: TeamsService) {
+  constructor(
+    private readonly store: Store,
+    public readonly teams: TeamsService
+  ) {
     this.store.dispatch(PlayersActions.loadPlayers());
     this.store.dispatch(MatchesActions.loadMatches());
     this.store.dispatch(InningsActions.loadInnings());
@@ -81,13 +84,13 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
         if (acc[ball.striker]) {
           acc[ball.striker] = {
             runs: +acc[ball.striker].runs + +ball.runs.striker,
-            balls: ball.isWide? +acc[ball.striker].balls: +acc[ball.striker].balls + 1
-          }
+            balls: ball.isWide ? +acc[ball.striker].balls : +acc[ball.striker].balls + 1
+          };
         } else {
           acc[ball.striker] = {
             runs: +ball.runs.striker,
             balls: 1
-          }
+          };
         }
       }
       return acc;
@@ -101,7 +104,7 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
           id: player,
           runs: batsmen[player].runs,
           balls: batsmen[player].balls,
-          status: allPlayers.find(batter => batter?.id === player)?.status
+          status: allPlayers.find((batter) => batter?.id === player)?.status
         });
       }
       players?.sort((a, b) => b.runs - a.runs);
@@ -112,18 +115,18 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
             runs: null,
             balls: null,
             status: 0
-          })
+          });
         }
       }
     }
     return players.slice(0, 4);
   }
 
-  getDate(date){
-    if(date)return moment(date).format('DD-MMM-YYYY hh:mm A');
+  getDate(date) {
+    if (date) return moment(date).format('DD-MMM-YYYY hh:mm A');
     return null;
   }
-  
+
   getPlayerName(playerId: string) {
     return this.players.find((player) => player.id === playerId)?.name;
   }
@@ -153,12 +156,12 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
           acc[ball.bowler] = {
             runs: +acc[ball.bowler].runs + +ball.runs.total,
             wickets: +acc[ball.bowler].wickets + (ball.isOut ? 1 : 0)
-          }
+          };
         } else {
           acc[ball.bowler] = {
             runs: +ball.runs.total,
             wickets: ball.isOut ? 1 : 0
-          }
+          };
         }
       }
       return acc;
@@ -175,7 +178,7 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
         });
       }
       players?.sort((a, b) => b.wickets - a.wickets);
-      players =  players.slice(0, 4);
+      players = players.slice(0, 4);
       if (keys?.length < 4) {
         for (let i = keys.length; i < 4; i++) {
           players.push({
@@ -183,7 +186,7 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
             runs: null,
             wickets: null,
             overs: null
-          })
+          });
         }
       }
     }
@@ -191,9 +194,7 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
   }
 
   getBowledOversAndBalls(innings, bowler) {
-    const bowledValidBalls = innings?.balls?.filter(
-      (ball) => ball?.bowler === bowler && !ball?.runs?.extras
-    );
+    const bowledValidBalls = innings?.balls?.filter((ball) => ball?.bowler === bowler && !ball?.runs?.extras);
     let overs = 0;
     let balls = 0;
     (bowledValidBalls || [])?.forEach((ball) => {
@@ -212,7 +213,9 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
     return +this.match?.overs * 6 - ((+this.currentInnings?.currentOver || 0) * 6 + (+this.currentInnings?.currentBall || 0));
   }
 
-  scoreToWin(){
-    return this.match?.target - this.getInningsScore(this.currentInnings);
+  scoreToWin() {
+    return this.match?.target - this.getInningsScore(this.currentInnings) > 0
+      ? this.match?.target - this.getInningsScore(this.currentInnings)
+      : 0;
   }
 }

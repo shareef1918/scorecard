@@ -11,6 +11,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "json:server": "json-server --watch database.json",
+    "json:auction": "json-server --watch auction-database.json",
     "json:server-test": "json-server --watch test.json"
   },
   "dependencies": {

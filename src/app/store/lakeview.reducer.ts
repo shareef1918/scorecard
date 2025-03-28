@@ -1,7 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
 import {
+  AuctionApiInfo,
   AuctionApiPlayers,
   AuctionApiTeams,
+  AuctionInfo,
+  AuctionPlayers,
   AuctionTeams,
   InningsActions,
   InningsApiActions,
@@ -14,6 +17,8 @@ import {
   UndoListActions,
   UndoListApiActions
 } from './lakeview.action';
+import { state } from '@angular/animations';
+import { auctionInfo } from './lakeview.selector';
 
 export const initialTeamsState: any = [];
 
@@ -28,9 +33,11 @@ export const initialInnings: any = [];
 export const initailActionTeams: any = [];
 export const initailActionPlayers: any = [];
 export const initailUndoList: any = [];
+export const initialAuctionState: any = [];
 
 export const auctionTeamsReducer = createReducer(
   initailActionTeams,
+  on(AuctionTeams.addAuctionTeam, (state, { team }) => [...state, team]),
   on(AuctionApiTeams.loadTeamsSuccess, (_state, { teams }) => teams),
   on(AuctionApiTeams.updateTeamSuccess, (_state, { team }) =>
     [..._state?.filter((state) => state?.id !== team?.id), ...[team]].sort((a, b) => +a?.id - +b?.id)
@@ -38,6 +45,7 @@ export const auctionTeamsReducer = createReducer(
 );
 export const auctionPlayersReducer = createReducer(
   initailActionPlayers,
+  on(AuctionPlayers.addAuctionPlayer, (state, { player }) => [...state, player]),
   on(AuctionApiPlayers.loadPlayersSuccess, (_state, { players }) => players),
   on(AuctionApiPlayers.updatePlayerSuccess, (_state, { player }) => [..._state?.filter((state) => state?.id !== player?.id), ...[player]]),
   on(AuctionApiPlayers.deletePlayerSuccess, (_state, { player }) => [..._state?.filter((state) => state?.id !== player?.id)])
@@ -100,7 +108,7 @@ export const matchesReducer = createReducer(
     ];
   }),
   on(MatchesActions.clearMatch, (state) => []),
-  on(MatchesApiActions.loadMatchesSuccess, (_state, { matches }) => matches),
+  on(MatchesApiActions.loadMatchesSuccess, (_state, { matches }) => matches)
 );
 
 export const undoListReducer = createReducer(
@@ -113,3 +121,15 @@ export const undoListReducer = createReducer(
 export const updateLiveMatchData = (match, innings, updatedData) => {
   return { ...match[innings], ...updatedData };
 };
+
+export const auctionReducer = createReducer(
+  initialAuctionState,
+  on(AuctionInfo.createAuction, (state, { auction }) => [...state, auction]),
+  on(AuctionInfo.updateAuction, (state, { auction }) => {
+    const index = state.findIndex(state.id === auction.id);
+    state[index] = auction;
+    return state;
+  }),
+  on(AuctionInfo.deleteAuction, (state, { auctionId }) => state.filter((auction) => auction.id !== auctionId)),
+  on(AuctionApiInfo.loadAuctionInfoSuccess, (_state, { auctionInfo }) => auctionInfo)
+);

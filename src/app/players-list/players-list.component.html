@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-center main-div">
+  @if (liveMatch$ | async; as match) {
+    <div>
+      <div class="header">
+        <div class="title">Teams</div>
+        <!-- <div class="sub-title">LakeView Premier League</div> -->
+        <div class="sub-title">
+          Location: {{ matchInfo.venue }}
+          <span>Date: {{ getDate() }}</span>
+        </div>
+      </div>
+      <div class="players-card">
+        <div class="d-flex justify-content-center">
+          @for (team of teams; track teams) {
+            <div class="team-div">
+              <div class="team-name">{{ team?.name }}</div>
+              <div class="players-list">
+                @for (player of getPlayersList(team.id); track player) {
+                  <div class="player-name">{{ player?.name }}</div>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  } @else {
+    <div>Please Start Match to see Players List</div>
+  }
+</div>

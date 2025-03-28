@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
+  AuctionApiInfo,
   AuctionApiPlayers,
   AuctionApiTeams,
+  AuctionInfo,
   AuctionPlayers,
   AuctionTeams,
   InningsActions,
@@ -21,6 +23,7 @@ import { of } from 'rxjs';
 import { TeamsService } from '../demo/elements/teams.service';
 import { MatchesService } from '../demo/elements/matches.service';
 import { AuctionService } from '../demo/elements/auction.service';
+import { auctionInfo } from './lakeview.selector';
 
 @Injectable()
 export class LakeViweEffects {
@@ -108,6 +111,18 @@ export class LakeViweEffects {
     )
   );
 
+  addAuctionPlayer$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuctionPlayers.addAuctionPlayer),
+      switchMap((player) =>
+        this.auctionService.addAuctionPlayer(player).pipe(
+          map((player) => AuctionApiPlayers.addAuctionPlayerSuccess({ player })),
+          catchError((error) => of(AuctionApiPlayers.addAutionPlayerFailure({ error })))
+        )
+      )
+    )
+  );
+
   updateAuctionTeam$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AuctionTeams.updateTeam),
@@ -115,6 +130,18 @@ export class LakeViweEffects {
         this.auctionService.updateAuctionTeam(team).pipe(
           map((team) => AuctionApiTeams.updateTeamSuccess({ team })),
           catchError((error) => of(AuctionApiTeams.updateTeamFailure({ error })))
+        )
+      )
+    )
+  );
+
+  addAuctionTeam$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuctionTeams.addAuctionTeam),
+      switchMap((team) =>
+        this.auctionService.addAuctionTeam(team).pipe(
+          map((team) => AuctionApiTeams.addTeamsSuccess({ team })),
+          catchError((error) => of(AuctionApiTeams.addTeamsFailure({ error })))
         )
       )
     )
@@ -291,10 +318,36 @@ export class LakeViweEffects {
     )
   );
 
+  loadAuctionInfo$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuctionInfo.loadAuction),
+      mergeMap(() =>
+        this.auctionService.loadAuctionInfo().pipe(
+          map(
+            (auctionInfo: any[]) => AuctionApiInfo.loadAuctionInfoSuccess({ auctionInfo }),
+            catchError((error) => of(AuctionApiInfo.deleteAuctionInfoFailure({ error })))
+          )
+        )
+      )
+    )
+  );
+
+  createAuction$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuctionInfo.createAuction),
+      switchMap(({ auction }) =>
+        this.auctionService.createAuction({ auction }).pipe(
+          map(() => AuctionApiInfo.createAuctionInfoAPISuccess({ auction })),
+          catchError((error) => of(AuctionApiInfo.loadAuctionInfoFailure({ error })))
+        )
+      )
+    )
+  );
+
   constructor(
     private readonly actions$: Actions,
     private readonly teamsService: TeamsService,
     private readonly matchesService: MatchesService,
     private readonly auctionService: AuctionService
-  ) { }
+  ) {}
 }

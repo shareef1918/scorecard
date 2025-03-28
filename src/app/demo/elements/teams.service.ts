@@ -42,11 +42,9 @@ export class TeamsService {
     //     this.httpClient.delete(`${this.inningsUrl}/${inn.id}`).subscribe();
     //   })
     // });
-    this.getPlayersList().subscribe((players:any) => {
+    this.getPlayersList().subscribe((players: any) => {
       const TeamPlayers = players.filter((player) => player.team === teamId.teamId);
-      console.log(TeamPlayers);
       TeamPlayers.forEach((player) => {
-        console.log(player.id);
         this.deletePlayer({ playerId: player.id }).subscribe();
       });
     });

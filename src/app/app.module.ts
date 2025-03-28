@@ -30,7 +30,8 @@ import {
   InningsReducer,
   auctionPlayersReducer,
   auctionTeamsReducer,
-  undoListReducer
+  undoListReducer,
+  auctionReducer
 } from './store/lakeview.reducer';
 import { LakeViweEffects } from './store/lakeview.effects';
 import { provideEffects } from '@ngrx/effects';
@@ -70,7 +71,8 @@ import { provideEffects } from '@ngrx/effects';
       innings: InningsReducer,
       auctionPlayers: auctionPlayersReducer,
       auctionTeams: auctionTeamsReducer,
-      undoList: undoListReducer
+      undoList: undoListReducer,
+      auctionInfo: auctionReducer
     }),
     provideHttpClient(),
     provideEffects([LakeViweEffects])
