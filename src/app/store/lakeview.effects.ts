@@ -279,6 +279,18 @@ export class LakeViweEffects {
     )
   );
 
+  updatePlayer$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(PlayersActions.updatePlayer),
+      switchMap(({ player }) => {
+        return this.teamsService.updatePlayer({ player }).pipe(
+          map((player: any) => PlayerApiActions.updatePlayerSuccess({ player })),
+          catchError((error) => of(PlayerApiActions.updatePlayerFailure({ error })))
+        );
+      })
+    )
+  );
+
   loadAuctionPlayers$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AuctionPlayers.loadPlayers),

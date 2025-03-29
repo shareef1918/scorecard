@@ -145,6 +145,12 @@
                       >
                         <i class="ti ti-trash"></i>
                       </button>
+                      &nbsp;&nbsp;
+                      @if (!player?.isCaptain) {
+                        <button class="btn btn-danger" (click)="setPlayerAsCaptian(player.id)">Set As Captian</button>
+                      } @else {
+                        <button class="btn btn-success">Captain</button>
+                      }
                     </td>
                   </tr>
                 }

@@ -69,9 +69,9 @@ export class TeamsComponent {
     this.teams$.subscribe((teams) => (this.teamsList = teams));
     this.players$ = this.store.select(selectPlayers);
     this.players$.subscribe((players) => {
-      if(this.PlayersFilterForm.value.id){
+      if (this.PlayersFilterForm.value.id) {
         this.allPlayers = players.filter((player) => player.team === this.PlayersFilterForm.value.id);
-      }else {
+      } else {
         this.allPlayers = players;
       }
     });
@@ -99,9 +99,22 @@ export class TeamsComponent {
   addNewPlayer(): void {
     const playerData = this.addPlayerForm.value;
     const player: any = this.appendIdAndTime(playerData);
+    player.isCaptain = false;
     this.store.dispatch(PlayersActions.addPlayer({ player }));
     this.addPlayerForm.reset();
     this.closePlayerModal.nativeElement.click();
+    this.store.dispatch(PlayersActions.loadPlayers());
+  }
+
+  setPlayerAsCaptian(id) {
+    let player: any = JSON.parse(JSON.stringify(this.playerList.find((player) => player.id == id)));
+    player.isCaptain = true;
+    const teamPlayers = JSON.parse(JSON.stringify(this.playerList.filter((p) => p.team === player.team)));
+    for (let p of teamPlayers) {
+      p.isCaptain = false;
+      this.store.dispatch(PlayersActions.updatePlayer({ player: p }));
+    }
+    this.store.dispatch(PlayersActions.updatePlayer({ player }));
     this.store.dispatch(PlayersActions.loadPlayers());
   }
 
@@ -122,7 +135,7 @@ export class TeamsComponent {
       this.store.dispatch(TeamsActions.removeTeam({ teamId: this.deleteTeamId }));
       setTimeout(() => {
         this.store.dispatch(PlayersActions.loadPlayers());
-      },1000)
+      }, 1000);
     }
     this.deleteTeamModal.nativeElement.click();
   }

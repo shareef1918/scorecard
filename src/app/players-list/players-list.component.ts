@@ -37,7 +37,17 @@ export default class PlayersListComponent implements OnInit {
   }
 
   getPlayersList(teamId) {
-    return this.players.filter((player) => player.team === teamId);
+    return this.players
+      .filter((player) => player.team === teamId)
+      .sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      });
   }
 
   getDate() {

@@ -17,4 +17,5 @@ export interface Player {
   name: string;
   team: string;
   createdOn: number;
+  isCaptain?: boolean;
 }

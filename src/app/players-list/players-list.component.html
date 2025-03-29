@@ -11,12 +11,18 @@
       </div>
       <div class="players-card">
         <div class="d-flex justify-content-center">
-          @for (team of teams; track teams) {
+          @for (team of teams; track $index) {
             <div class="team-div">
               <div class="team-name">{{ team?.name }}</div>
               <div class="players-list">
-                @for (player of getPlayersList(team.id); track player) {
-                  <div class="player-name">{{ player?.name }}</div>
+                @for (player of getPlayersList(team.id); track $index) {
+                  <div class="player-name">
+                    {{ $index + 1 }}.&nbsp;{{ player?.name }} &nbsp;
+                    {{ player?.is }}
+                    @if (player?.isCaptain) {
+                      ( C )
+                    }
+                  </div>
                 }
               </div>
             </div>

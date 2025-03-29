@@ -66,4 +66,8 @@ export class TeamsService {
   deletePlayer({ playerId }) {
     return this.httpClient.delete(`${this.playersUrl}/${playerId}`);
   }
+
+  updatePlayer({ player }) {
+    return this.httpClient.put(`${this.playersUrl}/${player?.id}`, player);
+  }
 }

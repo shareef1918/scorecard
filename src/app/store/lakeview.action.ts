@@ -116,7 +116,7 @@ export const PlayersActions = createActionGroup({
   events: {
     'Add Player': props<{ player: any }>(),
     'Remove Player': props<{ playerId: string }>(),
-    'Update Player': props<{ playerId: string; player: any }>(),
+    'Update Player': props<{ player: any }>(),
     'Add Player Success': props<{ player: any }>(),
     'Add Player Failure': props<{ error: string }>(),
     'Load Players': emptyProps
@@ -130,7 +130,9 @@ export const PlayerApiActions = createActionGroup({
     'Add Player Success': props<{ player }>(),
     'Add Player Failure': props<{ error: string }>(),
     'Remove Player Success': props<{ playerId: any }>(),
-    'Remove Player Failure': props<{ error: string }>()
+    'Remove Player Failure': props<{ error: string }>(),
+    'Update Player Success': props<{ player: any }>(),
+    'Update Player Failure': props<{ error: string }>()
   }
 });
 

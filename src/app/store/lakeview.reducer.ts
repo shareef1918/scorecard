@@ -75,10 +75,9 @@ export const playersReducer = createReducer(
   initialPlayersState,
   on(PlayersActions.addPlayer, (state, { player }) => [...state, player]),
   on(PlayersActions.removePlayer, (state, { playerId }) => state.filter((player) => player.id !== playerId)),
-  on(PlayersActions.updatePlayer, (state, { playerId, player }) => {
-    const index = state.findIndex(state.id === playerId);
-    state[index] = player;
-    return state;
+  on(PlayersActions.updatePlayer, (state, { player }) => {
+    const filterData = state.filter((state) => state.id !== player.id);
+    return [...filterData, player];
   }),
   on(PlayerApiActions.loadPlayersSuccess, (_state, { players }) => players),
   on(PlayerApiActions.addPlayerSuccess, (_state) => _state)

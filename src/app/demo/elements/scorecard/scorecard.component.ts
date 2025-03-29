@@ -17,32 +17,30 @@ import moment from 'moment';
   styleUrl: './scorecard.component.scss'
 })
 export default class ScorecardComponent implements OnInit {
-
   innings$: Observable<any>;
   currentInnings: any;
   match: any;
   battersList = [];
   topScorer = null;
 
-  constructor(private readonly store: Store) {
-  }
+  constructor(private readonly store: Store) {}
 
   getTeamLogo(team) {
     return team?.logo || 'assets/images/logos/lakeview.png';
   }
-  
+
   ngOnInit() {
     this.store.dispatch(InningsActions.loadInnings());
     this.store.dispatch(MatchesActions.loadMatches());
     this.innings$ = this.store.select(innings).pipe(map((data) => data?.find((inn) => inn.currentInnings)));
-    this.innings$.subscribe((innings) => this.currentInnings = innings);
-    this.store.pipe(select(getLiveMatch)).subscribe((match) => this.match = match);
+    this.innings$.subscribe((innings) => (this.currentInnings = innings));
+    this.store.pipe(select(getLiveMatch)).subscribe((match) => (this.match = match));
     setTimeout(() => {
       this.generateScorecard();
     }, 100);
   }
 
-  getDateFormat(date){
+  getDateFormat(date) {
     return moment(date).format('DD-MM-YYYY');
   }
 
@@ -58,16 +56,15 @@ export default class ScorecardComponent implements OnInit {
           id: batter.id,
           status: batter.status,
           down: batter.down,
-          ...(batter.status === 2 ? {
-            out: this.getOutDetails(batter?.id)
-          } : {})
-        }
-        if (batterObj.name === 'Praveen') {
-          console.log(batterObj)
-        }
+          ...(batter.status === 2
+            ? {
+                out: this.getOutDetails(batter?.id)
+              }
+            : {})
+        };
         this.battersList.push(batterObj);
       }
-      this.getTopScorer()
+      this.getTopScorer();
     }
   }
 
@@ -112,9 +109,6 @@ export default class ScorecardComponent implements OnInit {
 
   getBowlerNameDetails(batter) {
     if (batter?.status === 2) {
-      if (batter?.name === 'Praveen') {
-        console.log(batter);
-      }
       return `b ${this.currentInnings?.players?.bowlers?.find((bowler) => bowler.id === batter?.out?.bowler)?.name}`;
     }
     return null;
@@ -160,14 +154,17 @@ export default class ScorecardComponent implements OnInit {
   }
 
   getTopperBoundaries() {
-    return this.currentInnings.balls?.reduce((acc, ball) => {
-      if (ball.runs.striker === 4) {
-        acc.fours += 1;
-      }
-      if (ball.runs.striker === 6) {
-        acc.sixes += 1;
-      }
-      return acc;
-    }, { fours: 0, sixes: 0 })
+    return this.currentInnings.balls?.reduce(
+      (acc, ball) => {
+        if (ball.runs.striker === 4) {
+          acc.fours += 1;
+        }
+        if (ball.runs.striker === 6) {
+          acc.sixes += 1;
+        }
+        return acc;
+      },
+      { fours: 0, sixes: 0 }
+    );
   }
 }

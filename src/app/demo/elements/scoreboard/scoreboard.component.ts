@@ -50,7 +50,7 @@ export class ScoreboardComponent {
     private readonly store: Store,
     private readonly fb: FormBuilder,
     private readonly api: ApiService,
-    private readonly utils: UtilsService,
+    private readonly utils: UtilsService
   ) {
     this.addPlayerForm = this.fb.group({
       id: new FormControl(),
@@ -95,13 +95,13 @@ export class ScoreboardComponent {
     const playerData = this.addPlayerForm.value;
     playerData.team = teamId;
     let player: any = this.appendIdAndTime(playerData);
-    
+
     this.store.dispatch(PlayersActions.loadPlayers());
-    player = { ...player, status: 0 }
+    player = { ...player, status: 0 };
     const currentInnings = JSON.parse(JSON.stringify(this.bothInnings.find((inn) => inn.id === this.liveMatch.currentInnings)));
     const otherInnings = JSON.parse(JSON.stringify(this.bothInnings.find((inn) => inn.id !== this.liveMatch.currentInnings)));
     if (num === 1) {
-      const playerExists = currentInnings?.players?.batter.find(player => player?.name === playerData.name);
+      const playerExists = currentInnings?.players?.batters.find((player) => player?.name === playerData.name);
       console.log(playerExists, playerData);
       currentInnings.players.batters = [...currentInnings.players.batters, ...[player]];
       otherInnings.players.bowlers = [...otherInnings.players.bowlers, ...[player]];
@@ -119,7 +119,6 @@ export class ScoreboardComponent {
   appendIdAndTime(obj: any) {
     return { ...obj, ...{ id: this.utils.generateId(), createdOn: this.utils.generateTimeStamp() } };
   }
-
 
   getBallMessage(runs, currentInnings, onStrikeBatsman, addedRuns: any) {
     if (!isNaN(addedRuns)) {
@@ -179,7 +178,9 @@ export class ScoreboardComponent {
     const currentInnings = this.liveMatch?.innings?.find((team) => team.id === this.liveMatch?.currentInnings);
     if (currentInnings) {
       const bowlingTeamId = this.liveMatch?.innings?.find((team) => team.id !== this.liveMatch.currentInnings)?.id;
-      return this.playersList?.filter((player) => player.team === bowlingTeamId && player.id !== currentInnings.currentBowler).sort((a, b) => a.name.localeCompare(b.name));
+      return this.playersList
+        ?.filter((player) => player.team === bowlingTeamId && player.id !== currentInnings.currentBowler)
+        .sort((a, b) => a.name.localeCompare(b.name));
     }
   }
 
@@ -301,18 +302,18 @@ export class ScoreboardComponent {
       },
       ...(isWide
         ? {
-          isWide: true
-        }
+            isWide: true
+          }
         : {}),
       ...(isNb
         ? {
-          isNb: true
-        }
+            isNb: true
+          }
         : {}),
       ...(isBye
         ? {
-          isBye: true
-        }
+            isBye: true
+          }
         : {})
     };
     //Bye
@@ -340,7 +341,7 @@ export class ScoreboardComponent {
   }
   addRuns(runs: number) {
     if (runs === 4 || runs === 6) {
-      this.api.boundariesBanner.next(runs)
+      this.api.boundariesBanner.next(runs);
     }
     if (this.currentInnings?.currentBall < 6) {
       this.disableScoreBoard = true;
@@ -426,8 +427,8 @@ export class ScoreboardComponent {
     }
     // this.store.dispatch(InningsActions.loadInnings());
     setTimeout(() => {
-      this.disableScoreBoard = false; 
-      this.checkForEndInningsOrMatch()
+      this.disableScoreBoard = false;
+      this.checkForEndInningsOrMatch();
     }, 2000);
   }
 
@@ -445,7 +446,9 @@ export class ScoreboardComponent {
 
   getNextBattersList(batters) {
     const currentPlaying = this.currentInnings?.currentBatsman?.map((batsman) => batsman?.id);
-    return batters?.filter((batter) => (!currentPlaying?.includes(batter?.id) && batter?.status === 0) || batter?.status === 6).sort((a, b) => a?.name.localeCompare(b?.name));
+    return batters
+      ?.filter((batter) => (!currentPlaying?.includes(batter?.id) && batter?.status === 0) || batter?.status === 6)
+      .sort((a, b) => a?.name.localeCompare(b?.name));
   }
 
   getBattersListToPlay(batters) {
@@ -500,11 +503,13 @@ export class ScoreboardComponent {
     // } else if (allOut || oversComplete) {
     //   this.disableEndMatch = false;
     // }
-    console.log(this.showPlayerOut ||
-      this.liveMatch?.outCome?.winner ||
-      this.disableScoreBoard ||
-      !this.disableEndMatch ||
-      this.currentInnings.currentBall === 6)
+    console.log(
+      this.showPlayerOut ||
+        this.liveMatch?.outCome?.winner ||
+        this.disableScoreBoard ||
+        !this.disableEndMatch ||
+        this.currentInnings.currentBall === 6
+    );
     return (
       this.showPlayerOut ||
       this.liveMatch?.outCome?.winner ||
@@ -603,13 +608,13 @@ export class ScoreboardComponent {
             type: this.outType,
             ...(this.outType === 2
               ? {
-                caughtBy: this.fielderForm.value?.id
-              }
+                  caughtBy: this.fielderForm.value?.id
+                }
               : {}),
             ...(this.outType === 3
               ? {
-                stumpedBy: this.fielderForm.value?.id
-              }
+                  stumpedBy: this.fielderForm.value?.id
+                }
               : {})
           }
         }
@@ -649,12 +654,12 @@ export class ScoreboardComponent {
       ],
       ...(nextPlayer?.id
         ? [
-          {
-            ...nextPlayer,
-            status: 1,
-            down: this.getInningsWickets() + 3
-          }
-        ]
+            {
+              ...nextPlayer,
+              status: 1,
+              down: this.getInningsWickets() + 3
+            }
+          ]
         : [])
     ];
   }
@@ -682,7 +687,7 @@ export class ScoreboardComponent {
     this.store.dispatch(InningsActions.loadInnings());
     setTimeout(() => {
       this.disableScoreBoard = false;
-      this.disableEndInnings = true
+      this.disableEndInnings = true;
     }, 2000);
   }
 
@@ -708,5 +713,4 @@ export class ScoreboardComponent {
     }
     return this.nextPlayer.invalid;
   }
-
 }

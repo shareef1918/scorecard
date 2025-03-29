@@ -1,29 +1,30 @@
 .main-div {
-  background: url('../../assets/images/players-list.jpg');
+  background: url('../../assets/images/summary-bg.jpg');
   background-size: cover;
   height: 100vh;
   .header {
     .title {
-      font-size: 80px;
+      font-size: 50px;
       text-transform: uppercase;
       color: #fff;
       font-weight: bold;
       text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
     .sub-title {
+      text-shadow: rgb(16, 14, 3) 1px 0 10px;
       font-size: 20px;
       color: lightyellow;
       font-weight: bold;
       position: relative;
-      bottom: 20px;
+      bottom: 10px;
       span {
         position: relative;
         left: 100px;
       }
-      background: -moz-linear-gradient(90deg, rgba(186, 35, 16, 1) 48%, rgba(245, 216, 222, 1) 100%);
-      background: -webkit-linear-gradient(90deg, rgba(186, 35, 16, 1) 48%, rgba(245, 216, 222, 1) 100%);
-      background: linear-gradient(90deg, rgba(186, 35, 16, 1) 48%, rgba(245, 216, 222, 1) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ba2310",endColorstr="#f5d8de",GradientType=1);
+      background: -moz-linear-gradient(90deg, rgba(13, 12, 12, 1) 2%, rgba(20, 20, 20, 1) 41%, rgba(222, 46, 23, 1) 100%);
+      background: -webkit-linear-gradient(90deg, rgba(13, 12, 12, 1) 2%, rgba(20, 20, 20, 1) 41%, rgba(222, 46, 23, 1) 100%);
+      background: linear-gradient(90deg, rgba(13, 12, 12, 1) 2%, rgba(20, 20, 20, 1) 41%, rgba(222, 46, 23, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0c0c",endColorstr="#de2e17",GradientType=1);
       padding: 5px 10px;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
@@ -39,14 +40,18 @@
     padding: 10px;
     .team-div {
       .team-name {
-        background: #df5a25;
-        background: linear-gradient(to right, #df5a25 34%, #3f0944 74%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        background: -moz-linear-gradient(90deg, rgba(19, 9, 214, 1) 2%, rgba(20, 20, 20, 1) 47%, rgba(9, 0, 191, 1) 100%);
+        background: -webkit-linear-gradient(90deg, rgba(19, 9, 214, 1) 2%, rgba(20, 20, 20, 1) 47%, rgba(9, 0, 191, 1) 100%);
+        background: linear-gradient(90deg, rgba(19, 9, 214, 1) 2%, rgba(20, 20, 20, 1) 47%, rgba(9, 0, 191, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1309d6",endColorstr="#0900bf",GradientType=1);
+        padding-left: 10px;
         font-size: 26px;
         font-weight: bold;
         text-transform: uppercase;
         margin-bottom: 10px;
+        color: #fff;
+        margin-right: 10px;
+        text-shadow: rgb(16, 14, 3) 1px 0 10px;
       }
       .players-list {
         margin-right: 40px;
