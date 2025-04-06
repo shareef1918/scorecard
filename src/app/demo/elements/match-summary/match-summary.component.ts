@@ -41,6 +41,10 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
     return team?.logo || 'assets/images/logos/lakeview.png';
   }
 
+  getFirstInningsTeam(teamId) {
+    return this.bothInnings?.find((innings) => innings?.id !== teamId)?.id;
+  }
+
   ngOnInit(): void {
     this.innings$ = this.store.select(innings).pipe(map((data) => data?.find((inn) => inn.currentInnings)));
     this.innings$.subscribe((innings) => (this.currentInnings = innings));

@@ -413,12 +413,12 @@
   "matches": [],
   "matchInfo": [
     {
-      "id": "MT-1743288954",
+      "id": "MT-1743930457",
       "team1": "LV-1743118079",
       "team2": "LV-1743118092",
-      "venue": "asdsafsa",
-      "overs": 25,
-      "wickets": 11,
+      "venue": "sdfsfds",
+      "overs": "2",
+      "wickets": "17",
       "toss": "LV-1743118079",
       "opted": 1,
       "teams": [
@@ -431,186 +431,150 @@
           "name": "Rising Stars"
         }
       ],
-      "currentInnings": "LV-1743118079",
-      "status": 1,
-      "firstInnings": true,
-      "date": "2025-03-29T22:55:54.032Z",
-      "type": "League Match"
+      "currentInnings": "LV-1743118092",
+      "status": 2,
+      "firstInnings": false,
+      "date": "2025-04-06T09:07:37.486Z",
+      "type": "League Match",
+      "target": 16,
+      "outCome": {
+        "targetChased": false,
+        "winner": "LV-1743118079",
+        "by": {
+          "runs": " Won by 9 runs"
+        }
+      }
     }
   ],
   "innings": [
     {
       "id": "LV-1743118079",
-      "onStrike": "",
-      "currentInnings": true,
-      "players": {
-        "batters": [
-          {
-            "id": "LV-1743118113",
-            "name": "Kittu",
-            "team": "LV-1743118079",
-            "createdOn": 1743118113,
-            "isCaptian": true,
-            "isCaptain": true,
-            "status": 0
-          },
-          {
-            "id": "LV-1743118120",
-            "name": "Shareef",
-            "team": "LV-1743118079",
-            "createdOn": 1743118120,
-            "isCaptian": false,
-            "isCaptain": false,
-            "status": 0
-          },
-          {
-            "id": "LV-1743231302",
-            "name": "Srihari",
-            "team": "LV-1743118079",
-            "createdOn": 1743231302,
-            "isCaptian": false,
-            "isCaptain": false,
-            "status": 0
-          },
-          {
-            "id": "LV-1743231308",
-            "name": "Bharath",
-            "team": "LV-1743118079",
-            "createdOn": 1743231308,
-            "isCaptian": false,
-            "isCaptain": false,
-            "status": 0
-          },
-          {
-            "id": "LV-1743231313",
-            "name": "Raju",
-            "team": "LV-1743118079",
-            "createdOn": 1743231313,
-            "isCaptian": false,
-            "isCaptain": false,
-            "status": 0
-          },
-          {
-            "id": "LV-1743231319",
-            "name": "Vinay",
-            "team": "LV-1743118079",
-            "createdOn": 1743231319,
-            "isCaptian": false,
-            "isCaptain": false,
-            "status": 0
-          },
-          {
-            "id": "LV-1743231346",
-            "name": "Jaya Krishna",
-            "team": "LV-1743118079",
-            "createdOn": 1743231346,
-            "isCaptian": false,
-            "isCaptain": false,
-            "status": 0
-          },
-          {
-            "id": "LV-1743231351",
-            "name": "Arif",
-            "team": "LV-1743118079",
-            "createdOn": 1743231351,
-            "isCaptian": false,
-            "isCaptain": false,
-            "status": 0
-          },
-          {
-            "id": "LV-1743231359",
-            "name": "Giri",
-            "team": "LV-1743118079",
-            "createdOn": 1743231359,
-            "isCaptian": false,
-            "isCaptain": false,
-            "status": 0
-          },
-          {
-            "id": "LV-1743231366",
-            "name": "Vamsi",
-            "team": "LV-1743118079",
-            "createdOn": 1743231366,
-            "isCaptian": false,
-            "isCaptain": false,
-            "status": 0
-          },
-          {
-            "id": "LV-1743231375",
-            "name": "Sai Charan",
-            "team": "LV-1743118079",
-            "createdOn": 1743231375,
-            "isCaptian": false,
-            "isCaptain": false,
-            "status": 0
-          },
-          {
-            "id": "LV-1743231383",
-            "name": "Habeeb",
-            "team": "LV-1743118079",
-            "createdOn": 1743231383,
-            "isCaptian": false,
-            "isCaptain": false,
-            "status": 0
-          },
-          {
-            "id": "LV-1743231401",
-            "name": "Naseer",
-            "team": "LV-1743118079",
-            "createdOn": 1743231401,
-            "isCaptian": false,
-            "isCaptain": false,
-            "status": 0
-          }
-        ],
-        "bowlers": [
-          {
-            "id": "LV-1743118099",
-            "name": "Poojesh",
-            "team": "LV-1743118092",
-            "createdOn": 1743118099,
-            "isCaptian": true,
-            "isCaptain": false,
-            "status": 0
-          },
-          {
-            "id": "LV-1743118106",
-            "name": "Vasanth",
-            "team": "LV-1743118092",
-            "createdOn": 1743118106,
-            "isCaptian": false,
-            "isCaptain": true,
-            "status": 0
-          },
-          {
-            "id": "LV-1743231152",
-            "name": "Khaleel",
-            "team": "LV-1743118092",
-            "createdOn": 1743231152,
-            "status": 0,
-            "isCaptian": false,
-            "isCaptain": false
-          },
-          {
-            "id": "LV-1743231261",
-            "name": "Mahesh",
-            "team": "LV-1743118092",
-            "createdOn": 1743231261,
-            "status": 0,
-            "isCaptian": false,
-            "isCaptain": false
-          }
-        ]
-      },
-      "balls": []
-    },
-    {
-      "id": "LV-1743118092",
-      "onStrike": "",
+      "onStrike": "LV-1743231351",
       "currentInnings": false,
       "players": {
         "batters": [
           {
+            "id": "LV-1743231351",
+            "name": "Arif",
+            "team": "LV-1743118079",
+            "createdOn": 1743231351,
+            "isCaptian": false,
+            "isCaptain": false,
+            "status": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231359",
+            "name": "Giri",
+            "team": "LV-1743118079",
+            "createdOn": 1743231359,
+            "isCaptian": false,
+            "isCaptain": false,
+            "status": 1,
+            "down": 2
+          },
+          {
+            "id": "LV-1743118113",
+            "name": "Kittu",
+            "team": "LV-1743118079",
+            "createdOn": 1743118113,
+            "isCaptian": true,
+            "isCaptain": true,
+            "status": 0
+          },
+          {
+            "id": "LV-1743118120",
+            "name": "Shareef",
+            "team": "LV-1743118079",
+            "createdOn": 1743118120,
+            "isCaptian": false,
+            "isCaptain": false,
+            "status": 0
+          },
+          {
+            "id": "LV-1743231302",
+            "name": "Srihari",
+            "team": "LV-1743118079",
+            "createdOn": 1743231302,
+            "isCaptian": false,
+            "isCaptain": false,
+            "status": 0
+          },
+          {
+            "id": "LV-1743231308",
+            "name": "Bharath",
+            "team": "LV-1743118079",
+            "createdOn": 1743231308,
+            "isCaptian": false,
+            "isCaptain": false,
+            "status": 0
+          },
+          {
+            "id": "LV-1743231313",
+            "name": "Raju",
+            "team": "LV-1743118079",
+            "createdOn": 1743231313,
+            "isCaptian": false,
+            "isCaptain": false,
+            "status": 0
+          },
+          {
+            "id": "LV-1743231319",
+            "name": "Vinay",
+            "team": "LV-1743118079",
+            "createdOn": 1743231319,
+            "isCaptian": false,
+            "isCaptain": false,
+            "status": 0
+          },
+          {
+            "id": "LV-1743231346",
+            "name": "Jaya Krishna",
+            "team": "LV-1743118079",
+            "createdOn": 1743231346,
+            "isCaptian": false,
+            "isCaptain": false,
+            "status": 0
+          },
+          {
+            "id": "LV-1743231366",
+            "name": "Vamsi",
+            "team": "LV-1743118079",
+            "createdOn": 1743231366,
+            "isCaptian": false,
+            "isCaptain": false,
+            "status": 0
+          },
+          {
+            "id": "LV-1743231375",
+            "name": "Sai Charan",
+            "team": "LV-1743118079",
+            "createdOn": 1743231375,
+            "isCaptian": false,
+            "isCaptain": false,
+            "status": 0
+          },
+          {
+            "id": "LV-1743231383",
+            "name": "Habeeb",
+            "team": "LV-1743118079",
+            "createdOn": 1743231383,
+            "isCaptian": false,
+            "isCaptain": false,
+            "status": 0
+          },
+          {
+            "id": "LV-1743231401",
+            "name": "Naseer",
+            "team": "LV-1743118079",
+            "createdOn": 1743231401,
+            "isCaptian": false,
+            "isCaptain": false,
+            "status": 0
+          }
+        ],
+        "bowlers": [
+          {
             "id": "LV-1743118099",
             "name": "Poojesh",
             "team": "LV-1743118092",
@@ -636,6 +600,216 @@
             "status": 0,
             "isCaptian": false,
             "isCaptain": false
+          },
+          {
+            "id": "LV-1743231261",
+            "name": "Mahesh",
+            "team": "LV-1743118092",
+            "createdOn": 1743231261,
+            "status": 0,
+            "isCaptian": false,
+            "isCaptain": false
+          }
+        ]
+      },
+      "balls": [
+        {
+          "over": 0,
+          "ball": 1,
+          "striker": "LV-1743231351",
+          "nonStriker": "LV-1743231359",
+          "bowler": "LV-1743118106",
+          "runs": {
+            "striker": 2,
+            "extras": false,
+            "total": 2
+          }
+        },
+        {
+          "over": 0,
+          "ball": 2,
+          "striker": "LV-1743231351",
+          "nonStriker": "LV-1743231359",
+          "bowler": "LV-1743118106",
+          "runs": {
+            "striker": 1,
+            "extras": false,
+            "total": 1
+          }
+        },
+        {
+          "over": 0,
+          "ball": 3,
+          "striker": "LV-1743231359",
+          "nonStriker": "LV-1743231351",
+          "bowler": "LV-1743118106",
+          "runs": {
+            "striker": 4,
+            "extras": false,
+            "total": 4
+          }
+        },
+        {
+          "over": 0,
+          "ball": 4,
+          "striker": "LV-1743231359",
+          "nonStriker": "LV-1743231351",
+          "bowler": "LV-1743118106",
+          "runs": {
+            "striker": 2,
+            "extras": false,
+            "total": 2
+          }
+        },
+        {
+          "over": 0,
+          "ball": 5,
+          "striker": "LV-1743231359",
+          "nonStriker": "LV-1743231351",
+          "bowler": "LV-1743118106",
+          "runs": {
+            "striker": 0,
+            "extras": false,
+            "total": 0
+          }
+        },
+        {
+          "over": 0,
+          "ball": 6,
+          "striker": "LV-1743231359",
+          "nonStriker": "LV-1743231351",
+          "bowler": "LV-1743118106",
+          "runs": {
+            "striker": 1,
+            "extras": false,
+            "total": 1
+          }
+        },
+        {
+          "over": 1,
+          "ball": 1,
+          "striker": "LV-1743231359",
+          "nonStriker": "LV-1743231351",
+          "bowler": "LV-1743231261",
+          "runs": {
+            "striker": 3,
+            "extras": false,
+            "total": 3
+          }
+        },
+        {
+          "over": 1,
+          "ball": 2,
+          "striker": "LV-1743231351",
+          "nonStriker": "LV-1743231359",
+          "bowler": "LV-1743231261",
+          "runs": {
+            "striker": 2,
+            "extras": false,
+            "total": 2
+          }
+        },
+        {
+          "over": 1,
+          "ball": 3,
+          "striker": "LV-1743231351",
+          "nonStriker": "LV-1743231359",
+          "bowler": "LV-1743231261",
+          "runs": {
+            "striker": 1,
+            "extras": false,
+            "total": 1
+          }
+        },
+        {
+          "over": 1,
+          "ball": 4,
+          "striker": "LV-1743231359",
+          "nonStriker": "LV-1743231351",
+          "bowler": "LV-1743231261",
+          "runs": {
+            "striker": 0,
+            "extras": false,
+            "total": 0
+          }
+        },
+        {
+          "over": 1,
+          "ball": 5,
+          "striker": "LV-1743231359",
+          "nonStriker": "LV-1743231351",
+          "bowler": "LV-1743231261",
+          "runs": {
+            "striker": 0,
+            "extras": false,
+            "total": 0
+          }
+        },
+        {
+          "over": 1,
+          "ball": 6,
+          "striker": "LV-1743231359",
+          "nonStriker": "LV-1743231351",
+          "bowler": "LV-1743231261",
+          "runs": {
+            "striker": 0,
+            "extras": false,
+            "total": 0
+          }
+        }
+      ],
+      "currentBowler": "LV-1743118099",
+      "currentBatsman": [
+        {
+          "id": "LV-1743231351",
+          "onStrike": true,
+          "order": 1,
+          "down": 1
+        },
+        {
+          "id": "LV-1743231359",
+          "onStrike": false,
+          "order": 2,
+          "down": 2
+        }
+      ],
+      "currentOver": 2,
+      "currentBall": 0
+    },
+    {
+      "id": "LV-1743118092",
+      "onStrike": "LV-1743118106",
+      "currentInnings": true,
+      "players": {
+        "batters": [
+          {
+            "id": "LV-1743118106",
+            "name": "Vasanth",
+            "team": "LV-1743118092",
+            "createdOn": 1743118106,
+            "isCaptian": false,
+            "isCaptain": true,
+            "status": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231152",
+            "name": "Khaleel",
+            "team": "LV-1743118092",
+            "createdOn": 1743231152,
+            "status": 1,
+            "isCaptian": false,
+            "isCaptain": false,
+            "down": 2
+          },
+          {
+            "id": "LV-1743118099",
+            "name": "Poojesh",
+            "team": "LV-1743118092",
+            "createdOn": 1743118099,
+            "isCaptian": true,
+            "isCaptain": false,
+            "status": 0
           },
           {
             "id": "LV-1743231261",
@@ -767,8 +941,6265 @@
           }
         ]
       },
-      "balls": []
+      "balls": [
+        {
+          "over": 0,
+          "ball": 1,
+          "striker": "LV-1743118106",
+          "nonStriker": "LV-1743231152",
+          "bowler": "LV-1743231375",
+          "runs": {
+            "striker": 1,
+            "extras": false,
+            "total": 1
+          }
+        },
+        {
+          "over": 0,
+          "ball": 2,
+          "striker": "LV-1743231152",
+          "nonStriker": "LV-1743118106",
+          "bowler": "LV-1743231375",
+          "runs": {
+            "striker": 2,
+            "extras": false,
+            "total": 2
+          }
+        },
+        {
+          "over": 0,
+          "ball": 3,
+          "striker": "LV-1743231152",
+          "nonStriker": "LV-1743118106",
+          "bowler": "LV-1743231375",
+          "runs": {
+            "striker": 0,
+            "extras": false,
+            "total": 0
+          }
+        },
+        {
+          "over": 0,
+          "ball": 4,
+          "striker": "LV-1743231152",
+          "nonStriker": "LV-1743118106",
+          "bowler": "LV-1743231375",
+          "runs": {
+            "striker": 0,
+            "extras": false,
+            "total": 0
+          }
+        },
+        {
+          "over": 0,
+          "ball": 5,
+          "striker": "LV-1743231152",
+          "nonStriker": "LV-1743118106",
+          "bowler": "LV-1743231375",
+          "runs": {
+            "striker": 1,
+            "extras": false,
+            "total": 1
+          }
+        },
+        {
+          "over": 0,
+          "ball": 6,
+          "striker": "LV-1743118106",
+          "nonStriker": "LV-1743231152",
+          "bowler": "LV-1743231375",
+          "runs": {
+            "striker": 0,
+            "extras": false,
+            "total": 0
+          }
+        },
+        {
+          "over": 1,
+          "ball": 1,
+          "striker": "LV-1743231152",
+          "nonStriker": "LV-1743118106",
+          "bowler": "LV-1743231383",
+          "runs": {
+            "striker": 1,
+            "extras": false,
+            "total": 1
+          }
+        },
+        {
+          "over": 1,
+          "ball": 2,
+          "striker": "LV-1743118106",
+          "nonStriker": "LV-1743231152",
+          "bowler": "LV-1743231383",
+          "runs": {
+            "striker": 0,
+            "extras": false,
+            "total": 0
+          }
+        },
+        {
+          "over": 1,
+          "ball": 3,
+          "striker": "LV-1743118106",
+          "nonStriker": "LV-1743231152",
+          "bowler": "LV-1743231383",
+          "runs": {
+            "striker": 1,
+            "extras": false,
+            "total": 1
+          }
+        },
+        {
+          "over": 1,
+          "ball": 4,
+          "striker": "LV-1743231152",
+          "nonStriker": "LV-1743118106",
+          "bowler": "LV-1743231383",
+          "runs": {
+            "striker": 0,
+            "extras": false,
+            "total": 0
+          }
+        },
+        {
+          "over": 1,
+          "ball": 5,
+          "striker": "LV-1743231152",
+          "nonStriker": "LV-1743118106",
+          "bowler": "LV-1743231383",
+          "runs": {
+            "striker": 1,
+            "extras": false,
+            "total": 1
+          }
+        },
+        {
+          "over": 1,
+          "ball": 6,
+          "striker": "LV-1743118106",
+          "nonStriker": "LV-1743231152",
+          "bowler": "LV-1743231383",
+          "runs": {
+            "striker": 0,
+            "extras": false,
+            "total": 0
+          }
+        }
+      ],
+      "currentBowler": "LV-1743231383",
+      "currentBatsman": [
+        {
+          "id": "LV-1743118106",
+          "onStrike": true,
+          "order": 1,
+          "down": 1
+        },
+        {
+          "id": "LV-1743231152",
+          "onStrike": false,
+          "order": 2,
+          "down": 2
+        }
+      ],
+      "currentOver": 1,
+      "currentBall": 6
     }
   ],
-  "undoList": []
+  "undoList": [
+    {
+      "id": "1743930464",
+      "innings": {
+        "id": "LV-1743118079",
+        "onStrike": "LV-1743231351",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ]
+        },
+        "balls": [],
+        "currentBowler": "LV-1743118106",
+        "currentBatsman": [
+          {
+            "id": "LV-1743231351",
+            "onStrike": true,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231359",
+            "onStrike": false,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 0,
+        "currentBall": 0
+      }
+    },
+    {
+      "id": "1743930467",
+      "innings": {
+        "id": "LV-1743118079",
+        "onStrike": "LV-1743231351",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          }
+        ],
+        "currentBowler": "LV-1743118106",
+        "currentBatsman": [
+          {
+            "id": "LV-1743231351",
+            "onStrike": true,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231359",
+            "onStrike": false,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 0,
+        "currentBall": 1
+      }
+    },
+    {
+      "id": "1743930469",
+      "innings": {
+        "id": "LV-1743118079",
+        "onStrike": "LV-1743231351",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          }
+        ],
+        "currentBowler": "LV-1743118106",
+        "currentBatsman": [
+          {
+            "id": "LV-1743231351",
+            "onStrike": false,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231359",
+            "onStrike": true,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 0,
+        "currentBall": 2
+      }
+    },
+    {
+      "id": "1743930472",
+      "innings": {
+        "id": "LV-1743118079",
+        "onStrike": "LV-1743231351",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 4,
+              "extras": false,
+              "total": 4
+            }
+          }
+        ],
+        "currentBowler": "LV-1743118106",
+        "currentBatsman": [
+          {
+            "id": "LV-1743231351",
+            "onStrike": false,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231359",
+            "onStrike": true,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 0,
+        "currentBall": 3
+      }
+    },
+    {
+      "id": "1743930474",
+      "innings": {
+        "id": "LV-1743118079",
+        "onStrike": "LV-1743231351",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 4,
+              "extras": false,
+              "total": 4
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          }
+        ],
+        "currentBowler": "LV-1743118106",
+        "currentBatsman": [
+          {
+            "id": "LV-1743231351",
+            "onStrike": false,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231359",
+            "onStrike": true,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 0,
+        "currentBall": 4
+      }
+    },
+    {
+      "id": "1743930476",
+      "innings": {
+        "id": "LV-1743118079",
+        "onStrike": "LV-1743231351",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 4,
+              "extras": false,
+              "total": 4
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 5,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          }
+        ],
+        "currentBowler": "LV-1743118106",
+        "currentBatsman": [
+          {
+            "id": "LV-1743231351",
+            "onStrike": false,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231359",
+            "onStrike": true,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 0,
+        "currentBall": 5
+      }
+    },
+    {
+      "id": "1743930480",
+      "innings": {
+        "id": "LV-1743118079",
+        "onStrike": "LV-1743231351",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 4,
+              "extras": false,
+              "total": 4
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 5,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 6,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231261",
+        "currentBatsman": [
+          {
+            "id": "LV-1743231351",
+            "onStrike": false,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231359",
+            "onStrike": true,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 1,
+        "currentBall": 0
+      }
+    },
+    {
+      "id": "1743930483",
+      "innings": {
+        "id": "LV-1743118079",
+        "onStrike": "LV-1743231351",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 4,
+              "extras": false,
+              "total": 4
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 5,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 6,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 1,
+            "ball": 1,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743231261",
+            "runs": {
+              "striker": 3,
+              "extras": false,
+              "total": 3
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231261",
+        "currentBatsman": [
+          {
+            "id": "LV-1743231351",
+            "onStrike": true,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231359",
+            "onStrike": false,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 1,
+        "currentBall": 1
+      }
+    },
+    {
+      "id": "1743930485",
+      "innings": {
+        "id": "LV-1743118079",
+        "onStrike": "LV-1743231351",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 4,
+              "extras": false,
+              "total": 4
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 5,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 6,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 1,
+            "ball": 1,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743231261",
+            "runs": {
+              "striker": 3,
+              "extras": false,
+              "total": 3
+            }
+          },
+          {
+            "over": 1,
+            "ball": 2,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743231261",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231261",
+        "currentBatsman": [
+          {
+            "id": "LV-1743231351",
+            "onStrike": true,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231359",
+            "onStrike": false,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 1,
+        "currentBall": 2
+      }
+    },
+    {
+      "id": "1743930488",
+      "innings": {
+        "id": "LV-1743118079",
+        "onStrike": "LV-1743231351",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 4,
+              "extras": false,
+              "total": 4
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 5,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 6,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 1,
+            "ball": 1,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743231261",
+            "runs": {
+              "striker": 3,
+              "extras": false,
+              "total": 3
+            }
+          },
+          {
+            "over": 1,
+            "ball": 2,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743231261",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 1,
+            "ball": 3,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743231261",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231261",
+        "currentBatsman": [
+          {
+            "id": "LV-1743231351",
+            "onStrike": false,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231359",
+            "onStrike": true,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 1,
+        "currentBall": 3
+      }
+    },
+    {
+      "id": "1743930490",
+      "innings": {
+        "id": "LV-1743118079",
+        "onStrike": "LV-1743231351",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 4,
+              "extras": false,
+              "total": 4
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 5,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 6,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 1,
+            "ball": 1,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743231261",
+            "runs": {
+              "striker": 3,
+              "extras": false,
+              "total": 3
+            }
+          },
+          {
+            "over": 1,
+            "ball": 2,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743231261",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 1,
+            "ball": 3,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743231261",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 1,
+            "ball": 4,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743231261",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231261",
+        "currentBatsman": [
+          {
+            "id": "LV-1743231351",
+            "onStrike": false,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231359",
+            "onStrike": true,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 1,
+        "currentBall": 4
+      }
+    },
+    {
+      "id": "1743930493",
+      "innings": {
+        "id": "LV-1743118079",
+        "onStrike": "LV-1743231351",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 1,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 4,
+              "extras": false,
+              "total": 4
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 5,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 6,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743118106",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 1,
+            "ball": 1,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743231261",
+            "runs": {
+              "striker": 3,
+              "extras": false,
+              "total": 3
+            }
+          },
+          {
+            "over": 1,
+            "ball": 2,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743231261",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 1,
+            "ball": 3,
+            "striker": "LV-1743231351",
+            "nonStriker": "LV-1743231359",
+            "bowler": "LV-1743231261",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 1,
+            "ball": 4,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743231261",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 1,
+            "ball": 5,
+            "striker": "LV-1743231359",
+            "nonStriker": "LV-1743231351",
+            "bowler": "LV-1743231261",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231261",
+        "currentBatsman": [
+          {
+            "id": "LV-1743231351",
+            "onStrike": false,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231359",
+            "onStrike": true,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 1,
+        "currentBall": 5
+      }
+    },
+    {
+      "id": "1743930509",
+      "innings": {
+        "id": "LV-1743118092",
+        "onStrike": "LV-1743118106",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 1,
+              "isCaptian": false,
+              "isCaptain": false,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ]
+        },
+        "balls": [],
+        "currentBowler": "LV-1743231375",
+        "currentBatsman": [
+          {
+            "id": "LV-1743118106",
+            "onStrike": true,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231152",
+            "onStrike": false,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 0,
+        "currentBall": 0
+      }
+    },
+    {
+      "id": "1743930512",
+      "innings": {
+        "id": "LV-1743118092",
+        "onStrike": "LV-1743118106",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 1,
+              "isCaptian": false,
+              "isCaptain": false,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231375",
+        "currentBatsman": [
+          {
+            "id": "LV-1743118106",
+            "onStrike": false,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231152",
+            "onStrike": true,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 0,
+        "currentBall": 1
+      }
+    },
+    {
+      "id": "1743930515",
+      "innings": {
+        "id": "LV-1743118092",
+        "onStrike": "LV-1743118106",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 1,
+              "isCaptian": false,
+              "isCaptain": false,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231375",
+        "currentBatsman": [
+          {
+            "id": "LV-1743118106",
+            "onStrike": false,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231152",
+            "onStrike": true,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 0,
+        "currentBall": 2
+      }
+    },
+    {
+      "id": "1743930517",
+      "innings": {
+        "id": "LV-1743118092",
+        "onStrike": "LV-1743118106",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 1,
+              "isCaptian": false,
+              "isCaptain": false,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231375",
+        "currentBatsman": [
+          {
+            "id": "LV-1743118106",
+            "onStrike": false,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231152",
+            "onStrike": true,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 0,
+        "currentBall": 3
+      }
+    },
+    {
+      "id": "1743930520",
+      "innings": {
+        "id": "LV-1743118092",
+        "onStrike": "LV-1743118106",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 1,
+              "isCaptian": false,
+              "isCaptain": false,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231375",
+        "currentBatsman": [
+          {
+            "id": "LV-1743118106",
+            "onStrike": false,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231152",
+            "onStrike": true,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 0,
+        "currentBall": 4
+      }
+    },
+    {
+      "id": "1743930522",
+      "innings": {
+        "id": "LV-1743118092",
+        "onStrike": "LV-1743118106",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 1,
+              "isCaptian": false,
+              "isCaptain": false,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 5,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231375",
+        "currentBatsman": [
+          {
+            "id": "LV-1743118106",
+            "onStrike": true,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231152",
+            "onStrike": false,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 0,
+        "currentBall": 5
+      }
+    },
+    {
+      "id": "1743930527",
+      "innings": {
+        "id": "LV-1743118092",
+        "onStrike": "LV-1743118106",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 1,
+              "isCaptian": false,
+              "isCaptain": false,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 5,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 6,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231383",
+        "currentBatsman": [
+          {
+            "id": "LV-1743118106",
+            "onStrike": false,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231152",
+            "onStrike": true,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 1,
+        "currentBall": 0
+      }
+    },
+    {
+      "id": "1743930529",
+      "innings": {
+        "id": "LV-1743118092",
+        "onStrike": "LV-1743118106",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 1,
+              "isCaptian": false,
+              "isCaptain": false,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 5,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 6,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 1,
+            "ball": 1,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231383",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231383",
+        "currentBatsman": [
+          {
+            "id": "LV-1743118106",
+            "onStrike": true,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231152",
+            "onStrike": false,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 1,
+        "currentBall": 1
+      }
+    },
+    {
+      "id": "1743930532",
+      "innings": {
+        "id": "LV-1743118092",
+        "onStrike": "LV-1743118106",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 1,
+              "isCaptian": false,
+              "isCaptain": false,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 5,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 6,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 1,
+            "ball": 1,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231383",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 1,
+            "ball": 2,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231383",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231383",
+        "currentBatsman": [
+          {
+            "id": "LV-1743118106",
+            "onStrike": true,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231152",
+            "onStrike": false,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 1,
+        "currentBall": 2
+      }
+    },
+    {
+      "id": "1743930534",
+      "innings": {
+        "id": "LV-1743118092",
+        "onStrike": "LV-1743118106",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 1,
+              "isCaptian": false,
+              "isCaptain": false,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 5,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 6,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 1,
+            "ball": 1,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231383",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 1,
+            "ball": 2,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231383",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 1,
+            "ball": 3,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231383",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231383",
+        "currentBatsman": [
+          {
+            "id": "LV-1743118106",
+            "onStrike": false,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231152",
+            "onStrike": true,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 1,
+        "currentBall": 3
+      }
+    },
+    {
+      "id": "1743930537",
+      "innings": {
+        "id": "LV-1743118092",
+        "onStrike": "LV-1743118106",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 1,
+              "isCaptian": false,
+              "isCaptain": false,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 5,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 6,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 1,
+            "ball": 1,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231383",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 1,
+            "ball": 2,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231383",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 1,
+            "ball": 3,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231383",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 1,
+            "ball": 4,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231383",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231383",
+        "currentBatsman": [
+          {
+            "id": "LV-1743118106",
+            "onStrike": false,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231152",
+            "onStrike": true,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 1,
+        "currentBall": 4
+      }
+    },
+    {
+      "id": "1743930539",
+      "innings": {
+        "id": "LV-1743118092",
+        "onStrike": "LV-1743118106",
+        "currentInnings": true,
+        "players": {
+          "batters": [
+            {
+              "id": "LV-1743118106",
+              "name": "Vasanth",
+              "team": "LV-1743118092",
+              "createdOn": 1743118106,
+              "isCaptian": false,
+              "isCaptain": true,
+              "status": 1,
+              "down": 1
+            },
+            {
+              "id": "LV-1743231152",
+              "name": "Khaleel",
+              "team": "LV-1743118092",
+              "createdOn": 1743231152,
+              "status": 1,
+              "isCaptian": false,
+              "isCaptain": false,
+              "down": 2
+            },
+            {
+              "id": "LV-1743118099",
+              "name": "Poojesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743118099,
+              "isCaptian": true,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231261",
+              "name": "Mahesh",
+              "team": "LV-1743118092",
+              "createdOn": 1743231261,
+              "status": 0,
+              "isCaptian": false,
+              "isCaptain": false
+            }
+          ],
+          "bowlers": [
+            {
+              "id": "LV-1743118113",
+              "name": "Kittu",
+              "team": "LV-1743118079",
+              "createdOn": 1743118113,
+              "isCaptian": true,
+              "isCaptain": true,
+              "status": 0
+            },
+            {
+              "id": "LV-1743118120",
+              "name": "Shareef",
+              "team": "LV-1743118079",
+              "createdOn": 1743118120,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231302",
+              "name": "Srihari",
+              "team": "LV-1743118079",
+              "createdOn": 1743231302,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231308",
+              "name": "Bharath",
+              "team": "LV-1743118079",
+              "createdOn": 1743231308,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231313",
+              "name": "Raju",
+              "team": "LV-1743118079",
+              "createdOn": 1743231313,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231319",
+              "name": "Vinay",
+              "team": "LV-1743118079",
+              "createdOn": 1743231319,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231346",
+              "name": "Jaya Krishna",
+              "team": "LV-1743118079",
+              "createdOn": 1743231346,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231351",
+              "name": "Arif",
+              "team": "LV-1743118079",
+              "createdOn": 1743231351,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231359",
+              "name": "Giri",
+              "team": "LV-1743118079",
+              "createdOn": 1743231359,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231366",
+              "name": "Vamsi",
+              "team": "LV-1743118079",
+              "createdOn": 1743231366,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231375",
+              "name": "Sai Charan",
+              "team": "LV-1743118079",
+              "createdOn": 1743231375,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231383",
+              "name": "Habeeb",
+              "team": "LV-1743118079",
+              "createdOn": 1743231383,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            },
+            {
+              "id": "LV-1743231401",
+              "name": "Naseer",
+              "team": "LV-1743118079",
+              "createdOn": 1743231401,
+              "isCaptian": false,
+              "isCaptain": false,
+              "status": 0
+            }
+          ]
+        },
+        "balls": [
+          {
+            "over": 0,
+            "ball": 1,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 2,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 2,
+              "extras": false,
+              "total": 2
+            }
+          },
+          {
+            "over": 0,
+            "ball": 3,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 4,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 0,
+            "ball": 5,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 0,
+            "ball": 6,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231375",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 1,
+            "ball": 1,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231383",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 1,
+            "ball": 2,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231383",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 1,
+            "ball": 3,
+            "striker": "LV-1743118106",
+            "nonStriker": "LV-1743231152",
+            "bowler": "LV-1743231383",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          },
+          {
+            "over": 1,
+            "ball": 4,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231383",
+            "runs": {
+              "striker": 0,
+              "extras": false,
+              "total": 0
+            }
+          },
+          {
+            "over": 1,
+            "ball": 5,
+            "striker": "LV-1743231152",
+            "nonStriker": "LV-1743118106",
+            "bowler": "LV-1743231383",
+            "runs": {
+              "striker": 1,
+              "extras": false,
+              "total": 1
+            }
+          }
+        ],
+        "currentBowler": "LV-1743231383",
+        "currentBatsman": [
+          {
+            "id": "LV-1743118106",
+            "onStrike": true,
+            "order": 1,
+            "down": 1
+          },
+          {
+            "id": "LV-1743231152",
+            "onStrike": false,
+            "order": 2,
+            "down": 2
+          }
+        ],
+        "currentOver": 1,
+        "currentBall": 5
+      }
+    }
+  ]
 }
