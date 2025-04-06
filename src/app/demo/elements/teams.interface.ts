@@ -19,3 +19,9 @@ export interface Player {
   createdOn: number;
   isCaptain?: boolean;
 }
+
+export const PlayerRole = {
+  1: 'Batsman',
+  2: 'Bowler',
+  3: 'All-Rounder'
+};

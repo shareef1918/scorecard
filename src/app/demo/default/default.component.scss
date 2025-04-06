@@ -29,6 +29,7 @@ body.berry-dark .tab-content {
 }
 
 .team-card {
+  width: 47%;
   max-height: 240px;
   margin-bottom: 20px;
   margin-right: 10px;
@@ -58,6 +59,9 @@ body.berry-dark .tab-content {
     padding: 10px;
   }
 }
+.no-players {
+  padding: 20px 10px 10px 10px;
+}
 .right {
   padding: 10px;
   .card-body {
@@ -69,8 +73,10 @@ body.berry-dark .tab-content {
 }
 
 .players-text {
+  text-align: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  padding: 10px 10px 0px 10px;
   color: #fff;
   background: linear-gradient(180deg, rgba(101, 247, 14, 0.9051995798319328) 0%, rgba(47, 113, 11, 1) 48%);
 }
@@ -185,9 +191,22 @@ body.berry-dark .tab-content {
   width: 100px;
 }
 
+.captain-row {
+  font-weight: bold;
+  background: rgb(217, 29, 65) !important;
+  background: -moz-linear-gradient(90deg, rgba(217, 29, 65, 1) 43%, rgba(143, 9, 27, 1) 73%) !important;
+  background: -webkit-linear-gradient(90deg, rgba(217, 29, 65, 1) 43%, rgba(143, 9, 27, 1) 73%) !important;
+  background: linear-gradient(90deg, rgba(217, 29, 65, 1) 43%, rgba(143, 9, 27, 1) 73%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d91d41",endColorstr="#8f091b",GradientType=1) !important;
+  td {
+    color: #fff !important;
+  }
+}
+
 .team-pic {
   width: 70%;
-  height: 100%;
+  height: 90%;
+  padding: 10px 0px 0px 0px;
 }
 .auction-teams {
   flex-wrap: wrap;
@@ -202,31 +221,116 @@ body.berry-dark .tab-content {
     // color: #fff;
   }
 }
+.player-details-body {
+  overflow: auto;
+  .card-body {
+    background: rgb(244, 243, 250);
+    background: -moz-linear-gradient(
+      90deg,
+      rgba(244, 243, 250, 0.3136904419971114) 2%,
+      rgba(142, 183, 242, 0.5153711142660189) 47%,
+      rgba(191, 0, 58, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      90deg,
+      rgba(244, 243, 250, 0.3136904419971114) 2%,
+      rgba(142, 183, 242, 0.5153711142660189) 47%,
+      rgba(191, 0, 58, 1) 100%
+    );
+    background: linear-gradient(
+      90deg,
+      rgba(244, 243, 250, 0.3136904419971114) 2%,
+      rgba(142, 183, 242, 0.5153711142660189) 47%,
+      rgba(191, 0, 58, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f4f3fa",endColorstr="#bf003a",GradientType=1);
+  }
+  .card {
+    margin-bottom: 0px !important;
+  }
+  .teams-card {
+    margin-bottom: 24px !important;
+  }
+}
+.table {
+  --bs-table-bg: none !important;
+}
 
+.table > :not(caption) > * > * {
+  color: none;
+}
+
+.name-table {
+  width: 87%;
+  margin-left: 40px;
+  font-weight: bold;
+  font-size: 30px;
+  color: #fff;
+  .d-flex {
+    // margin-bottom: 10px;
+    div {
+      padding-left: 10px;
+    }
+  }
+}
+.role-tr {
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-bottom: 10px;
+  background: rgb(217, 29, 65);
+  background: -moz-linear-gradient(90deg, rgba(217, 29, 65, 1) 31%, rgba(65, 9, 143, 1) 57%);
+  background: -webkit-linear-gradient(90deg, rgba(217, 29, 65, 1) 31%, rgba(65, 9, 143, 1) 57%);
+  background: linear-gradient(90deg, rgba(217, 29, 65, 1) 31%, rgba(65, 9, 143, 1) 57%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d91d41",endColorstr="#41098f",GradientType=1);
+  margin-top: 10px;
+}
+.name-tr {
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(167, 141, 141, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: rgb(217, 29, 65);
+  background: -moz-linear-gradient(90deg, rgba(217, 29, 65, 1) 31%, rgba(65, 9, 143, 1) 57%);
+  background: -webkit-linear-gradient(90deg, rgba(217, 29, 65, 1) 31%, rgba(65, 9, 143, 1) 57%);
+  background: linear-gradient(90deg, rgba(217, 29, 65, 1) 31%, rgba(65, 9, 143, 1) 57%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d91d41",endColorstr="#41098f",GradientType=1);
+}
 .bid-price-div {
   position: absolute;
-  top: 0px;
-  left: 55%;
+  top: 48%;
+  left: 64%;
+  z-index: 999;
   color: #fff;
   background-color: #000;
   min-width: 120px;
   font-size: 50px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
 }
 
-.player-details-body {
-  overflow: auto;
+#viewPlayerDetails {
+  background: rgb(126, 123, 123);
+  background: -moz-linear-gradient(90deg, rgba(126, 123, 123, 0.835171568627451) 43%, rgba(126, 123, 123, 0.8575805322128851) 73%);
+  background: -webkit-linear-gradient(90deg, rgba(126, 123, 123, 0.835171568627451) 43%, rgba(126, 123, 123, 0.8575805322128851) 73%);
+  background: linear-gradient(90deg, rgba(126, 123, 123, 0.835171568627451) 43%, rgba(126, 123, 123, 0.8575805322128851) 73%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7e7b7b",endColorstr="#7e7b7b",GradientType=1);
 }
+
 .timer {
   position: absolute;
   top: -10px;
-  left: 200px;
+  left: 33%;
   background-color: #000;
   padding: 10px;
   color: #fff;
   border-radius: 10px;
   z-index: 900;
+  font-size: 40px;
 }
 
 .current-bid-team {
@@ -235,8 +339,11 @@ body.berry-dark .tab-content {
 }
 
 .sold-out {
-  position: relative;
-  bottom: 30px;
+  .btn {
+    position: absolute;
+    width: 30%;
+    bottom: 35px;
+  }
 }
 
 .logo-div {
@@ -266,20 +373,57 @@ body.berry-dark .tab-content {
 .generatePlayer {
   position: relative;
   top: 35px;
-  left: 30px;
   .btn {
     font-weight: bold;
-    width: 150px;
+    max-width: 200px;
     font-size: 20px;
   }
 }
 
 .t-logo {
   position: absolute;
-  right: 20px;
+  right: 15px;
   top: 75px;
   img {
     width: 120px;
     height: 120px;
   }
+}
+
+.c-bid-price {
+  text-align: right;
+  padding-right: 10%;
+}
+
+#viewPlayersModal {
+  .modal-header {
+    padding: 10px 10px 0px 3%;
+  }
+}
+.purse-details {
+  div {
+    padding: 0px 3%;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+.result-info {
+  // padding: 10px;
+  div {
+    width: 50%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0px 5px;
+    background: rgb(201, 15, 34);
+    background: -moz-linear-gradient(90deg, rgba(201, 15, 34, 1) 43%, rgba(212, 33, 61, 1) 73%);
+    background: -webkit-linear-gradient(90deg, rgba(201, 15, 34, 1) 43%, rgba(212, 33, 61, 1) 73%);
+    background: linear-gradient(90deg, rgba(201, 15, 34, 1) 43%, rgba(212, 33, 61, 1) 73%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c90f22",endColorstr="#d4213d",GradientType=1);
+  }
+}
+.disable-team {
+  pointer-events: none !important;
+  background-color: lightgrey !important;
 }

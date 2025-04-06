@@ -54,44 +54,32 @@
                 <h1 class="modal-title fs-2" id="createAuction">Create Auction</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #closeCreateAuctionModal></button>
               </div>
-              <form [formGroup]="createAuctionForm">
+              <form [formGroup]="createAuctionForm" id="auctionForm">
                 <div class="modal-body">
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Auction Title" formControlName="title" />
-                        <label for="floatingInput">Auction Title</label>
+                        <input type="text" class="form-control" id="auctionTitle" placeholder="Auction Title" formControlName="title" />
+                        <label for="auctionTitle">Auction Title</label>
                       </div>
                     </div>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Sub Title" formControlName="subTitle" />
-                    <label for="floatingInput">Sub Title</label>
+                    <input type="text" class="form-control" id="auctionSubTitle" placeholder="Sub Title" formControlName="subTitle" />
+                    <label for="auctionSubTitle">Sub Title</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="floatingInput"
-                      placeholder="Player Base Price"
-                      formControlName="basePrice"
-                    />
-                    <label for="floatingInput">Player Base Price</label>
+                    <input type="number" class="form-control" id="basePrice" placeholder="Player Base Price" formControlName="basePrice" />
+                    <label for="basePrice">Player Base Price</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="floatingInput"
-                      placeholder="Team Purse Amount"
-                      formControlName="teamPurse"
-                    />
-                    <label for="floatingInput">Team Purse Amount</label>
+                    <input type="number" class="form-control" id="teamPurse" placeholder="Team Purse Amount" formControlName="teamPurse" />
+                    <label for="teamPurse">Team Purse Amount</label>
                   </div>
                 </div>
                 <div class="form-floating mb-3 p-3">
-                  <input type="date" class="form-control" id="floatingInput" placeholder="Auction Date" formControlName="auctionDate" />
-                  <label for="floatingInput">Auction Date</label>
+                  <input type="date" class="form-control" id="auctionDate" placeholder="Auction Date" formControlName="auctionDate" />
+                  <label for="auctionDate">Auction Date</label>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-primary" (click)="createAuction()" [disabled]="createAuctionForm.invalid">
@@ -109,6 +97,7 @@
           <span class="round secondary-round big"></span>
           <div class="card-body">
             <div class="fs-3 fw-bold">Team Details</div>
+            <div>Total Teams: {{ auctionTeams?.length }}</div>
             <div>
               <div>
                 <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#addTeamModal">Add Team</button>
@@ -123,6 +112,7 @@
           <span class="round secondary-round big"></span>
           <div class="card-body">
             <div class="fs-3 fw-bold">Player Details</div>
+            <div>Total Players: {{ auctionPlayers?.length }}</div>
             <div>
               <div>
                 <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addPlayerModal">Add Player</button>
@@ -142,23 +132,34 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #closeAddTeamModal></button>
           </div>
           <div>
-            <form [formGroup]="addTeamForm">
+            <form [formGroup]="addTeamForm" id="addTeam">
               <div class="modal-body">
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-floating mb-3">
-                      <input type="email" class="form-control" id="floatingInput" placeholder="Team Name" formControlName="name" />
-                      <label for="floatingInput">Team Name</label>
+                      <input type="email" class="form-control" id="teamName" placeholder="Team Name" formControlName="name" />
+                      <label for="teamName">Team Name</label>
                     </div>
                   </div>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="Location" formControlName="location" />
-                  <label for="floatingInput">Team Location</label>
+                  <input type="email" class="form-control" id="TeamLocation" placeholder="Location" formControlName="location" />
+                  <label for="TeamLocation">Team Location</label>
                 </div>
-                <div class="form-floating mb-3">
-                  <input type="file" class="form-control" id="floatingInput" placeholder="Photo" formControlName="logo" />
-                  <label for="floatingInput">Logo</label>
+                <div>
+                  <div><h3>Select Captain</h3></div>
+                  @if (getCaptains()?.length) {
+                    @for (player of getCaptains(); track player?.id) {
+                      <div class="form-check bowler">
+                        <input class="form-check-input" [value]="player?.id" type="radio" formControlName="captainId" [id]="player?.id" />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          {{ player?.name }}
+                        </label>
+                      </div>
+                    }
+                  } @else {
+                    <div class="p-2">Please add captain players</div>
+                  }
                 </div>
               </div>
               <div class="modal-footer">
@@ -178,13 +179,13 @@
             <h1 class="modal-title fs-2" id="addBatsmanForm">Add New Player</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #closeAddPlayerModal></button>
           </div>
-          <form [formGroup]="addPlayerForm">
+          <form [formGroup]="addPlayerForm" id="addPlayer">
             <div class="modal-body">
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Name" formControlName="name" />
-                    <label for="floatingInput">Name</label>
+                    <input type="text" class="form-control" id="playerName" placeholder="Name" formControlName="name" />
+                    <label for="playerName">Name</label>
                   </div>
                 </div>
               </div>
@@ -192,28 +193,32 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="floatingInput"
+                  id="playerPhone"
                   maxlength="10"
                   placeholder="phone number"
                   formControlName="phone"
                 />
-                <label for="floatingInput">Phone Number</label>
+                <label for="playerPhone">Phone Number</label>
               </div>
               <div class="form-floating mb-3">
-                <select formControlName="role" class="form-select" aria-label="Player role">
+                <select formControlName="role" class="form-select" aria-label="Player role" id="playerRole">
                   <option value="">Role</option>
                   <option value="1">Batsman</option>
                   <option value="2">Bowler</option>
                   <option value="3">All-Rounder</option>
                 </select>
               </div>
-              <div class="mb-3">
-                <input formControlName="isCaptain" class="form-check-input" type="checkbox" />
-                <label class="form-check-label" for="layoutfontRoboto">&nbsp;Is Captain</label>
-              </div>
               <div class="form-floating mb-3">
-                <input type="file" class="form-control" id="floatingInput" placeholder="Photo" formControlName="photo" />
-                <label for="floatingInput">Photo</label>
+                <select formControlName="category" class="form-select" aria-label="Player Category" id="PlayerCategory">
+                  <option value="">Category</option>
+                  <option value="1">A</option>
+                  <option value="2">B</option>
+                  <option value="3">C</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <input formControlName="isCaptain" class="form-check-input" type="checkbox" id="captain" />
+                <label class="form-check-label" for="captain">&nbsp;Is Captain</label>
               </div>
             </div>
             <div class="modal-footer">
@@ -263,65 +268,68 @@
             <div class="d-flex justify-content-end">
               <div class="add-team d-flex">
                 <div class="players-count">
-                  <div>Total Teams:</div>
+                  <div>Total Teams: {{ auctionTeams?.length }}</div>
                 </div>
                 <div>
                   <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addTeamModal">Add Team</button>
                 </div>
               </div>
             </div>
-            <!-- @if (teams$ | async; as teams) {
-                    @if (teams.length) {
-                      <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th class="pl-20">Sno</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Location</th>
-                            <th scope="col">Created On</th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          @for (team of teams; track index; let index = $index) {
-                            <tr>
-                              <td class="pl-20">{{ index + 1 }}</td>
-                              <td>{{ team?.name }}</td>
-                              <td>{{ team?.location }}</td>
-                              <td>{{ generateTimeFormat(team?.createdOn) }}</td>
-                              <td>
-                                <button
-                                  class="btn btn-primary"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#deleteTeamModal"
-                                  (click)="setDeleteTeamId(team.id)"
-                                >
-                                  <i class="ti ti-pencil-star"></i>
-                                </button>
-                                &nbsp;&nbsp;
-                                <button
-                                  class="btn btn-danger"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#deleteTeamModal"
-                                  (click)="setDeleteTeamId(team.id)"
-                                >
-                                  <i class="ti ti-trash"></i>
-                                </button>
-                              </td>
-                            </tr>
-                          }
-                        </tbody>
-                      </table>
-                    } @else {
-                      <div class="p-3">No Teams Available.</div>
+            @if (auctionTeams$ | async; as teams) {
+              @if (teams?.length) {
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th class="pl-20">Sno</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Location</th>
+                      <th scope="col">Logo</th>
+                      <th scope="col">Created On</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for (team of teams; track index; let index = $index) {
+                      <tr>
+                        <td class="pl-20">{{ index + 1 }}</td>
+                        <td>{{ team?.name }}</td>
+                        <td>{{ team?.location }}</td>
+                        <td class="logo"><img [src]="team?.logo" alt="" (error)="onImageError($event)" /></td>
+                        <td>{{ getDate(team?.createdOn) }}</td>
+                        <!-- <td>{{ generateTimeFormat(team?.createdOn) }}</td> -->
+                        <td>
+                          <!-- <button
+                            class="btn btn-primary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#deleteTeamModal"
+                            (click)="setDeleteTeamId(team.id)"
+                          >
+                            <i class="ti ti-pencil-star"></i>
+                          </button> -->
+                          &nbsp;&nbsp;
+                          <button
+                            class="btn btn-danger"
+                            data-bs-toggle="modal"
+                            data-bs-target="#deleteTeamModal"
+                            (click)="setDeleteTeamId(team.id)"
+                          >
+                            <i class="ti ti-trash"></i>
+                          </button>
+                        </td>
+                      </tr>
                     }
-                  } -->
+                  </tbody>
+                </table>
+              } @else {
+                <div class="p-3">No Teams Available.</div>
+              }
+            }
           </div>
           <div class="tab-pane" id="icon-tabpanel-1" role="tabpanel" aria-labelledby="icon-tab-1">
             <div class="d-flex justify-content-end">
               <div class="add-team d-flex">
                 <div class="players-count">
-                  <div>Total Players:</div>
+                  <div>Total Players: {{ auctionPlayers?.length }}</div>
                 </div>
                 <!-- <div class="mx-2" [formGroup]="PlayersFilterForm">
                         <select formControlName="id" class="form-select" aria-label="Default select example" (ngModelChange)="updatePlayersFilter()">
@@ -336,27 +344,29 @@
                 </div>
               </div>
             </div>
-            <!-- @if (allPlayers; as players) {
-                    @if (players.length) {
-                      <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th class="pl-20">Sno</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Team</th>
-                            <th scope="col">Created On</th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          @for (player of players; track index; let index = $index) {
-                            <tr>
-                              <td class="pl-20">{{ index + 1 }}</td>
-                              <td>{{ player.name }}</td>
-                              <td>{{ getTeamName(player.team) }}</td>
-                              <td>{{ generateTimeFormat(player.createdOn) }}</td>
-                              <td>
-                                <button
+            @if (auctionPlayers$ | async; as players) {
+              @if (players.length) {
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th class="pl-20">Sno</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Role</th>
+                      <th scope="col">Photo</th>
+                      <th scope="col">Created On</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for (player of players; track index; let index = $index) {
+                      <tr>
+                        <td class="pl-20">{{ index + 1 }}</td>
+                        <td>{{ player.name }}</td>
+                        <td>{{ getPlayerRole(player.role) }}</td>
+                        <td class="logo"><img [src]="player?.logo" alt="" (error)="onImageError($event)" /></td>
+                        <td>{{ getDate(player.createdOn) }}</td>
+                        <td>
+                          <!-- <button
                                   class="btn btn-primary"
                                   data-bs-toggle="modal"
                                   data-bs-target="#deletePlayerModal"
@@ -364,29 +374,29 @@
                                 >
                                   <i class="ti ti-pencil-star"></i>
                                 </button>
-                                &nbsp;&nbsp;
-                                <button
-                                  class="btn btn-danger"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#deletePlayerModal"
-                                  (click)="setDeletePlayerId(player.id)"
-                                >
-                                  <i class="ti ti-trash"></i>
-                                </button>
-                              </td>
-                            </tr>
-                          }
-                        </tbody>
-                      </table>
-                    } @else {
-                      <div class="p-3">No Players Available.</div>
+                                &nbsp;&nbsp;-->
+                          <button
+                            class="btn btn-danger"
+                            data-bs-toggle="modal"
+                            data-bs-target="#deletePlayerModal"
+                            (click)="setDeletePlayerId(player.id)"
+                          >
+                            <i class="ti ti-trash"></i>
+                          </button>
+                        </td>
+                      </tr>
                     }
-                  } -->
+                  </tbody>
+                </table>
+              } @else {
+                <div class="p-3">No Players Available.</div>
+              }
+            }
           </div>
         </div>
       </div>
       <!-- Add Player Modal-->
-      <div class="modal fade" id="addPlayerModal" tabindex="-1" aria-hidden="true">
+      <div class="modal fade" id="addPlayerModal" tabindex="-1">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -421,35 +431,35 @@
         </div>
       </div>
       <!-- Delete Team Modal-->
-      <!-- <div class="modal fade" id="deleteTeamModal" tabindex="-1" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #deleteTeamModal></button>
-                  </div>
-                  <div class="modal-body fs-2">Are you sure to delete this team?</div>
-                  <div class="modal-footer">
-                    <button class="btn btn-danger" (click)="deleteTeam(1)">Confirm</button>
-                    <button class="btn btn-primary" (click)="deleteTeam(0)">No</button>
-                  </div>
-                </div>
-              </div>
-            </div> -->
+      <div class="modal fade" id="deleteTeamModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #deleteTeamModal></button>
+            </div>
+            <div class="modal-body fs-2">Are you sure to delete this team?</div>
+            <div class="modal-footer">
+              <button class="btn btn-danger" (click)="deleteTeam(1)">Confirm</button>
+              <button class="btn btn-primary" (click)="deleteTeam(0)">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Delete Player Modal-->
-      <!-- <div class="modal fade" id="deletePlayerModal" tabindex="-1" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #deletePlayerModal></button>
-                  </div>
-                  <div class="modal-body fs-2">Are you sure to delete this player?</div>
-                  <div class="modal-footer">
-                    <button class="btn btn-danger" (click)="deletePlayer(1)">Confirm</button>
-                    <button class="btn btn-primary" (click)="deletePlayer(0)">No</button>
-                  </div>
-                </div>
-              </div>
-            </div> -->
+      <div class="modal fade" id="deletePlayerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #deletePlayerModal></button>
+            </div>
+            <div class="modal-body fs-2">Are you sure to delete this player?</div>
+            <div class="modal-footer">
+              <button class="btn btn-danger" (click)="deletePlayer(1)">Confirm</button>
+              <button class="btn btn-primary" (click)="deletePlayer(0)">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

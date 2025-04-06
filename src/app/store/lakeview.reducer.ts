@@ -41,14 +41,17 @@ export const auctionTeamsReducer = createReducer(
   on(AuctionApiTeams.loadTeamsSuccess, (_state, { teams }) => teams),
   on(AuctionApiTeams.updateTeamSuccess, (_state, { team }) =>
     [..._state?.filter((state) => state?.id !== team?.id), ...[team]].sort((a, b) => +a?.id - +b?.id)
-  )
+  ),
+  on(AuctionApiTeams.deleteTeamSuccess, (_state, { team }) => {
+    return [..._state?.filter((state) => state?.id !== team.id)];
+  })
 );
 export const auctionPlayersReducer = createReducer(
   initailActionPlayers,
   on(AuctionPlayers.addAuctionPlayer, (state, { player }) => [...state, player]),
   on(AuctionApiPlayers.loadPlayersSuccess, (_state, { players }) => players),
   on(AuctionApiPlayers.updatePlayerSuccess, (_state, { player }) => [..._state?.filter((state) => state?.id !== player?.id), ...[player]]),
-  on(AuctionApiPlayers.deletePlayerSuccess, (_state, { player }) => [..._state?.filter((state) => state?.id !== player?.id)])
+  on(AuctionApiPlayers.deletePlayerSuccess, (_state, { player }) => [..._state?.filter((state) => state?.id !== player.id)])
 );
 
 export const InningsReducer = createReducer(
@@ -124,11 +127,10 @@ export const updateLiveMatchData = (match, innings, updatedData) => {
 export const auctionReducer = createReducer(
   initialAuctionState,
   on(AuctionInfo.createAuction, (state, { auction }) => [...state, auction]),
-  on(AuctionInfo.updateAuction, (state, { auction }) => {
-    const index = state.findIndex(state.id === auction.id);
-    state[index] = auction;
-    return state;
-  }),
+  on(AuctionInfo.updateAuction, (state, { auction }) => (_state, { auction }) => [
+    ..._state?.filter((state) => state?.id !== auction?.id),
+    ...[auction]
+  ]),
   on(AuctionInfo.deleteAuction, (state, { auctionId }) => state.filter((auction) => auction.id !== auctionId)),
   on(AuctionApiInfo.loadAuctionInfoSuccess, (_state, { auctionInfo }) => auctionInfo)
 );

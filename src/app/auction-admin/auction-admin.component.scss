@@ -1,100 +1,103 @@
 .matches-card {
-    .earning-card {
-      margin-bottom: 0px !important;
-      min-height: 130px;
-    }
-  
-    .bg-gradient-blue {
-      background: linear-gradient(180deg, rgba(70, 108, 221, 1) 0%, rgba(6, 53, 145, 1) 58%);
-    }
-    .bg-gradient-red {
+  .earning-card {
+    margin-bottom: 0px !important;
+    min-height: 130px;
+  }
+
+  .bg-gradient-blue {
+    background: linear-gradient(180deg, rgba(70, 108, 221, 1) 0%, rgba(6, 53, 145, 1) 58%);
+  }
+  .bg-gradient-red {
+    background: linear-gradient(180deg, rgba(239, 40, 40, 1) 0%, rgba(162, 6, 20, 1) 58%);
+  }
+
+  .bg-gradient-green {
+    background: linear-gradient(
+      180deg,
+      rgba(28, 204, 15, 1) 0%,
+      rgba(15, 131, 27, 1) 33%,
+      rgba(13, 123, 28, 1) 40%,
+      rgba(6, 89, 34, 1) 70%,
+      rgba(6, 89, 34, 1) 74%
+    );
+  }
+  .vs {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    .circle {
+      border: 2px solid silver;
       background: linear-gradient(180deg, rgba(239, 40, 40, 1) 0%, rgba(162, 6, 20, 1) 58%);
-    }
-  
-    .bg-gradient-green {
-      background: linear-gradient(
-        180deg,
-        rgba(28, 204, 15, 1) 0%,
-        rgba(15, 131, 27, 1) 33%,
-        rgba(13, 123, 28, 1) 40%,
-        rgba(6, 89, 34, 1) 70%,
-        rgba(6, 89, 34, 1) 74%
-      );
-    }
-    .vs {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      .circle {
-        border: 2px solid silver;
-        background: linear-gradient(180deg, rgba(239, 40, 40, 1) 0%, rgba(162, 6, 20, 1) 58%);
-        padding: 10px;
-        border-radius: 30px;
-        color: #fff;
-      }
-    }
-  }
-  
-  .ti-hexagon-plus {
-    font-size: 30px;
-    cursor: pointer;
-  }
-  
-  .bat {
-    width: 15px;
-    height: 15px;
-  }
-  
-  .onStrike {
-    background-color: #000;
-    color: #fff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px solid silver;
-    padding-left: 10px;
-    margin-left: -10px;
-  }
-  
-  .set-striker {
-    color: #fff;
-    padding: 0px;
-  }
-  .set-striker:hover {
-    color: silver;
-  }
-  
-
-
-
-  .admin-list {
-    padding: 10px;
-    .nav-link.active {
-      border: none !important;
-      background: linear-gradient(180deg, rgba(225, 9, 206, 1) 0%, rgba(153, 7, 140, 1) 58%);
+      padding: 10px;
+      border-radius: 30px;
       color: #fff;
-      font-weight: bold;
-    }
-    ul {
-      font-size: 1.1rem;
-      i {
-        font-size: 1.5rem;
-        position: relative;
-        top: 3px;
-      }
-    }
-    .add-team {
-      position: absolute;
-      top: 10px;
-      right: 30px;
     }
   }
-  .pl-20 {
-    padding-left: 20px !important;
+}
+
+.logo {
+  img {
+    width: 60px;
+    height: 60px;
   }
-  
-  .players-count {
-    font-size: 18px;
-    margin-top: 5px;
-    margin-right: 10px;
+}
+
+.ti-hexagon-plus {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.bat {
+  width: 15px;
+  height: 15px;
+}
+
+.onStrike {
+  background-color: #000;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px solid silver;
+  padding-left: 10px;
+  margin-left: -10px;
+}
+
+.set-striker {
+  color: #fff;
+  padding: 0px;
+}
+.set-striker:hover {
+  color: silver;
+}
+
+.admin-list {
+  padding: 10px;
+  .nav-link.active {
+    border: none !important;
+    background: linear-gradient(180deg, rgba(225, 9, 206, 1) 0%, rgba(153, 7, 140, 1) 58%);
+    color: #fff;
     font-weight: bold;
   }
-  
+  ul {
+    font-size: 1.1rem;
+    i {
+      font-size: 1.5rem;
+      position: relative;
+      top: 3px;
+    }
+  }
+  .add-team {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+  }
+}
+.pl-20 {
+  padding-left: 20px !important;
+}
+
+.players-count {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-right: 10px;
+  font-weight: bold;
+}

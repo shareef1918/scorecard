@@ -2,7 +2,7 @@
   @if (showTimerDiv) {
     <div class="number-display d-flex align-items-center justify-content-center fw-bold">
       <div class="num-div text-center">
-        {{ randNumber }}
+        {{ displayNumber }}
       </div>
     </div>
   }
@@ -11,32 +11,38 @@
       <div class="col-xl-12 col-md-12">
         <div class="card banner">
           <div class="card-body">
-            <div class="d-flex">
-              <div>
+            <div class="d-flex justify-content-between">
+              <div class="d-flex">
                 <img class="logo" src="assets/images/lakeview.png" alt="LakeView Logo" />
+                <div class="auction-title otto">{{ auctionInfo?.title }}</div>
               </div>
-              <div class="auction-title otto">LPL Auction 2025</div>
-              <div class="generatePlayer"><button class="btn btn-primary" (click)="generateNumber()">Pick Player</button></div>
+              @if (getAuctionPlayers()?.length) {
+                <div class="generatePlayer"><button class="btn btn-primary" (click)="generateNumber()">Pick Player</button></div>
+              } @else if (getUnsoldPlayersCount()) {
+                <div class="generatePlayer">
+                  <button class="btn btn-primary" (click)="startNextAuctionRound()">Start Next Auction Round</button>
+                </div>
+              }
             </div>
-            <div class="text-md-start desc">LakeView Premier League</div>
+            <div class="text-md-start desc">{{ auctionInfo?.subTitle }}</div>
           </div>
         </div>
       </div>
       <div class="card">
         <div class="card-body">
-          <div class="d-flex justify-content-evenly teams-card">
+          <div class="d-flex justify-content-between teams-card">
             @if (teams$ | async; as teams) {
               @for (team of teams; track team) {
                 <div class="team-card">
                   <div class="card total-income-card text-white overflow-hidden" [ngClass]="team?.class ? team.class : 'card-1'">
                     <div class="card-body">
-                      <div class="t-logo"><img [src]="team.logo" alt="team" /></div>
+                      <div class="t-logo"><img [src]="team.logo" alt="team" (error)="onImageError($event)" /></div>
                       <div class="team-div d-flex flex-column">
                         <div class="title">{{ team?.name }}</div>
                         <div class="d-flex">
                           <div class="captain-name">
                             <span class="header">Captain:</span>
-                            <span>{{ team?.captain }}</span>
+                            <span>{{ getPlayerDetailsById(team?.captainId)?.name }}</span>
                           </div>
                         </div>
                         <div class="d-flex">
@@ -56,12 +62,12 @@
                           </button>
                         </div>
                         <div class="mt-auto text-center purse-amount">
-                          <div class="d-flex justify-content-center">
+                          <div class="d-flex justify-content-left">
                             <div>Remaining Amount:</div>
                             <div>
                               &nbsp;
                               <span>&#8377;</span>
-                              {{ getTotalRemainingAmount(team?.players) }}
+                              {{ getTotalRemainingAmount(team.id) }}
                             </div>
                           </div>
                         </div>
@@ -77,26 +83,33 @@
     </div>
     <div class="right col-xl-4">
       <div class="card">
-        <div class="p-3 players-text">
-          <h3>Auction Players List ({{ players?.length }}) + 4 Captains</h3>
+        <div class="players-text">
+          <h3>Auction Players List ({{ players?.length - getCaptainsCount() }}) + {{ getCaptainsCount() }} Captains</h3>
+          <div class="d-flex justify-content-center result-info">
+            <div>Sold Out Players: {{ getSoldOutPlayersCount() }}</div>
+            <div>
+              UnSold Players:
+              {{ getUnsoldPlayersCount() }}
+            </div>
+          </div>
         </div>
         <div class="card-body">
           @if (players$ | async; as players) {
-            @if (players?.length) {
+            @if (players?.length - getCaptainsCount()) {
               <ul class="list-group list-group-flush">
-                @for (player of players; track player) {
+                @for (player of getAuctionPlayers(); track player) {
                   <li class="list-group-item px-0">
                     <div class="row align-items-start">
                       <div class="d-flex justify-content-between">
                         <div class="d-flex">
-                          <div><img [src]="getPlayerPic(player)" alt="pic" class="player-pic" /></div>
+                          <div><img [src]="player?.photo" alt="pic" class="player-pic" (error)="onImageError($event)" /></div>
                           <div class="player-list-info">
                             <div class="player-name">
                               {{ player?.name }}
                             </div>
                             <div>
                               <span class="header">Role:</span>
-                              <span>{{ player?.role }}</span>
+                              <span>{{ getPlayerRole(player?.role) }}</span>
                             </div>
                             <div>
                               <span class="header">Base Price:</span>
@@ -121,7 +134,7 @@
                 }
               </ul>
             } @else {
-              <div class="fw-bold p-2 text-center">No Players available for auction</div>
+              <div class="fw-bold text-center no-players">No Players available for auction</div>
             }
           }
         </div>
@@ -129,11 +142,13 @@
     </div>
   </div>
 
-  <div class="modal fade" id="viewPlayersModal" tabindex="-1" aria-hidden="true">
+  <div class="modal fade" id="viewPlayersModal" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-2" id="addPlayerForm">Players</h1>
+          <div>
+            <h1 class="modal-title fs-2" id="addPlayerForm">{{ getTeamName(currentTeamId) }} Players List</h1>
+          </div>
           <button
             type="button"
             class="btn-close"
@@ -143,6 +158,10 @@
             #closeViewPlayersModal
           ></button>
         </div>
+        <div class="d-flex justify-content-between purse-details">
+          <div>Purse Amount: {{ auctionInfo?.teamPurse }}</div>
+          <div>Remaining Amount: {{ auctionInfo?.teamPurse - getTotalSpentAmount(currentTeamId) }}</div>
+        </div>
         <div class="px-4">
           @if (getTeamPlayersList(); as teamPlayers) {
             <table class="table table-striped">
@@ -151,24 +170,26 @@
                   <th scope="col">Sno</th>
                   <th scope="col">Player Name</th>
                   <th scope="col">Role</th>
+                  <th scope="col">Mobile</th>
                   <th scope="col">Base Price</th>
                   <th scope="col">Bid Price</th>
                 </tr>
               </thead>
               <tbody>
                 @for (player of teamPlayers; track player; let index = $index) {
-                  <tr>
+                  <tr [ngClass]="player?.isCaptain ? 'captain-row' : ''">
                     <td>{{ index + 1 }}</td>
                     <td>{{ player?.name }}</td>
-                    <td>{{ player?.role }}</td>
-                    <td>{{ player?.basePrice }}</td>
-                    <td>{{ player?.currentBidPrice }}</td>
+                    <td>{{ getPlayerRole(player?.role) }}</td>
+                    <td>{{ player?.phone }}</td>
+                    <td class="c-bid-price">{{ player?.isCaptain ? '-' : auctionInfo?.basePrice }}</td>
+                    <td class="c-bid-price fw-bold">{{ player?.currentBidPrice || '-' }}</td>
                   </tr>
                 }
                 <tr class="fw-bold">
-                  <td colspan="3"></td>
+                  <td colspan="4"></td>
                   <td>Total</td>
-                  <td>{{ getTotalSpentAmount(teamPlayers) }}</td>
+                  <td class="c-bid-price">{{ getTotalSpentAmount(currentTeamId) }}</td>
                 </tr>
               </tbody>
             </table>
@@ -178,15 +199,7 @@
     </div>
   </div>
 
-  <div
-    class="modal fade"
-    data-bs-backdrop="static"
-    data-bs-keyboard="false"
-    id="viewPlayerDetails"
-    tabindex="-1"
-    aria-hidden="true"
-    #playerModal
-  >
+  <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="viewPlayerDetails" tabindex="-1" #playerModal>
     <div class="modal-dialog show modal-xl modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div>
@@ -200,45 +213,36 @@
             (click)="closePlayerModal()"
           ></button>
         </div>
-        <div class="px-4 player-details-body">
+        <div class="player-details-body">
           @if (getCurrentPlayerToDisplay(); as player) {
             <div class="card" style="padding: 0px">
               <div class="card-body">
                 <div class="d-flex justify-content-center">
                   <div class="col-md-5 px-3">
-                    <div class="fw-bold fs-1 text-center timer">{{ timeLeft }} Sec</div>
+                    <div class="fw-bold text-center timer">{{ timeLeft }} Sec</div>
                     <div>
-                      <img [src]="getPlayerPic(player)" alt="player pic" class="player-pic-details" />
+                      <img [src]="player?.photo" alt="player pic" class="player-pic-details" (error)="onImageError($event)" />
                     </div>
-                    <div class="pt-1 sold-out">
-                      <button
-                        class="btn btn-danger"
-                        style="width: 100%"
-                        (click)="soldPlayer(player?.id)"
-                        [ngClass]="disableSoldOut ? 'd-none' : ''"
-                      >
-                        Sold Out
-                      </button>
+                    <div class="pt-1 sold-out d-flex justify-content-around" [ngClass]="disableSoldOut ? 'd-none' : ''">
+                      @if (!currentBidTeam) {
+                        <button class="btn btn-danger" (click)="unSoldPlayer(player?.id)">Un Sold</button>
+                      } @else {
+                        <button class="btn btn-primary" (click)="soldPlayer(player?.id)">Sold Out</button>
+                      }
                     </div>
                   </div>
                   <div class="col-md-7">
                     <div>
-                      <table class="table table-striped player-details-table fw-bold fs-3">
-                        <tbody>
-                          <tr>
-                            <td>Name</td>
-                            <td>{{ player?.name }}</td>
-                          </tr>
-                          <tr>
-                            <td>Role</td>
-                            <td>{{ player?.role }}</td>
-                          </tr>
-                          <tr>
-                            <td>Base Bid Price</td>
-                            <td>{{ player?.basePrice }}</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <div class="name-table">
+                        <div class="d-flex name-tr">
+                          <div>Name:</div>
+                          <div>{{ player?.name }}</div>
+                        </div>
+                        <div class="d-flex role-tr">
+                          <div>Role:</div>
+                          <div>{{ getRoleText(player?.role) }}</div>
+                        </div>
+                      </div>
                       <div class="bid-price-div text-center p-3 fw-bold">
                         {{ player?.currentBidPrice }}
                       </div>
@@ -246,15 +250,18 @@
                         @if (teams$ | async; as teams) {
                           @for (team of teams; track team) {
                             <div
-                              class="card p-2 col-md-5 text-center"
-                              [ngClass]="currentBidTeam === team?.id ? 'current-bid-team' : ''"
+                              [ngClass]="{
+                                'current-bid-team': player?.bidBy === team?.id,
+                                'disable-team': getTotalRemainingAmount(team.id) - player?.currentBidPrice <= 0
+                              }"
+                              class="teams-card card p-2 col-md-5 text-center"
                               (click)="updateBidPrice(player, team?.id)"
                             >
                               <div class="logo-div">
-                                <img [src]="getTeamLogo(team)" alt="Team pic" class="team-pic" />
+                                <img [src]="getTeamLogo(team)" alt="Team pic" class="team-pic" (error)="onImageError($event)" />
                               </div>
                               <div class="fw-bold">
-                                {{ getTotalRemainingAmount(team?.players) }}
+                                {{ getTotalRemainingAmount(team?.id) }}
                               </div>
                               <div class="team-name fw-bold">
                                 {{ team?.name }}

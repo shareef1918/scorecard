@@ -6,8 +6,13 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { SharedModule } from 'src/app/theme/shared/shared.module';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AuctionPlayers, AuctionTeams } from 'src/app/store/lakeview.action';
-import { getAuctionPlayers, getAuctionTeams } from 'src/app/store/lakeview.selector';
+import { AuctionInfo, AuctionPlayers, AuctionTeams } from 'src/app/store/lakeview.action';
+import { getAuctionInfo, getAuctionPlayers, getAuctionTeams } from 'src/app/store/lakeview.selector';
+import { PlayerRole } from '../elements/teams.interface';
+
+export const PlayerRoles = ['Batsman', 'Bowler', 'All-Rounder'];
+
+const AuctionPlayersCount = 11;
 
 @Component({
   selector: 'app-default',
@@ -30,10 +35,12 @@ export class DefaultComponent {
   public interval;
   public disableSoldOut = true;
   public randNumber = 0;
+  public displayNumber = 0;
   public randTimeer: any;
   public showTimerDiv = false;
   isBrowser = signal(false);
   public currentPlayerToDisplay = null;
+  public auctionInfo: any;
 
   @ViewChild('closeViewPlayerDetails') closeViewPlayerDetails: ElementRef;
   @ViewChild('viewPlayerButton') viewPlayerButton: ElementRef;
@@ -49,25 +56,36 @@ export class DefaultComponent {
   ngOnInit() {
     this.store.dispatch(AuctionPlayers.loadPlayers());
     this.store.dispatch(AuctionTeams.loadTeams());
+    this.store.dispatch(AuctionInfo.loadAuction());
+    this.store.select(getAuctionInfo).subscribe((info) => (this.auctionInfo = info[0]));
     this.players$ = this.store.select(getAuctionPlayers);
     this.teams$ = this.store.select(getAuctionTeams);
     this.teams$.subscribe((teams) => (this.teams = teams));
     this.players$.subscribe((players) => (this.players = players));
   }
 
-  getPlayerPic(player) {
-    return player?.photo || 'assets/images/players/pic1.jpeg';
-  }
-
   showTeamPlayersList(teamId) {
     this.currentTeamId = teamId;
   }
+
+  startNextAuctionRound() {
+    let auction = JSON.parse(JSON.stringify(this.auctionInfo));
+    auction.auctionRound = auction.auctionRound + 1;
+    this.store.dispatch(AuctionInfo.updateAuction({ auction }));
+  }
+
   getTeamPlayersList() {
     return this.teams?.find((team) => team?.id === this.currentTeamId)?.players;
   }
 
+  getTeamName(id) {
+    if (id) {
+      return this.teams?.find((team) => team.id === id)?.name;
+    }
+  }
+
   teamPlayersCount(id) {
-    return this.teams?.find((team) => team?.id === id)?.players?.length;
+    return this.teams?.find((team) => team?.id === id)?.players?.length || 0;
   }
 
   selectedPlayerDetails(id) {
@@ -78,7 +96,6 @@ export class DefaultComponent {
   }
 
   getPlayerDetails(id) {
-    // const pid = id ?? this.selectedPlayerId;
     const pid = id ?? 10;
     if (!id) {
       const player = this.players.find((player) => player?.id === pid);
@@ -88,6 +105,9 @@ export class DefaultComponent {
     return this.players[pid];
   }
 
+  getPlayerDetailsById(id) {
+    return (this.players || []).find((player) => player?.id === id);
+  }
   getTeamLogo(team) {
     return team?.logo || 'assets/images/logos/lakeview.png';
   }
@@ -106,6 +126,27 @@ export class DefaultComponent {
     // } else {
     //   console.log('Yourv Puse amount is less than the bid');
     // }
+  }
+
+  getAuctionPlayers() {
+    return this.players?.filter((player) => !player.isCaptain && player.auctionRound === this.auctionInfo?.auctionRound);
+  }
+
+  getUnsoldPlayersCount() {
+    return this.players?.filter((player) => player?.auctionRound === this.auctionInfo?.auctionRound + 1)?.length;
+  }
+
+  getSoldOutPlayersCount() {
+    return AuctionPlayersCount - this.getUnsoldPlayersCount() - this.getCaptainsCount() - this.getAuctionPlayers()?.length;
+  }
+
+  getCaptainsCount() {
+    return this.players?.filter((player) => player.isCaptain)?.length;
+  }
+
+  onImageError(event: any): void {
+    // If the image fails to load, update the source to the default image.
+    event.target.src = 'assets/images/logos/lakeview.png';
   }
 
   startTimer() {
@@ -129,35 +170,57 @@ export class DefaultComponent {
   }
 
   soldPlayer(playerId) {
-    this.playerModal.nativeElement.className = 'modal fade';
     const playerData = this.players?.find((player) => player?.id == playerId);
     if (playerData?.bidBy) {
       const teamData = this.teams?.find((team) => team?.id === this.currentBidTeam);
-      const team = { ...teamData, ...{ players: [...teamData?.players, ...[playerData]] } };
+      const team = { ...teamData, ...{ players: [...(teamData?.players || []), ...[playerData]] } };
       this.store?.dispatch(AuctionTeams.updateTeam({ team }));
       this.store?.dispatch(AuctionPlayers.deletePlayer({ playerId }));
       this.currentBidTeam = 0;
-      this.closeViewPlayerDetails.nativeElement.click();
+      // this.closeViewPlayerDetails.nativeElement.click();
+      this.playerModal.nativeElement.className = 'modal fade';
       this.disableSoldOut = true;
     }
   }
 
-  getTotalSpentAmount(players) {
-    return players?.reduce((acc, player) => acc + +player?.currentBidPrice, 0);
+  getPlayerRole(role) {
+    return PlayerRole[role];
   }
 
-  getTotalRemainingAmount(players) {
-    return 2500 - this.getTotalSpentAmount(players);
+  getTotalSpentAmount(teamId) {
+    if (teamId) {
+      const team = this.teams?.find((team) => team.id === teamId);
+      return (team?.players || [])?.reduce((acc, player) => acc + +player?.currentBidPrice, 0);
+    }
+    return 0;
+  }
+
+  getTotalRemainingAmount(teamId) {
+    const player = this.players?.find((player) => player?.id === this.currentPlayerToDisplay?.id);
+    return this.auctionInfo?.teamPurse - this.getTotalSpentAmount(teamId) - (teamId === player?.bidBy ? player.currentBidPrice : 0);
+  }
+
+  getRoleText(role: number) {
+    return PlayerRoles[role - 1];
+  }
+
+  getCategoryWisePlayers() {
+    const categoryA = this.players.filter((player) => player.category === '1' && !player?.isCaptain);
+    const categoryB = this.players.filter((player) => player.category === '2' && !player?.isCaptain);
+    const categoryC = this.players.filter((player) => player.category === '3' && !player?.isCaptain);
+    return categoryA?.length ? categoryA : categoryB?.length ? categoryB : categoryC;
   }
 
   generateNumber() {
     let interval: any;
     this.showTimerDiv = true;
     if (this.isBrowser()) {
-      // check it where you want to write setTimeout or setInterval
+      const auctionPlayers = this.getCategoryWisePlayers();
+      console.log(auctionPlayers);
       interval = setInterval(() => {
-        this.randNumber = Math.trunc(Math.random() * this.players.length + 1);
-      }, 70);
+        this.displayNumber = Math.trunc(Math.random() * 100);
+        this.randNumber = Math.trunc(Math.random() * auctionPlayers.length + 1);
+      }, 100);
     }
     setTimeout(() => {
       if (interval) {
@@ -165,17 +228,25 @@ export class DefaultComponent {
         this.showTimerDiv = false;
       }
       this.disableSoldOut = true;
-      this.currentPlayerToDisplay = this.players[this.randNumber];
+      const players = this.getCategoryWisePlayers();
+      this.currentPlayerToDisplay = players[this.randNumber - 1];
       this.playerModal.nativeElement.className = 'modal fade show d-block';
       this.startTimer();
     }, 3000);
   }
 
   getCurrentPlayerToDisplay() {
-    console.log(this.currentPlayerToDisplay);
     if (this.currentPlayerToDisplay) {
-      return this.players.find((player) => player.id == this.currentPlayerToDisplay.id);
+      const player = this.players.find((player) => player.id == this.currentPlayerToDisplay.id);
+      this.currentBidTeam = player?.bidBy;
+      return player;
     }
+  }
+
+  unSoldPlayer(playerId) {
+    let player = JSON.parse(JSON.stringify(this.players?.find((player) => player?.id === playerId)));
+    player.auctionRound = this.auctionInfo?.auctionRound + 1;
+    this.store.dispatch(AuctionPlayers.updatePlayer({ player }));
   }
 
   closePlayerModal() {

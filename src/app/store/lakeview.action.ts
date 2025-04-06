@@ -1,5 +1,4 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
-import { auctionInfo } from './lakeview.selector';
 
 ///////// New Implementation
 // export const MatchInfoActions = createActionGroup({
@@ -27,7 +26,8 @@ export const AuctionTeams = createActionGroup({
   events: {
     'Load Teams': emptyProps,
     'Add Auction Team': props<{ team: any }>(),
-    'Update Team': props<{ team: any }>()
+    'Update Team': props<{ team: any }>(),
+    'Delete Team': props<{ teamId: any }>()
   }
 });
 
@@ -39,7 +39,9 @@ export const AuctionApiTeams = createActionGroup({
     'Add Teams Success': props<{ team: any }>(),
     'Add Teams Failure': props<{ error: string }>(),
     'Update Team Success': props<{ team: any }>(),
-    'Update Team Failure': props<{ error: string }>()
+    'Update Team Failure': props<{ error: string }>(),
+    'Delete Team Success': props<{ team: any }>(),
+    'Delete Team Failure': props<{ error: string }>()
   }
 });
 

@@ -26,6 +26,13 @@ export class AuctionService {
   updateAuctionTeam({ team }) {
     return this.httpClient.put(`${this.teamsUrl}/${team?.id}`, team);
   }
+  updateAuctionInfo({ auction }) {
+    return this.httpClient.put(`${this.auctionInfo}/${auction?.id}`, auction);
+  }
+
+  deleteAuctionTeam({ team }) {
+    return this.httpClient.delete(`${this.teamsUrl}/${team.teamId}`);
+  }
 
   deleteAuctionPlayer({ playerId }) {
     return this.httpClient.delete(`${this.playersUrl}/${playerId}`);

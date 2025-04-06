@@ -135,6 +135,18 @@ export class LakeViweEffects {
     )
   );
 
+  updateAuctionInfo$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuctionInfo.updateAuction),
+      switchMap((auction) =>
+        this.auctionService.updateAuctionInfo(auction).pipe(
+          map((team) => AuctionApiTeams.updateTeamSuccess({ team })),
+          catchError((error) => of(AuctionApiTeams.updateTeamFailure({ error })))
+        )
+      )
+    )
+  );
+
   addAuctionTeam$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AuctionTeams.addAuctionTeam),
@@ -262,6 +274,18 @@ export class LakeViweEffects {
         this.teamsService.deleteTeam({ teamId }).pipe(
           map((teamId: any) => TeamsApiActions.removeTeamSuccess({ teamId })),
           catchError((error) => of(TeamsApiActions.removeTeamFailure({ error })))
+        )
+      )
+    )
+  );
+
+  deleteAuctionTeam$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuctionTeams.deleteTeam),
+      switchMap((team) =>
+        this.auctionService.deleteAuctionTeam({ team }).pipe(
+          map((team: any) => AuctionApiTeams.deleteTeamSuccess({ team })),
+          catchError((error) => of(AuctionApiTeams.deleteTeamFailure({ error })))
         )
       )
     )
