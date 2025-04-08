@@ -23,5 +23,6 @@ export interface Player {
 export const PlayerRole = {
   1: 'Batsman',
   2: 'Bowler',
-  3: 'All-Rounder'
+  3: 'All-Rounder',
+  4: 'WK-Batsman'
 };

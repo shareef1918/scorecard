@@ -1,5 +1,7 @@
 <div class="outer">
-  @if (!match?.firstInnings) {
+  @if (match?.firstInnings === null) {
+    <div class="message">Match hasn't started yet</div>
+  } @else if (!match?.firstInnings) {
     <div class="card shadow-lg">
       <!--Header-->
       <div class="d-flex justify-content-around header">
@@ -109,6 +111,6 @@
       </div>
     </div>
   } @else {
-    <div>Still first innings going on..please wait to complete it.</div>
+    <div class="message">Still first innings is progress..please wait untill it completes.</div>
   }
 </div>

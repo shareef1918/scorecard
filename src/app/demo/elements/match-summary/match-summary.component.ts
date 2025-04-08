@@ -194,7 +194,23 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
         }
       }
     }
-    return players;
+    return this.sortBowlersOnWickets(players);
+  }
+
+  sortBowlersOnWickets(players) {
+    let bowlers = [];
+    (players || []).forEach((player) => {
+      const ids = bowlers.map((b) => b.id);
+      console.log(ids, player.id, ids.includes(player?.id));
+      if (!ids.includes(player?.id)) {
+        const filter = players?.filter((p) => p.wickets == player?.wickets);
+        if (filter?.length > 1) {
+          filter.sort((a, b) => a.runs - b.runs);
+        }
+        bowlers = [...bowlers, ...filter];
+      }
+    });
+    return bowlers;
   }
 
   getBowledOversAndBalls(innings, bowler) {
@@ -209,7 +225,6 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
   }
 
   getCurrentPlayingTeamName() {
-    console.log(this.match);
     return this.getTeamName(this.match?.currentInnings)?.name;
   }
 
@@ -219,7 +234,7 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
 
   scoreToWin() {
     return this.match?.target - this.getInningsScore(this.currentInnings) > 0
-      ? this.match?.target - this.getInningsScore(this.currentInnings)
+      ? this.match?.target - this.getInningsScore(this.currentInnings) + 1
       : 0;
   }
 }
