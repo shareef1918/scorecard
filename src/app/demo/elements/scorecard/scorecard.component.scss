@@ -53,6 +53,7 @@
   font-weight: bold;
   color: #fff;
   padding-left: 30px;
+  padding-right: 10px;
 }
 
 table {
@@ -63,6 +64,16 @@ table {
       padding-left: 20px;
       font-size: 1rem;
     }
+  }
+}
+
+.match-details {
+  padding-right: 10px;
+  position: relative;
+  right: 3%;
+  text-align: center;
+  .type {
+    font-size: 25px;
   }
 }
 

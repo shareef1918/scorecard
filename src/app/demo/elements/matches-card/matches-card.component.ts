@@ -63,6 +63,8 @@ export class MatchesCardComponent {
       team2: new FormControl('', [Validators.required]),
       venue: new FormControl('', [Validators.required]),
       overs: new FormControl(25, [Validators.required]),
+      type: new FormControl('', [Validators.required]),
+      matchInfo: new FormControl(''),
       wickets: new FormControl(11, [Validators.required]),
       toss: new FormControl('', [Validators.required]),
       opted: new FormControl('', [Validators.required])
@@ -159,7 +161,6 @@ export class MatchesCardComponent {
     match.firstInnings = true;
     match.opted = +match.opted;
     match.date = new Date();
-    match.type = match?.type || `League Match`;
     this.store.dispatch(MatchesActions.startMatch({ match }));
     this.store.dispatch(InningsActions.addInnings({ innings: this.generateInningsJson(batTeamId, bowlteamId, match.currentInnings) }));
     this.store.dispatch(InningsActions.addInnings({ innings: this.generateInningsJson(bowlteamId, batTeamId, match.currentInnings) }));

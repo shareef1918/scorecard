@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { getLiveMatch, selectPlayers } from '../store/lakeview.selector';
 import { SharedModule } from '../theme/shared/shared.module';
 import moment from 'moment';
+import { MatchType } from '../demo/elements/scorecard/scorecard.component';
 
 @Component({
   selector: 'app-players-list',
@@ -51,6 +52,10 @@ export default class PlayersListComponent implements OnInit {
   }
 
   getDate() {
-    return moment().format('DD-MMM-YYYY');
+    return moment().format('DD-MMM-YYYY hh:mm A');
+  }
+
+  getMatchType(type) {
+    return MatchType[type];
   }
 }

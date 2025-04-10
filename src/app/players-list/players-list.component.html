@@ -2,8 +2,19 @@
   @if (liveMatch$ | async; as match) {
     <div>
       <div class="header">
-        <div class="title">Teams</div>
-        <!-- <div class="sub-title">LakeView Premier League</div> -->
+        <div class="d-flex justify-content-between">
+          <div class="title">Teams</div>
+          @if (match?.type === '2') {
+            <div class="match-info">
+              <div>
+                {{ getMatchType(match?.type) }}
+              </div>
+              <div style="text-align: center">
+                {{ match?.matchInfo }}
+              </div>
+            </div>
+          }
+        </div>
         <div class="sub-title">
           Location: {{ matchInfo.venue }}
           <span>Date: {{ getDate() }}</span>

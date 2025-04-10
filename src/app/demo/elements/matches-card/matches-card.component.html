@@ -42,7 +42,7 @@
                 {{ liveMatch.venue }}
               </div>
               <div>
-                <button class='btn btn-primary' (click)="clearMatch()">Clear Match</button>
+                <button class="btn btn-primary" (click)="clearMatch()">Clear Match</button>
               </div>
             } @else {
               <div>
@@ -106,7 +106,6 @@
         <span class="round secondary-round big"></span>
         <div class="card-body">
           <div class="fs-3">Scheduled Matches</div>
-          
         </div>
       </div>
     </div>
@@ -122,6 +121,48 @@
         </div>
         <form [formGroup]="startMatchForm">
           <div class="modal-body">
+            <div class="d-flex justify-content-between">
+              <div class="col-md-5">
+                <div class="form-floating mb-3">
+                  <select formControlName="type" class="form-select" aria-label="Default select example" (change)="updateTeam2List()">
+                    <option value="">Select Match Type</option>
+                    <option value="1">Individual</option>
+                    <option value="2">Tournament</option>
+                  </select>
+                  <label for="matchType">Match Type</label>
+                </div>
+              </div>
+              <div class="col-md-5">
+                @if (startMatchForm.get('type').value === '2') {
+                  <div class="form-floating mb-3">
+                    <select
+                      formControlName="matchInfo"
+                      class="form-select"
+                      aria-label="Default select example"
+                      (change)="updateTeam2List()"
+                    >
+                      <option value="">Select Match Info</option>
+                      <option value="League Match 1">League Match 1</option>
+                      <option value="League Match 2">League Match 2</option>
+                      <option value="League Match 3">League Match 3</option>
+                      <option value="League Match 4">League Match 4</option>
+                      <option value="League Match 5">League Match 5</option>
+                      <option value="League Match 6">League Match 6</option>
+                      <option value="League Match 7">League Match 7</option>
+                      <option value="League Match 8">League Match 8</option>
+                      <option value="League Match 9">League Match 9</option>
+                      <option value="League Match 10">League Match 10</option>
+                      <option value="League Match 11">League Match 11</option>
+                      <option value="League Match 12">League Match 12</option>
+                      <option value="Semi Finals Match">Semi Finals</option>
+                      <option value="Eliminator Match">Eliminator</option>
+                      <option value="Final Match">Finals</option>
+                    </select>
+                    <label for="matchType">Match Info</label>
+                  </div>
+                }
+              </div>
+            </div>
             <div class="d-flex justify-content-between">
               <div class="col-md-5">
                 <div class="form-floating mb-3">
@@ -187,7 +228,7 @@
                     <option value="19">19</option>
                     <option value="20">20</option>
                   </select>
-                  <label for="floatingInput">Playing</label>
+                  <label for="floatingInput">Wickets</label>
                 </div>
               </div>
             </div>

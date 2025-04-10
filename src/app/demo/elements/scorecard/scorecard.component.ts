@@ -8,11 +8,16 @@ import { BannerThemeAComponent } from '../banner-theme-a/banner-theme-a.componen
 import { InningsActions, MatchesActions, PlayersActions } from 'src/app/store/lakeview.action';
 import moment from 'moment';
 
+export const MatchType = {
+  1: 'Individual Match',
+  2: 'LakeView Premier League Season - 2'
+};
+
 @Component({
   selector: 'app-scorecard',
 
   standalone: true,
-  imports: [SharedModule, BannerThemeAComponent],
+  imports: [SharedModule],
   templateUrl: './scorecard.component.html',
   styleUrl: './scorecard.component.scss'
 })
@@ -41,7 +46,15 @@ export default class ScorecardComponent implements OnInit {
   }
 
   getDateFormat(date) {
-    return moment(date).format('DD-MM-YYYY');
+    return moment(date).format('DD-MM-YYYY hh:mm A');
+  }
+
+  getMatchType(type) {
+    return MatchType[type];
+  }
+
+  getMatchInfo(info) {
+    return info || null;
   }
 
   generateScorecard() {
@@ -55,6 +68,7 @@ export default class ScorecardComponent implements OnInit {
           balls: batter.status === 1 || batter.status === 2 ? this.getPlayedBall(batter?.id) : null,
           id: batter.id,
           status: batter.status,
+          isCaptain: batter?.isCaptain,
           down: batter.down,
           ...(batter.status === 2
             ? {
