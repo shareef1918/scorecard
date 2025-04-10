@@ -12,7 +12,7 @@ import { PlayerRole } from '../elements/teams.interface';
 
 export const PlayerRoles = ['Batsman', 'Bowler', 'All-Rounder'];
 
-const AuctionPlayersCount = 11;
+const AuctionPlayersCount = 5;
 
 @Component({
   selector: 'app-default',
@@ -137,7 +137,7 @@ export class DefaultComponent {
   }
 
   getSoldOutPlayersCount() {
-    return AuctionPlayersCount - this.getUnsoldPlayersCount() - this.getCaptainsCount() - this.getAuctionPlayers()?.length;
+    return AuctionPlayersCount - this.getCaptainsCount() - this.getAuctionPlayers()?.length;
   }
 
   getCaptainsCount() {

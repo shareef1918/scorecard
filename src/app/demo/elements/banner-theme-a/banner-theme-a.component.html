@@ -33,7 +33,7 @@
                 }
               } @else if (!liveMatchDetails?.outCome) {
                 <div class="px-2">Target: {{ getChaseScore() }}</div>
-                <div class="px-2">{{ getPlayingTeamName(true) }} need {{ getTargetScore() }} runs in {{ getTargetBalls() }} Balls</div>
+                <div class="px-2">Need {{ getTargetScore() }} runs from {{ getTargetBalls() }} Balls</div>
               } @else {
                 @if (liveMatchDetails?.outCome) {
                   @if (liveMatchDetails?.outCome?.targetChased) {
@@ -97,7 +97,7 @@
                       <marquee class="scroll-text" scrollDelay="300">
                         <div class="d-flex justify-content-around">
                           <!-- <div>LakeView Premier League</div> -->
-                          @if (liveMatchDetails?.firstInnings) {
+                          @if (liveMatchDetails?.firstInnings && currentOverBalls()?.over <= 2) {
                             <div class="px-2 toss-own">
                               Toss Own By {{ getTeamName(liveMatchDetails.toss) }} and Opted to
                               {{ liveMatchDetails.opted === 1 ? 'Bat' : 'Bowl' }} first
@@ -124,8 +124,8 @@
                       <div class="d-flex justify-content-center">
                         @if (+this.getInningsScore() > 0) {
                           <div class="px-2">C.R: {{ +getRunrate() <= 0 ? '0.0' : getRunrate() }}</div>
+                          <div class="px-2">R.R: {{ +getRequiredRunrate() <= 0 ? '0.0' : getRequiredRunrate() }}</div>
                         }
-                        <div class="px-2">R.R: {{ +getRequiredRunrate() <= 0 ? '0.0' : getRequiredRunrate() }}</div>
                       </div>
                     }
                   }
