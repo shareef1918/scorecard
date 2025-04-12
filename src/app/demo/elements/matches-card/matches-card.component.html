@@ -124,7 +124,7 @@
             <div class="d-flex justify-content-between">
               <div class="col-md-5">
                 <div class="form-floating mb-3">
-                  <select formControlName="type" class="form-select" aria-label="Default select example" (change)="updateTeam2List()">
+                  <select formControlName="type" class="form-select" id="matchType" aria-label="matchType" (change)="updateTeam2List()">
                     <option value="">Select Match Type</option>
                     <option value="1">Individual</option>
                     <option value="2">Tournament</option>
@@ -135,12 +135,7 @@
               <div class="col-md-5">
                 @if (startMatchForm.get('type').value === '2') {
                   <div class="form-floating mb-3">
-                    <select
-                      formControlName="matchInfo"
-                      class="form-select"
-                      aria-label="Default select example"
-                      (change)="updateTeam2List()"
-                    >
+                    <select formControlName="matchInfo" class="form-select" aria-label="matchInfo" (change)="updateTeam2List()">
                       <option value="">Select Match Info</option>
                       <option value="League Match 1">League Match 1</option>
                       <option value="League Match 2">League Match 2</option>
@@ -158,7 +153,7 @@
                       <option value="Eliminator Match">Eliminator</option>
                       <option value="Final Match">Finals</option>
                     </select>
-                    <label for="matchType">Match Info</label>
+                    <label for="matchInfo">Match Info</label>
                   </div>
                 }
               </div>
@@ -166,13 +161,19 @@
             <div class="d-flex justify-content-between">
               <div class="col-md-5">
                 <div class="form-floating mb-3">
-                  <select formControlName="team1" class="form-select" aria-label="Default select example" (change)="updateTeam2List()">
+                  <select
+                    formControlName="team1"
+                    id="team1"
+                    class="form-select"
+                    aria-label="Default select example"
+                    (change)="updateTeam2List()"
+                  >
                     <option value="">Select Team</option>
                     @for (team of team1List; track index; let index = $index) {
                       <option [value]="team.id">{{ team.name }}</option>
                     }
                   </select>
-                  <label for="floatingInput">Team 1</label>
+                  <label for="team1">Team 1</label>
                 </div>
               </div>
               <div class="vs d-flex justify-content-center pt-2">
@@ -180,20 +181,26 @@
               </div>
               <div class="col-md-5">
                 <div class="form-floating mb-3">
-                  <select formControlName="team2" class="form-select" aria-label="Default select example" (change)="updateTeam1List()">
+                  <select
+                    formControlName="team2"
+                    id="team2"
+                    class="form-select"
+                    aria-label="Default select example"
+                    (change)="updateTeam1List()"
+                  >
                     <option value="">Select Team</option>
                     @for (team of team2List; track index; let index = $index) {
                       <option [value]="team.id">{{ team.name }}</option>
                     }
                   </select>
-                  <label for="floatingInput">Team 2</label>
+                  <label for="team2">Team 2</label>
                 </div>
               </div>
             </div>
             <div class="d-flex justify-content-between">
               <div class="col-md-5">
                 <div class="form-floating mb-3">
-                  <select formControlName="overs" class="form-select" aria-label="Overs">
+                  <select formControlName="overs" id="overs" class="form-select" aria-label="Overs">
                     <option value="0">Select Overs</option>
                     <option value="2">2</option>
                     <option value="5">5</option>
@@ -208,13 +215,13 @@
                     <option value="50">50</option>
                     <option value="60">60</option>
                   </select>
-                  <label for="floatingInput">Overs</label>
+                  <label for="overs">Overs</label>
                 </div>
               </div>
               <div class="col-md-2"></div>
               <div class="col-md-5">
                 <div class="form-floating mb-3">
-                  <select formControlName="wickets" class="form-select" aria-label="Wickets">
+                  <select formControlName="wickets" id="wickets" class="form-select" aria-label="Wickets">
                     <option value="">Select Wickets</option>
                     <option value="10">10</option>
                     <option value="11">11</option>
@@ -228,7 +235,7 @@
                     <option value="19">19</option>
                     <option value="20">20</option>
                   </select>
-                  <label for="floatingInput">Wickets</label>
+                  <label for="wickets">Wickets</label>
                 </div>
               </div>
             </div>
@@ -241,22 +248,22 @@
                     maxlength="100"
                     formControlName="venue"
                     class="form-control"
-                    id="floatingInput"
+                    id="venue"
                     placeholder="Venue"
                   />
-                  <label for="floatingInput">Venue</label>
+                  <label for="venue">Venue</label>
                 </div>
               </div>
               <div class="col-md-2"></div>
               <div class="col-md-5">
                 <div class="form-floating mb-3">
                   @if (startMatchForm.value.team1 && startMatchForm.value.team2) {
-                    <select formControlName="toss" class="form-select" aria-label="Toss">
+                    <select formControlName="toss" id="toss" class="form-select" aria-label="Toss">
                       <option value="">Select Toss Own By Team</option>
                       <option [value]="startMatchForm.value.team1">{{ getTeamName(startMatchForm.value.team1)?.name }}</option>
                       <option [value]="startMatchForm.value.team2">{{ getTeamName(startMatchForm.value.team2)?.name }}</option>
                     </select>
-                    <label for="floatingInput">Toss Own By</label>
+                    <label for="toss">Toss Own By</label>
                   }
                 </div>
               </div>
@@ -265,12 +272,12 @@
               <div class="col-md-5">
                 <div class="form-floating mb-3">
                   @if (startMatchForm.value.team1 && startMatchForm.value.team2 && startMatchForm.value.toss) {
-                    <select formControlName="opted" class="form-select" aria-label="opted">
+                    <select formControlName="opted" id="opted" class="form-select" aria-label="opted">
                       <option value="">Opted To</option>
                       <option value="1">Bat First</option>
                       <option value="0">Bowl First</option>
                     </select>
-                    <label for="floatingInput">Opted To</label>
+                    <label for="opted">Opted To</label>
                   }
                 </div>
               </div>
@@ -285,7 +292,7 @@
   </div>
 
   <!-- Add Batters Modal-->
-  <div class="modal fade" id="addBattersModal" tabindex="-1" aria-hidden="true">
+  <div class="modal fade" id="addBattersModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollabl">
       <div class="modal-content">
         <div class="modal-header">
@@ -297,7 +304,13 @@
             <div class="d-flex justify-content-between">
               <div class="col-md-5">
                 <div class="form-floating mb-3">
-                  <select formControlName="batsman1" class="form-select" aria-label="Default select example" (change)="updateTeam2List()">
+                  <select
+                    formControlName="batsman1"
+                    id="batsman1"
+                    class="form-select"
+                    aria-label="Default select example"
+                    (change)="updateTeam2List()"
+                  >
                     <option value="null">Select Striker</option>
                     @for (player of battersList; track index; let index = $index) {
                       @if (player?.status === 0) {
@@ -305,32 +318,38 @@
                       }
                     }
                   </select>
-                  <label for="floatingInput">Striker</label>
+                  <label for="batsman1">Striker</label>
                 </div>
               </div>
 
               <div class="col-md-5">
                 <div class="form-floating mb-3">
-                  <select formControlName="batsman2" class="form-select" aria-label="Default select example" (change)="updateTeam2List()">
+                  <select
+                    formControlName="batsman2"
+                    class="form-select"
+                    id="batsman2"
+                    aria-label="Default select example"
+                    (change)="updateTeam2List()"
+                  >
                     <option value="null">Select Non Striker</option>
-                    @for (player of getNonStrikerList(currentPlayersForm.value.batsman1); track player; let index = $index) {
+                    @for (player of getNonStrikerList(currentPlayersForm.value.batsman1); track index; let index = $index) {
                       <option [value]="player.id">{{ player.name }}</option>
                     }
                   </select>
-                  <label for="floatingInput">Non Striker</label>
+                  <label for="batsman2">Non Striker</label>
                 </div>
               </div>
             </div>
             <div>
               <div class="col-md-5">
                 <div class="form-floating mb-3">
-                  <select formControlName="bowler" class="form-select" aria-label="Default select example">
+                  <select formControlName="bowler" id="bowler" class="form-select" aria-label="Default select example">
                     <option value="null">Select Bowler</option>
                     @for (player of bowlersList; track index; let index = $index) {
                       <option [value]="player.id">{{ player.name }}</option>
                     }
                   </select>
-                  <label for="floatingInput">Bowler</label>
+                  <label for="bowler">Bowler</label>
                 </div>
               </div>
             </div>

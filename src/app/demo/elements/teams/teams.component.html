@@ -55,7 +55,7 @@
                 </tr>
               </thead>
               <tbody>
-                @for (team of teams; track index; let index = $index) {
+                @for (team of teams; track $index; let index = $index) {
                   <tr>
                     <td class="pl-20">{{ index + 1 }}</td>
                     <td>{{ team?.name }}</td>
@@ -98,7 +98,7 @@
             <div class="mx-2" [formGroup]="PlayersFilterForm">
               <select formControlName="id" class="form-select" aria-label="Default select example" (ngModelChange)="updatePlayersFilter()">
                 <option value="">All Teams</option>
-                @for (team of teamsList; track index; let index = $index) {
+                @for (team of teamsList; track $index; let index = $index) {
                   <option [value]="team.id">{{ team.name }}</option>
                 }
               </select>
@@ -121,7 +121,7 @@
                 </tr>
               </thead>
               <tbody>
-                @for (player of players; track index; let index = $index) {
+                @for (player of players; track $index; let index = $index) {
                   <tr>
                     <td class="pl-20">{{ index + 1 }}</td>
                     <td>{{ player.name }}</td>
@@ -176,14 +176,14 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="Team Name" formControlName="name" />
-                  <label for="floatingInput">Team Name</label>
+                  <input type="text" class="form-control" id="teamName" placeholder="Team Name" formControlName="name" />
+                  <label for="teamName">Team Name</label>
                 </div>
               </div>
             </div>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInput" placeholder="Location" formControlName="location" />
-              <label for="floatingInput">Team Location</label>
+              <input type="text" class="form-control" id="teamLocation" placeholder="Location" formControlName="location" />
+              <label for="teamLocation">Team Location</label>
             </div>
           </div>
           <div class="modal-footer">
@@ -206,19 +206,19 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="Player Name" formControlName="name" />
-                  <label for="floatingInput">Player Name</label>
+                  <input type="text" class="form-control" id="name4" placeholder="Player Name" formControlName="name" />
+                  <label for="name4">Player Name</label>
                 </div>
               </div>
             </div>
             <div class="form-floating mb-3">
-              <select formControlName="team" class="form-select" aria-label="Default select example">
+              <select formControlName="team" id="team" class="form-select" aria-label="Default select example">
                 <option value="">Select Team</option>
-                @for (team of teams$ | async; track index; let index = $index) {
+                @for (team of teams$ | async; track $index; let index = $index) {
                   <option [value]="team?.id">{{ team?.name }}</option>
                 }
               </select>
-              <label for="floatingInput">Team</label>
+              <label for="team">Team</label>
             </div>
           </div>
           <div class="modal-footer">

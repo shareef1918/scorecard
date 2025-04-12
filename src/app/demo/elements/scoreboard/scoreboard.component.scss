@@ -8,10 +8,20 @@
     }
   }
 }
+
+.error {
+  padding: 5px;
+  background-color: #fff;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+
 .sticky {
   position: sticky;
-  top:0px;
-  z-index:999;
+  top: 0px;
+  z-index: 999;
 }
 
 .board-div {

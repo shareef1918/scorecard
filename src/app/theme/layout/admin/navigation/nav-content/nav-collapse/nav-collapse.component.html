@@ -8,7 +8,7 @@
     <span class="coded-mtext">{{ item.title }}</span>
   </a>
   <ul class="coded-submenu" [routerLinkActive]="['active']">
-    @for (item of item.children; track index; let index = $index) {
+    @for (item of item.children; track $index; let index = $index) {
       @if (item.type == 'group') {
         <app-nav-group [item]="item"></app-nav-group>
       }

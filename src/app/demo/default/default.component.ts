@@ -129,6 +129,7 @@ export class DefaultComponent {
   }
 
   getAuctionPlayers() {
+    console.log(this.players, this.auctionInfo?.auctionRound);
     return this.players?.filter((player) => !player.isCaptain && player.auctionRound === this.auctionInfo?.auctionRound);
   }
 

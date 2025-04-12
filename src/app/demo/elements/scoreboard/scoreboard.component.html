@@ -69,11 +69,14 @@
           </div>
         </div>
         <div class="col-md-5 balls-details bg-gradient-green overflow-auto white-text">
+          @if (playerExistsError) {
+            <div class="error">Player name already exists in the team</div>
+          }
           <div class="p-2 d-flex flex-column align-content-end">
             @if (disableEndInnings || disableEndMatch) {
               <div [ngClass]="!disableEndMatch ? 'd-none' : ''">
                 @if (currentInnings.currentBall === 6 && !liveMatch?.outCome) {
-                  <div class="next-bowler-div" [ngClass]="!disableBoard() ? 'd-none' : ''">
+                  <div class="next-bowler-div">
                     <div>
                       <h3>Select Next Bowler</h3>
                     </div>
@@ -89,14 +92,8 @@
                       <form [formGroup]="addPlayerForm">
                         <div class="col-6">
                           <div class="form-floating">
-                            <input
-                              type="email"
-                              class="form-control"
-                              id="floatingInput"
-                              placeholder="New Player Name"
-                              formControlName="name"
-                            />
-                            <label for="floatingInput">New Bowler Name</label>
+                            <input type="text" class="form-control" id="playerName" placeholder="New Player Name" formControlName="name" />
+                            <label for="playerName">New Bowler Name</label>
                           </div>
                         </div>
                         <button
@@ -150,7 +147,7 @@
                                       id="runs"
                                       placeholder="Venue"
                                     />
-                                    <label for="floatingInput">Runs:</label>
+                                    <label for="runs">Runs:</label>
                                   </div>
                                 </div>
                                 <div class="d-flex justify-content-around">
@@ -204,14 +201,8 @@
                             <form [formGroup]="addPlayerForm">
                               <div>
                                 <div class="form-floating">
-                                  <input
-                                    type="email"
-                                    class="form-control"
-                                    id="floatingInput"
-                                    placeholder="New Player Name"
-                                    formControlName="name"
-                                  />
-                                  <label for="floatingInput">New Player Name</label>
+                                  <input type="text" class="form-control" id="name1" placeholder="New Player Name" formControlName="name" />
+                                  <label for="name1">New Player Name</label>
                                 </div>
                               </div>
                               <button
@@ -254,13 +245,13 @@
                                   <div>
                                     <div class="form-floating">
                                       <input
-                                        type="email"
+                                        type="text"
                                         class="form-control"
-                                        id="floatingInput"
+                                        id="name3"
                                         placeholder="New Player Name"
                                         formControlName="name"
                                       />
-                                      <label for="floatingInput">New Player Name</label>
+                                      <label for="name3">New Player Name</label>
                                     </div>
                                   </div>
                                 </div>
@@ -304,14 +295,8 @@
                             <form [formGroup]="addPlayerForm">
                               <div>
                                 <div class="form-floating">
-                                  <input
-                                    type="email"
-                                    class="form-control"
-                                    id="floatingInput"
-                                    placeholder="New Player Name"
-                                    formControlName="name"
-                                  />
-                                  <label for="floatingInput">New Player Name</label>
+                                  <input type="text" class="form-control" id="name2" placeholder="New Player Name" formControlName="name" />
+                                  <label for="name2">New Player Name</label>
                                 </div>
                               </div>
                               <button
@@ -379,13 +364,13 @@
                 <div class="d-flex justify-content-between">
                   <div class="col-md-5">
                     <div class="form-floating mb-3">
-                      <select formControlName="id" class="form-select" aria-label="Default select example">
+                      <select formControlName="id" id="bowler1" class="form-select" aria-label="Default select example">
                         <option value="">Select Bowler</option>
                         @for (bowler of getBowlersList(); track index; let index = $index) {
                           <option [value]="bowler.id">{{ bowler.name }}</option>
                         }
                       </select>
-                      <label for="floatingInput">Select Bowler</label>
+                      <label for="bowler1">Select Bowler</label>
                     </div>
                   </div>
                 </div>

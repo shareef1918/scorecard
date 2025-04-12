@@ -139,7 +139,7 @@
                 @if (balls?.length) {
                   <div class="d-flex balls-text">
                     <div>Over:</div>
-                    @for (ball of currentOverBalls(); track ball; let index = $index) {
+                    @for (ball of currentOverBalls(); track index; let index = $index) {
                       @if (ball?.isOut) {
                         <div class="ball-div mx-1">
                           {{ ball?.outDetails?.type === 4 ? (ball?.runs?.striker > 0 ? ball?.runs?.striker + '+' : '') : '' }}W

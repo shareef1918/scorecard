@@ -5,7 +5,7 @@
         <div class="row align-items-center">
           <div class="col-md-12 d-sm-flex align-items-center justify-content-between">
             <div class="page-header-title">
-              @for (breadcrumb of navigationList; track index; let index = $index) {
+              @for (breadcrumb of navigationList; track $index; let index = $index) {
                 @if (last) {
                   <h5 class="m-b-10">
                     {{ breadcrumb.title }}
@@ -31,7 +31,7 @@
                   </svg>
                 </a>
               </li>
-              @for (breadcrumb of navigationList; track index; let index = $index) {
+              @for (breadcrumb of navigationList; track $index; let index = $index) {
                 @if (breadcrumb.url !== false) {
                   <li class="breadcrumb-item">
                     <a class="text-muted f-w-500" [routerLink]="breadcrumb.url">{{ breadcrumb.title }}</a>

@@ -43,6 +43,7 @@ export class ScoreboardComponent {
   public disableEndInnings = true;
   public disableUndoBtn = true;
   public disableScoreBoard = false;
+  public playerExistsError = false;
   public addPlayerForm: FormGroup;
 
   constructor(
@@ -67,7 +68,7 @@ export class ScoreboardComponent {
     });
     this.runOutPlayerForm = this.fb.group({
       id: new FormControl('', [Validators.required]),
-      runs: new FormControl('', [Validators.required]),
+      runs: new FormControl(0, [Validators.required]),
       isBye: new FormControl(false),
       isNb: new FormControl(false),
       isWide: new FormControl(false)
@@ -101,13 +102,27 @@ export class ScoreboardComponent {
     const currentInnings = JSON.parse(JSON.stringify(this.bothInnings.find((inn) => inn.id === this.liveMatch.currentInnings)));
     const otherInnings = JSON.parse(JSON.stringify(this.bothInnings.find((inn) => inn.id !== this.liveMatch.currentInnings)));
     if (num === 1) {
-      const playerExists = currentInnings?.players?.batters.find((player) => player?.name === playerData.name);
-      console.log(playerExists, playerData);
-      currentInnings.players.batters = [...currentInnings.players.batters, ...[player]];
-      otherInnings.players.bowlers = [...otherInnings.players.bowlers, ...[player]];
+      const playerExists = currentInnings?.players?.batters?.find((player) => player?.name.toLowerCase() === playerData.name.toLowerCase());
+      if (playerExists) {
+        this.playerExistsError = true;
+      } else {
+        const playerExists = currentInnings?.players?.bowlers?.find(
+          (player) => player?.name.toLowerCase() === playerData.name.toLowerCase()
+        );
+        currentInnings.players.batters = [...currentInnings.players.batters, ...[player]];
+        otherInnings.players.bowlers = [...otherInnings.players.bowlers, ...[player]];
+      }
+      setTimeout(() => {
+        this.playerExistsError = false;
+      }, 5000);
     } else {
-      currentInnings.players.bowlers = [...currentInnings.players.bowlers, ...[player]];
-      otherInnings.players.batters = [...otherInnings.players.batters, ...[player]];
+      const playerExists = currentInnings?.players?.bowlers?.find((player) => player?.name.toLowerCase() === playerData.name.toLowerCase());
+      if (playerExists) {
+        this.playerExistsError = true;
+      } else {
+        currentInnings.players.bowlers = [...currentInnings.players.bowlers, ...[player]];
+        otherInnings.players.batters = [...otherInnings.players.batters, ...[player]];
+      }
     }
     this.store.dispatch(PlayersActions.addPlayer({ player }));
     this.store.dispatch(InningsActions.updateInnings({ innings: currentInnings }));
@@ -336,8 +351,10 @@ export class ScoreboardComponent {
     // if (!this.liveMatch?.firstInnings && this.getInningsScore() > this.getTargetScore()) {
     //   this.disableEndMatch = true;
     // }
-    setTimeout(() => (this.disableScoreBoard = false), 2000);
-    this.checkForEndInningsOrMatch();
+    setTimeout(() => {
+      this.disableScoreBoard = false;
+      this.checkForEndInningsOrMatch();
+    }, 2000);
   }
   addRuns(runs: number) {
     if (runs === 4 || runs === 6) {
@@ -377,7 +394,7 @@ export class ScoreboardComponent {
       }
       this.store.dispatch(InningsActions.updateInnings({ innings: this.currentInnings }));
       setTimeout(() => {
-        this.disableScoreBoard = false;
+        // this.disableScoreBoard = false;
         this.checkForEndInningsOrMatch();
       }, 2000);
     }
@@ -437,7 +454,7 @@ export class ScoreboardComponent {
   }
 
   disableUndo() {
-    return false;
+    return this.currentInnings?.balls?.length === 0;
   }
 
   getNextBowlerList(bowlers) {
@@ -503,20 +520,8 @@ export class ScoreboardComponent {
     // } else if (allOut || oversComplete) {
     //   this.disableEndMatch = false;
     // }
-    console.log(
-      this.showPlayerOut ||
-        this.liveMatch?.outCome?.winner ||
-        this.disableScoreBoard ||
-        !this.disableEndMatch ||
-        this.currentInnings.currentBall === 6
-    );
-    return (
-      this.showPlayerOut ||
-      this.liveMatch?.outCome?.winner ||
-      this.disableScoreBoard ||
-      !this.disableEndMatch ||
-      this.currentInnings.currentBall === 6
-    );
+    console.log(this.showPlayerOut, this.disableScoreBoard, !this.disableEndMatch, this.currentInnings.currentBall === 6);
+    return this.showPlayerOut || this.disableScoreBoard || !this.disableEndMatch || this.currentInnings.currentBall === 6;
   }
 
   continueScoring() {
@@ -712,5 +717,10 @@ export class ScoreboardComponent {
       return this.nextPlayer.invalid || this.fielderForm.invalid || this.runOutPlayerForm.invalid;
     }
     return this.nextPlayer.invalid;
+  }
+
+  disabledScoreBoardButtons() {
+    // console.log(this.disableScoreBoard, this.currentInnings.currentBall === 6 || this.showPlayerOut || this.disableScoreBoard);
+    // return this.currentInnings.currentBall === 6 || this.showPlayerOut || this.disableScoreBoard;
   }
 }

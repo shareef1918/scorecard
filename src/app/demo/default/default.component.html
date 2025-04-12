@@ -102,6 +102,7 @@
                     <div class="row align-items-start">
                       <div class="d-flex justify-content-between">
                         <div class="d-flex">
+                          {{ player?.photo | json }}
                           <div><img [src]="player?.photo" alt="pic" class="player-pic" (error)="onImageError($event)" /></div>
                           <div class="player-list-info">
                             <div class="player-name">
