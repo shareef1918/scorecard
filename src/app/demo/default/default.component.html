@@ -51,7 +51,7 @@
                             <span>{{ teamPlayersCount(team?.id) }}</span>
                           </div>
                         </div>
-                        <div class="mt-3">
+                        <div class="mt-1">
                           <button
                             class="btn btn-secondary mt-1"
                             data-bs-toggle="modal"
@@ -61,7 +61,7 @@
                             View Players List
                           </button>
                         </div>
-                        <div class="mt-auto text-center purse-amount">
+                        <div class="text-center purse-amount">
                           <div class="d-flex justify-content-left">
                             <div>Remaining Amount:</div>
                             <div>
@@ -84,7 +84,10 @@
     <div class="right col-xl-4">
       <div class="card">
         <div class="players-text">
-          <h3>Auction Players List ({{ players?.length - getCaptainsCount() }}) + {{ getCaptainsCount() }} Captains</h3>
+          <h3>
+            Auction Players List ({{ auctionInfo?.auctionPlayersCount - getUnsoldPlayersCount() - getSoldOutPlayersCount() }}) +
+            {{ getCaptainsCount() }} Captains
+          </h3>
           <div class="d-flex justify-content-center result-info">
             <div>Sold Out Players: {{ getSoldOutPlayersCount() }}</div>
             <div>
@@ -102,7 +105,6 @@
                     <div class="row align-items-start">
                       <div class="d-flex justify-content-between">
                         <div class="d-flex">
-                          {{ player?.photo | json }}
                           <div><img [src]="player?.photo" alt="pic" class="player-pic" (error)="onImageError($event)" /></div>
                           <div class="player-list-info">
                             <div class="player-name">
@@ -114,7 +116,7 @@
                             </div>
                             <div>
                               <span class="header">Base Price:</span>
-                              <span>{{ player?.basePrice }}</span>
+                              <span>{{ player?.basePrice ? player?.basePrice : auctionInfo?.basePrice }}</span>
                             </div>
                           </div>
                         </div>
@@ -210,7 +212,7 @@
             class="btn-close"
             data-bs-dismiss="modal"
             aria-label="Close"
-            data-bs-target="#closeViewPlayerDetails"
+            #closeViewPlayerDetails
             (click)="closePlayerModal()"
           ></button>
         </div>
@@ -219,33 +221,29 @@
             <div class="card" style="padding: 0px">
               <div class="card-body">
                 <div class="d-flex justify-content-center">
-                  <div class="col-md-5 px-3">
-                    <div class="fw-bold text-center timer">{{ timeLeft }} Sec</div>
-                    <div>
+                  <div class="col-md-5 px-1">
+                    @if (timeLeft > 0) {
+                      <div class="fw-bold text-center timer">{{ timeLeft }} {{ timeLeft > 1 ? 'Secs' : 'Sec' }}</div>
+                    }
+                    <div style="height: 100%">
                       <img [src]="player?.photo" alt="player pic" class="player-pic-details" (error)="onImageError($event)" />
                     </div>
-                    <div class="pt-1 sold-out d-flex justify-content-around" [ngClass]="disableSoldOut ? 'd-none' : ''">
-                      @if (!currentBidTeam) {
-                        <button class="btn btn-danger" (click)="unSoldPlayer(player?.id)">Un Sold</button>
-                      } @else {
-                        <button class="btn btn-primary" (click)="soldPlayer(player?.id)">Sold Out</button>
-                      }
+                    <div class="player-name-div">
+                      <div class="name">{{ player?.name }}</div>
+                      <div class="role">{{ getPlayerRole(player?.role) }}</div>
+                      <div class="pt-1 sold-out d-flex justify-content-around" [ngClass]="disableSoldOut ? 'd-none' : ''">
+                        @if (!currentBidTeam) {
+                          <button class="btn btn-danger" (click)="unSoldPlayer(player?.id)">Un Sold</button>
+                        } @else {
+                          <button class="btn btn-primary" (click)="soldPlayer(player?.id)">Sold</button>
+                        }
+                      </div>
                     </div>
                   </div>
                   <div class="col-md-7">
                     <div>
-                      <div class="name-table">
-                        <div class="d-flex name-tr">
-                          <div>Name:</div>
-                          <div>{{ player?.name }}</div>
-                        </div>
-                        <div class="d-flex role-tr">
-                          <div>Role:</div>
-                          <div>{{ getRoleText(player?.role) }}</div>
-                        </div>
-                      </div>
                       <div class="bid-price-div text-center p-3 fw-bold">
-                        {{ player?.currentBidPrice }}
+                        {{ player?.currentBidPrice ? player?.currentBidPrice : auctionInfo?.basePrice }}
                       </div>
                       <div class="d-flex justify-content-evenly auction-teams">
                         @if (teams$ | async; as teams) {

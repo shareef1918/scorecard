@@ -89,6 +89,7 @@ export class AuctionAdminComponent implements OnInit {
     let form = this.createAuctionForm.value;
     (form.id = moment().unix().toString()), (form.createdOn = moment());
     form.auctionRound = 1;
+    form.auctionPlayersCount = this.auctionPlayers?.length;
     this.store.dispatch(AuctionInfo.createAuction({ auction: form }));
     this.closeCreateAuctionModal.nativeElement.click();
     this.createAuctionForm.reset();

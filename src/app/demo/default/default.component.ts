@@ -114,22 +114,23 @@ export class DefaultComponent {
 
   updateBidPrice(playerData, teamId) {
     this.currentTeamId = teamId;
-    const players = this.getTeamPlayersList();
-    // if (this.getTotalSpentAmount(players) >= playerData?.currentBidPrice) {
+    // const players = this.getTeamPlayersList();
     this.startTimer();
     this.currentBidTeam = teamId;
     const player = {
       ...playerData,
-      ...{ currentBidPrice: playerData?.currentBidPrice + this.getBidAdditionalPrice(playerData?.currentBidPrice), bidBy: teamId }
+      ...{
+        currentBidPrice:
+          (playerData?.currentBidPrice ? playerData?.currentBidPrice : this.auctionInfo?.basePrice) +
+          this.getBidAdditionalPrice(playerData?.currentBidPrice),
+        bidBy: teamId
+      }
     };
     this.store.dispatch(AuctionPlayers.updatePlayer({ player }));
-    // } else {
-    //   console.log('Yourv Puse amount is less than the bid');
-    // }
   }
 
   getAuctionPlayers() {
-    console.log(this.players, this.auctionInfo?.auctionRound);
+    console.log(this.auctionInfo?.auctionRound);
     return this.players?.filter((player) => !player.isCaptain && player.auctionRound === this.auctionInfo?.auctionRound);
   }
 
@@ -138,7 +139,7 @@ export class DefaultComponent {
   }
 
   getSoldOutPlayersCount() {
-    return AuctionPlayersCount - this.getCaptainsCount() - this.getAuctionPlayers()?.length;
+    return this.auctionInfo?.auctionPlayersCount - this.getAuctionPlayers()?.length - this.getUnsoldPlayersCount() || 0;
   }
 
   getCaptainsCount() {
@@ -178,7 +179,7 @@ export class DefaultComponent {
       this.store?.dispatch(AuctionTeams.updateTeam({ team }));
       this.store?.dispatch(AuctionPlayers.deletePlayer({ playerId }));
       this.currentBidTeam = 0;
-      // this.closeViewPlayerDetails.nativeElement.click();
+      this.closeViewPlayerDetails.nativeElement.click();
       this.playerModal.nativeElement.className = 'modal fade';
       this.disableSoldOut = true;
     }
@@ -217,7 +218,6 @@ export class DefaultComponent {
     this.showTimerDiv = true;
     if (this.isBrowser()) {
       const auctionPlayers = this.getCategoryWisePlayers();
-      console.log(auctionPlayers);
       interval = setInterval(() => {
         this.displayNumber = Math.trunc(Math.random() * 100);
         this.randNumber = Math.trunc(Math.random() * auctionPlayers.length + 1);
