@@ -9,10 +9,9 @@ import { Observable } from 'rxjs';
 import { AuctionInfo, AuctionPlayers, AuctionTeams } from 'src/app/store/lakeview.action';
 import { getAuctionInfo, getAuctionPlayers, getAuctionTeams } from 'src/app/store/lakeview.selector';
 import { PlayerRole } from '../elements/teams.interface';
+import { auctionPlayers } from '../../store/lakeview.selector';
 
 export const PlayerRoles = ['Batsman', 'Bowler', 'All-Rounder'];
-
-const AuctionPlayersCount = 5;
 
 @Component({
   selector: 'app-default',
@@ -72,6 +71,9 @@ export class DefaultComponent {
     let auction = JSON.parse(JSON.stringify(this.auctionInfo));
     auction.auctionRound = auction.auctionRound + 1;
     this.store.dispatch(AuctionInfo.updateAuction({ auction }));
+    this.store.dispatch(AuctionInfo.loadAuction());
+    this.store.dispatch(AuctionPlayers.loadPlayers());
+    this.store.dispatch(AuctionTeams.loadTeams());
   }
 
   getTeamPlayersList() {
@@ -130,7 +132,6 @@ export class DefaultComponent {
   }
 
   getAuctionPlayers() {
-    console.log(this.auctionInfo?.auctionRound);
     return this.players?.filter((player) => !player.isCaptain && player.auctionRound === this.auctionInfo?.auctionRound);
   }
 
@@ -158,17 +159,19 @@ export class DefaultComponent {
       if (this.timeLeft > 0) {
         this.timeLeft--;
       } else {
-        this.disableSoldOut = false;
         clearInterval(this.interval);
+      }
+      if (this.timeLeft <= 20) {
+        this.disableSoldOut = false;
       }
     }, 1000);
   }
 
   getBidAdditionalPrice(price) {
-    if (price < 100) return 10;
-    else if (price < 300) return 20;
+    if (price < 300) return 20;
     else if (price >= 300) return 50;
-    return 10;
+    else if (price > 700) return 100;
+    return 20;
   }
 
   soldPlayer(playerId) {
@@ -248,6 +251,9 @@ export class DefaultComponent {
     let player = JSON.parse(JSON.stringify(this.players?.find((player) => player?.id === playerId)));
     player.auctionRound = this.auctionInfo?.auctionRound + 1;
     this.store.dispatch(AuctionPlayers.updatePlayer({ player }));
+    this.closeViewPlayerDetails.nativeElement.click();
+    this.playerModal.nativeElement.className = 'modal fade';
+    this.disableSoldOut = true;
   }
 
   closePlayerModal() {

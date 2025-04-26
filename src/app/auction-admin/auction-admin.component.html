@@ -209,6 +209,9 @@
                   <option value="1">Batsman</option>
                   <option value="2">Bowler</option>
                   <option value="3">All-Rounder</option>
+                  <option value="4">WK-Batsman</option>
+                  <option value="5">Batting-AllRounder</option>
+                  <option value="6">Bowling-AllRounder</option>
                 </select>
               </div>
               <div class="form-floating mb-3">
@@ -358,18 +361,9 @@
                         <td class="pl-20">{{ index + 1 }}</td>
                         <td>{{ player.name }}</td>
                         <td>{{ getPlayerRole(player.role) }}</td>
-                        <td class="logo"><img [src]="player?.logo" alt="" (error)="onImageError($event)" /></td>
+                        <td class="logo"><img [src]="player?.photo" alt="" (error)="onImageError($event)" /></td>
                         <td>{{ getDate(player.createdOn) }}</td>
                         <td>
-                          <!-- <button
-                                  class="btn btn-primary"
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#deletePlayerModal"
-                                  (click)="setDeletePlayerId(player.id)"
-                                >
-                                  <i class="ti ti-pencil-star"></i>
-                                </button>
-                                &nbsp;&nbsp;-->
                           <button
                             class="btn btn-danger"
                             data-bs-toggle="modal"

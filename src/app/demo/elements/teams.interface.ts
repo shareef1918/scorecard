@@ -24,5 +24,7 @@ export const PlayerRole = {
   1: 'Batsman',
   2: 'Bowler',
   3: 'All-Rounder',
-  4: 'WK-Batsman'
+  4: 'WK-Batsman',
+  5: 'Batting-All Rounder',
+  6: 'Bowling-All Rounder'
 };

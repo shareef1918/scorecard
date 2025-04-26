@@ -24,7 +24,7 @@
                 </div>
               }
             </div>
-            <div class="text-md-start desc">{{ auctionInfo?.subTitle }}</div>
+            <div class="desc">{{ auctionInfo?.subTitle }}</div>
           </div>
         </div>
       </div>
@@ -146,7 +146,7 @@
   </div>
 
   <div class="modal fade" id="viewPlayersModal" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <div>
@@ -259,7 +259,7 @@
                               <div class="logo-div">
                                 <img [src]="getTeamLogo(team)" alt="Team pic" class="team-pic" (error)="onImageError($event)" />
                               </div>
-                              <div class="fw-bold">
+                              <div class="fw-bold rem-amount">
                                 {{ getTotalRemainingAmount(team?.id) }}
                               </div>
                               <div class="team-name fw-bold">
