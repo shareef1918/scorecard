@@ -85,7 +85,7 @@ export class ScoreboardComponent {
     this.teams.getPlayersList().subscribe((players) => (this.playersList = players));
     this.teams.getTeamsList().subscribe((teams) => (this.teamsList = teams));
     this.store.select(innings).subscribe((inng) => (this.bothInnings = inng));
-    this.checkForEndInningsOrMatch();
+
     setTimeout(() => {
       this.setOtherInningsDetails();
       this.checkForEndInningsOrMatch();
@@ -200,6 +200,7 @@ export class ScoreboardComponent {
   }
 
   startNextOver() {
+    this.disableScoreBoard = false;
     const lastBall = this.getLastball();
     if (lastBall?.runs?.total % 2 === 0) {
       this.changeStriker();
@@ -407,12 +408,18 @@ export class ScoreboardComponent {
   }
 
   checkForEndInningsOrMatch() {
+    console.log(Number(this.liveMatch.overs) === Number(this.currentInnings.currentOver) + 1);
     const currentInningsBatters = this.currentInnings?.players.batters;
     const nextBatters = this.getNextBattersList(currentInningsBatters);
     const allOut = this.liveMatch?.wickets === this.getInningsWickets();
     const oversComplete = this.liveMatch?.overs - 1 === this.currentInnings?.currentOver && this.currentInnings?.currentBall === 6;
     if (this.liveMatch?.firstInnings) {
-      if (allOut || oversComplete || nextBatters?.length < 0) {
+      if (
+        allOut ||
+        oversComplete ||
+        nextBatters?.length < 0 ||
+        (Number(this.liveMatch.overs) === Number(this.currentInnings.currentOver) + 1 && this.currentInnings?.currentBall === 6)
+      ) {
         this.disableEndInnings = false;
         this.disableScoreBoard = true;
       } else {
@@ -422,10 +429,21 @@ export class ScoreboardComponent {
     } else {
       const target = this.liveMatch.target;
       const currentScore = this.getInningsScore();
-      if (allOut || oversComplete || nextBatters?.length < 0 || target < currentScore) {
+      if (
+        allOut ||
+        oversComplete ||
+        nextBatters?.length < 0 ||
+        target < currentScore ||
+        (Number(this.liveMatch.overs) === Number(this.currentInnings.currentOver) + 1 && this.currentInnings?.currentBall === 6)
+      ) {
         this.disableEndMatch = false;
         this.disableScoreBoard = true;
+      } else {
+        this.disableScoreBoard = false;
       }
+    }
+    if (this.currentInnings.currentBall === 6) {
+      this.disableScoreBoard = true;
     }
   }
 

@@ -6,6 +6,7 @@ import { getLiveMatch, innings, selectPlayers } from 'src/app/store/lakeview.sel
 import { TeamsService } from '../teams.service';
 import moment from 'moment';
 import { SharedModule } from 'src/app/theme/shared/shared.module';
+import { MatchType } from '../scorecard/scorecard.component';
 
 @Component({
   selector: 'app-match-summary',
@@ -43,6 +44,10 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
 
   getFirstInningsTeam(teamId) {
     return this.bothInnings?.find((innings) => innings?.id !== teamId)?.id;
+  }
+
+  getMatchType(type) {
+    return MatchType[type];
   }
 
   ngOnInit(): void {

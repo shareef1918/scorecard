@@ -73,8 +73,9 @@
             <div class="error">Player name already exists in the team</div>
           }
           <div class="p-2 d-flex flex-column align-content-end">
+            {{ disableEndInnings }}-{{ disableEndMatch }}
             @if (disableEndInnings || disableEndMatch) {
-              <div [ngClass]="!disableEndMatch ? 'd-none' : ''">
+              <div [ngClass]="!disableEndMatch || !disableEndInnings ? 'd-none' : ''">
                 @if (currentInnings.currentBall === 6 && !liveMatch?.outCome) {
                   <div class="next-bowler-div">
                     <div>
