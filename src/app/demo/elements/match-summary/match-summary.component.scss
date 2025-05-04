@@ -1,19 +1,25 @@
+.main {
+  background: url('../../../../assets/images/summary-bg1.jpg');
+  background-size: cover;
+}
 .main-div {
   text-transform: uppercase;
-  margin: 0px 5%;
+  margin: 0px 0% 0% 5%;
   border-left: 10px solid #5692ce;
+  height: 1080px;
   .board {
     width: 73%;
+    height: 960px;
   }
   .pics {
-    width: 27%;
+    width: 33%;
     background: #c21356;
     background: linear-gradient(226deg, rgba(194, 19, 86, 1) 0%, rgba(28, 43, 80, 1) 43%, rgba(24, 54, 117, 1) 100%);
     .batter {
       position: relative;
       left: -15px;
       img {
-        width: 270px;
+        width: 400px;
         height: 92%;
       }
     }
@@ -23,17 +29,20 @@
     }
     .bowler {
       position: relative;
-      left: -160px;
+      left: -200px;
       img {
-        width: 270px;
+        width: 400px;
         height: 92%;
       }
     }
   }
   .venue {
-    padding: 0px 20px;
+    padding: 8px 15px;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 24px;
+    background: #e0d90b;
+    background: linear-gradient(106deg, rgba(224, 217, 11, 1) 0%, rgba(255, 247, 8, 1) 65%, rgba(204, 33, 10, 1) 100%);
+    color: #000;
   }
   .team-logos {
     padding: 10px;
@@ -59,13 +68,14 @@
       height: 40px;
     }
     margin-left: 20px;
+    padding-top: 10px;
   }
   .date {
     font-size: 16px;
   }
   .match-info {
-    font-size: 20px;
-    padding: 3px 20px 3px 20px;
+    font-size: 30px;
+    padding: 10px 15px;
     color: #fff;
     background: #020024;
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 64%, rgba(36, 33, 194, 1) 100%);
@@ -79,6 +89,7 @@
     background: linear-gradient(90deg, rgba(36, 33, 194, 1) 0%, rgba(9, 9, 121, 1) 17%, rgba(2, 0, 36, 1) 100%);
   }
   .team-details {
+    padding: 5px 10px;
     background: #c2213c;
     background: linear-gradient(90deg, rgba(194, 33, 60, 1) 0%, rgba(9, 9, 121, 1) 70%, rgba(2, 0, 36, 1) 100%);
   }
@@ -87,11 +98,11 @@
     .overs {
       padding: 12px 30px 5px 15px;
       text-shadow: 2px 2px #000;
-      font-size: 18px;
+      font-size: 24px;
     }
     .score {
-      font-size: 30px;
-      padding-right: 20px;
+      font-size: 38px;
+      padding-right: 30px;
       text-shadow: 2px 2px #000;
     }
   }
@@ -120,32 +131,36 @@
   .name,
   .runs,
   .wickets {
-    font-size: 22px;
+    font-size: 32px;
+  }
+  .name {
+    padding: 8px 15px;
   }
   .balls,
   .overs {
-    padding: 7px 10px 7px 15px;
+    padding: 5px 10px 7px 15px;
+    font-size: 24px;
   }
   .logo-name {
-    padding: 5px 20px;
+    padding: 5px 10px;
     color: #fff;
     .team-name {
-      font-size: 28px;
-      padding-left: 20px;
+      font-size: 38px;
+      padding-left: 5px;
       text-shadow: 2px 2px #000;
     }
   }
   .logo {
     .logo-img {
-      width: 40px;
-      height: 40px;
+      width: 60px;
+      height: 60px;
     }
   }
   .result {
-    font-size: 26px;
+    font-size: 30px;
     font-weight: bold;
     color: #fff;
-    padding: 0px 20px;
+    padding: 15px 10px;
     text-shadow: 2px 2px #000;
     background: #000000;
     background: linear-gradient(106deg, rgba(0, 0, 0, 1) 0%, rgba(125, 19, 5, 1) 65%, rgba(204, 33, 10, 1) 100%);

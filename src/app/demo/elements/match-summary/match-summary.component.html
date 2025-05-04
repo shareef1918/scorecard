@@ -1,137 +1,139 @@
-<div class="main-div">
-  @if (match?.firstInnings === null) {
-    <div class="message">Match hasn't started yet</div>
-  } @else if (!match?.firstInnings) {
-    <div class="d-flex justify-content-between">
-      <div class="board">
-        <div class="match-info fw-bold">{{ getMatchType(match?.type) }} - {{ match?.matchInfo }}</div>
-        <div class="venue d-flex justify-content-between">
-          <div>Venue:&nbsp;{{ match?.venue }}</div>
-          <div>Date:&nbsp;{{ getDate(match?.date) }}</div>
-        </div>
-        <div class="title fw-bold">MATCH SUMMARY</div>
-        <div>
-          <div class="d-flex justify-content-between team-details">
-            <div class="d-flex logo-name">
-              <div class="logo"><img [src]="getTeamLogo(getFirstInningsTeam(match?.currentInnings))" class="logo-img" alt="" /></div>
-              <div class="team-name fw-bold">{{ getTeamName(getFirstInningsTeam(match?.currentInnings))?.name }}</div>
-              @if (match?.toss === getFirstInningsTeam(match?.currentInnings)) {
-                <div class="toss"><img src="assets/images/toss.png" alt="" width="50px" height="50px" /></div>
-              }
-            </div>
-            <div class="d-flex overs-runs fw-bold">
-              <div class="overs">Overs {{ getOverDetails(false) }}</div>
-              <div class="score">{{ getScoreDetails(false) }}</div>
-            </div>
+<div class="main">
+  <div class="main-div">
+    @if (match?.firstInnings === null) {
+      <div class="message">Match hasn't started yet</div>
+    } @else if (!match?.firstInnings) {
+      <div class="d-flex justify-content-between">
+        <div class="board">
+          <div class="match-info fw-bold">{{ getMatchType(match?.type) }} - {{ match?.matchInfo }}</div>
+          <div class="venue d-flex justify-content-between">
+            <div>Venue:&nbsp;{{ match?.venue }}</div>
+            <div>Date:&nbsp;{{ getDate(match?.date) }}</div>
           </div>
-          <div class="player-div d-flex justify-content-between">
-            <div class="batter-div fw-bold">
-              @for (player of getTopBatsmanDetails(false); track $index) {
-                <div class="p-row d-flex justify-content-between">
-                  <div class="name">
-                    {{ player.id !== null ? getPlayerName(player?.id) : '&nbsp;' }} {{ player?.status === 1 ? '*' : '' }}
-                  </div>
-                  <div class="d-flex">
-                    <div class="runs">{{ player?.runs !== null ? player?.runs : '&nbsp;' }}</div>
-                    <div class="balls">{{ player?.balls !== null ? player?.balls : '&nbsp;' }}</div>
-                  </div>
-                </div>
-              }
-            </div>
-            <div class="bowler-div">
-              @for (player of getTopBowlersDetails(false); track $index) {
-                <div class="p-row d-flex fw-bold justify-content-between">
-                  <div class="name">{{ player.id !== null ? getPlayerName(player?.id) : '&nbsp;' }}</div>
-                  <div class="d-flex">
-                    <div class="wickets">{{ player?.runs !== null ? player?.runs + '-' + player?.wickets : '&nbsp;' }}</div>
-                    <div class="overs">{{ player?.overs !== null ? player?.overs : '&nbsp;' }}</div>
-                  </div>
-                </div>
-              }
-            </div>
-          </div>
-          <div class="d-flex justify-content-between team-details">
-            <div class="d-flex logo-name">
-              <div class="logo"><img [src]="getTeamLogo(match?.team2)" class="logo-img" alt="" /></div>
-              <div class="team-name fw-bold">{{ getTeamName(match?.currentInnings)?.name }}</div>
-              @if (match?.toss === match?.currentInnings) {
-                <div class="toss"><img src="assets/images/toss.png" alt="" /></div>
-              }
-            </div>
-            <div class="d-flex overs-runs fw-bold">
-              <div class="overs">Overs {{ getOverDetails(true) }}</div>
-              <div class="score">
-                <div class="score">{{ getScoreDetails(true) }}</div>
+          <div class="title fw-bold">MATCH SUMMARY</div>
+          <div>
+            <div class="d-flex justify-content-between team-details">
+              <div class="d-flex logo-name">
+                <div class="logo"><img [src]="getTeamLogo(getFirstInningsTeam(match?.currentInnings))" class="logo-img" alt="" /></div>
+                <div class="team-name fw-bold">{{ getTeamName(getFirstInningsTeam(match?.currentInnings))?.name }}</div>
+                @if (match?.toss === getFirstInningsTeam(match?.currentInnings)) {
+                  <div class="toss"><img src="assets/images/toss.png" alt="" width="50px" height="50px" /></div>
+                }
+              </div>
+              <div class="d-flex overs-runs fw-bold">
+                <div class="overs">Overs {{ getOverDetails(false) }}</div>
+                <div class="score">{{ getScoreDetails(false) }}</div>
               </div>
             </div>
-          </div>
-          <div class="player-div d-flex justify-content-between">
-            <div class="batter-div fw-bold">
-              @for (player of getTopBatsmanDetails(true); track $index) {
-                <div class="p-row d-flex justify-content-between">
-                  <div class="name">
-                    {{ player.id !== null ? getPlayerName(player?.id) : '&nbsp;' }} {{ player?.status === 1 ? '*' : '' }}
+            <div class="player-div d-flex justify-content-between">
+              <div class="batter-div fw-bold">
+                @for (player of getTopBatsmanDetails(false); track $index) {
+                  <div class="p-row d-flex justify-content-between">
+                    <div class="name">
+                      {{ player.id !== null ? getPlayerName(player?.id) : '&nbsp;' }} {{ player?.status === 1 ? '*' : '' }}
+                    </div>
+                    <div class="d-flex">
+                      <div class="runs">{{ player?.runs !== null ? player?.runs : '&nbsp;' }}</div>
+                      <div class="balls">{{ player?.balls !== null ? player?.balls : '&nbsp;' }}</div>
+                    </div>
                   </div>
-                  <div class="d-flex">
-                    <div class="runs">{{ player?.runs !== null ? player?.runs : '&nbsp;' }}</div>
-                    <div class="balls">{{ player?.balls !== null ? player?.balls : '&nbsp;' }}</div>
-                  </div>
-                </div>
-              }
-            </div>
-            <div class="bowler-div">
-              @for (player of getTopBowlersDetails(true); track $index) {
-                <div class="p-row d-flex fw-bold justify-content-between">
-                  <div class="name">{{ player.id !== null ? getPlayerName(player?.id) : '&nbsp;' }}</div>
-                  <div class="d-flex">
-                    <div class="wickets">{{ player?.runs !== null ? player?.runs + '-' + player?.wickets : '&nbsp;' }}</div>
-                    <div class="overs">{{ player?.overs !== null ? player?.overs : '&nbsp;' }}</div>
-                  </div>
-                </div>
-              }
-            </div>
-          </div>
-          <div class="result">
-            @if (match?.outCome) {
-              @if (match?.outCome?.targetChased) {
-                <div class="px-5">{{ getTeamName(match?.outCome?.winner)?.name }} {{ match?.outCome?.by?.wickets }}</div>
-              } @else {
-                @if (match?.outCome?.matchTied) {
-                  <div class="px-5">Match Tied</div>
-                } @else {
-                  <div class="px-5">{{ getTeamName(match?.outCome?.winner)?.name }} {{ match?.outCome?.by?.runs }}</div>
                 }
+              </div>
+              <div class="bowler-div">
+                @for (player of getTopBowlersDetails(false); track $index) {
+                  <div class="p-row d-flex fw-bold justify-content-between">
+                    <div class="name">{{ player.id !== null ? getPlayerName(player?.id) : '&nbsp;' }}</div>
+                    <div class="d-flex">
+                      <div class="wickets">{{ player?.runs !== null ? player?.runs + '-' + player?.wickets : '&nbsp;' }}</div>
+                      <div class="overs">{{ player?.overs !== null ? player?.overs : '&nbsp;' }}</div>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+            <div class="d-flex justify-content-between team-details">
+              <div class="d-flex logo-name">
+                <div class="logo"><img [src]="getTeamLogo(match?.team2)" class="logo-img" alt="" /></div>
+                <div class="team-name fw-bold">{{ getTeamName(match?.currentInnings)?.name }}</div>
+                @if (match?.toss === match?.currentInnings) {
+                  <div class="toss"><img src="assets/images/toss.png" alt="" /></div>
+                }
+              </div>
+              <div class="d-flex overs-runs fw-bold">
+                <div class="overs">Overs {{ getOverDetails(true) }}</div>
+                <div class="score">
+                  <div class="score">{{ getScoreDetails(true) }}</div>
+                </div>
+              </div>
+            </div>
+            <div class="player-div d-flex justify-content-between">
+              <div class="batter-div fw-bold">
+                @for (player of getTopBatsmanDetails(true); track $index) {
+                  <div class="p-row d-flex justify-content-between">
+                    <div class="name">
+                      {{ player.id !== null ? getPlayerName(player?.id) : '&nbsp;' }} {{ player?.status === 1 ? '*' : '' }}
+                    </div>
+                    <div class="d-flex">
+                      <div class="runs">{{ player?.runs !== null ? player?.runs : '&nbsp;' }}</div>
+                      <div class="balls">{{ player?.balls !== null ? player?.balls : '&nbsp;' }}</div>
+                    </div>
+                  </div>
+                }
+              </div>
+              <div class="bowler-div">
+                @for (player of getTopBowlersDetails(true); track $index) {
+                  <div class="p-row d-flex fw-bold justify-content-between">
+                    <div class="name">{{ player.id !== null ? getPlayerName(player?.id) : '&nbsp;' }}</div>
+                    <div class="d-flex">
+                      <div class="wickets">{{ player?.runs !== null ? player?.runs + '-' + player?.wickets : '&nbsp;' }}</div>
+                      <div class="overs">{{ player?.overs !== null ? player?.overs : '&nbsp;' }}</div>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+            <div class="result">
+              @if (match?.outCome) {
+                @if (match?.outCome?.targetChased) {
+                  <div class="px-5">{{ getTeamName(match?.outCome?.winner)?.name }} {{ match?.outCome?.by?.wickets }}</div>
+                } @else {
+                  @if (match?.outCome?.matchTied) {
+                    <div class="px-5">Match Tied</div>
+                  } @else {
+                    <div class="px-5">{{ getTeamName(match?.outCome?.winner)?.name }} {{ match?.outCome?.by?.runs }}</div>
+                  }
+                }
+              } @else if (!match?.firstInnings) {
+                <div class="px-5">{{ getCurrentPlayingTeamName() }} Need {{ scoreToWin() }} in {{ getTargetBalls() }} balls</div>
               }
-            } @else if (!match?.firstInnings) {
-              <div class="px-5">{{ getCurrentPlayingTeamName() }} Need {{ scoreToWin() }} in {{ getTargetBalls() }} balls</div>
-            }
+            </div>
           </div>
         </div>
+        @if (getTopBatsman()?.photo && getTopBowler()?.photo) {
+          <div class="pics d-flex">
+            <div class="batter">
+              <img [src]="getTopBatsman()?.photo" alt="" />
+              <div class="b-runs text-center fw-bold">{{ getTopBatsman()?.details }}</div>
+            </div>
+            <div class="bowler">
+              <img [src]="getTopBowler()?.photo" alt="" />
+              <div class="b-runs text-center fw-bold">{{ getTopBowler()?.details }}</div>
+            </div>
+          </div>
+        }
       </div>
-      @if (getTopBatsman()?.photo && getTopBowler()?.photo) {
-        <div class="pics d-flex">
-          <div class="batter">
-            <img [src]="getTopBatsman()?.photo" alt="" />
-            <div class="b-runs text-center fw-bold">{{ getTopBatsman()?.details }}</div>
-          </div>
-          <div class="bowler">
-            <img [src]="getTopBowler()?.photo" alt="" />
-            <div class="b-runs text-center fw-bold">{{ getTopBowler()?.details }}</div>
-          </div>
+      <div class="team-logos d-flex justify-content-center">
+        <div>
+          <img [src]="getTeamLogo(getFirstInningsTeam(match?.currentInnings))" alt="" />
         </div>
-      }
-    </div>
-    <div class="team-logos d-flex justify-content-center">
-      <div>
-        <img [src]="getTeamLogo(getFirstInningsTeam(match?.currentInnings))" alt="" />
+        <div class="hash-tag">
+          <div>VS</div>
+          <div>#LPL2</div>
+        </div>
+        <div>
+          <img [src]="getTeamLogo(match?.team2)" alt="" />
+        </div>
       </div>
-      <div class="hash-tag">
-        <div>VS</div>
-        <div>#LPL2</div>
-      </div>
-      <div>
-        <img [src]="getTeamLogo(match?.team2)" alt="" />
-      </div>
-    </div>
-  }
+    }
+  </div>
 </div>

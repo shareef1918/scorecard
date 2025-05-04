@@ -542,10 +542,10 @@
     },
     {
       "id": "1745110497",
-      "name": "LakeView Rebals",
+      "name": "LakeView Rebels",
       "location": "Bujabuja Nellore",
       "captainId": "1745107552",
-      "logo": "assets/images/logos/rebals.png",
+      "logo": "assets/images/logos/rebels.png",
       "createdOn": "2025-04-20T00:54:57.986Z",
       "purseAmount": 4300,
       "players": [
@@ -1185,7 +1185,7 @@
       "id": "LV-1745536438",
       "name": "Rebels",
       "location": "Bujabuja Nellore",
-      "logo": "assets/images/logos/rebals.png",
+      "logo": "assets/images/logos/rebels.png",
       "createdOn": 1745536438
     },
     {
@@ -1438,7 +1438,7 @@
       "id": "LV-1745536882",
       "name": "Sham Padmineni",
       "team": "LV-1745536445",
-      "photo": "assets/images/players/sham.png",
+      "photo": "assets/images/players/shyam.png",
       "createdOn": 1745536882,
       "isCaptain": false
     },
