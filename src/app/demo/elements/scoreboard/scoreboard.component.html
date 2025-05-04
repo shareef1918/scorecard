@@ -73,9 +73,8 @@
             <div class="error">Player name already exists in the team</div>
           }
           <div class="p-2 d-flex flex-column align-content-end">
-            {{ disableEndInnings }}-{{ disableEndMatch }}
-            @if (disableEndInnings || disableEndMatch) {
-              <div [ngClass]="!disableEndMatch || !disableEndInnings ? 'd-none' : ''">
+            @if (disableEndInnings || !(currentInnings.currentBall === 6 && +liveMatch.overs === +currentInnings.currentOver + 1)) {
+              <div [ngClass]="!disableEndMatch ? 'd-none' : ''">
                 @if (currentInnings.currentBall === 6 && !liveMatch?.outCome) {
                   <div class="next-bowler-div">
                     <div>
@@ -97,14 +96,9 @@
                             <label for="playerName">New Bowler Name</label>
                           </div>
                         </div>
-                        <button
-                          type="button"
-                          class="btn btn-primary"
-                          (click)="addNewPlayer(otherInningsId, 2)"
-                          [disabled]="addPlayerForm.invalid"
-                        >
-                          Add
-                        </button>
+                        @if (!addPlayerForm.invalid) {
+                          <button type="button" class="btn btn-primary" (click)="addNewPlayer(otherInningsId, 2)">Add</button>
+                        }
                       </form>
                       @if (innings?.players?.bowlers?.length) {
                         <button type="button" class="btn btn-primary mt-2" [disabled]="nextPlayer.invalid" (click)="startNextOver()">
@@ -206,14 +200,9 @@
                                   <label for="name1">New Player Name</label>
                                 </div>
                               </div>
-                              <button
-                                type="button"
-                                class="btn btn-primary"
-                                (click)="addNewPlayer(otherInningsId, 2)"
-                                [disabled]="addPlayerForm.invalid"
-                              >
-                                Add
-                              </button>
+                              @if (!addPlayerForm.invalid) {
+                                <button type="button" class="btn btn-primary" (click)="addNewPlayer(otherInningsId, 2)">Add</button>
+                              }
                             </form>
                           </div>
                         </div>
@@ -256,14 +245,9 @@
                                     </div>
                                   </div>
                                 </div>
-                                <button
-                                  type="button"
-                                  class="btn btn-primary"
-                                  (click)="addNewPlayer(innings.id, 1)"
-                                  [disabled]="addPlayerForm.invalid"
-                                >
-                                  Add
-                                </button>
+                                @if (!addPlayerForm.invalid) {
+                                  <button type="button" class="btn btn-primary" (click)="addNewPlayer(innings.id, 1)">Add</button>
+                                }
                               </form>
                             </div>
                           </div>
@@ -300,14 +284,9 @@
                                   <label for="name2">New Player Name</label>
                                 </div>
                               </div>
-                              <button
-                                type="button"
-                                class="btn btn-primary"
-                                (click)="addNewPlayer(otherInningsId, 2)"
-                                [disabled]="addPlayerForm.invalid"
-                              >
-                                Add
-                              </button>
+                              @if (!addPlayerForm.invalid) {
+                                <button type="button" class="btn btn-primary" (click)="addNewPlayer(otherInningsId, 2)">Add</button>
+                              }
                             </form>
                           </div>
                         </div>
@@ -325,27 +304,23 @@
                   </div>
                 }
               </div>
-              <div class="next-bowler-div">
-                @if (
-                  (currentInnings?.currentBall !== 6 && !showPlayerOut) || !disableEndInnings || !disableEndMatch || liveMatch?.outCome
-                ) {
-                  <h3>Last Balls</h3>
-                  @if (getBalls().length) {
-                    @for (ball of getBalls(); track index; let index = $index) {
-                      <div class="d-flex justify-content-left px-2 balls-row fw-bold">
-                        <div class="px-2 ball">
-                          <span>{{ ball.over }}.</span>
-                          <span>{{ ball?.runs?.extras && (ball?.isNb || ball?.isWide) ? ball?.ball + 1 : ball?.ball }}</span>
-                        </div>
-                        <div [ngClass]="ball?.runs?.extras ? 'wide-ball' : ''">{{ getMessage(ball) }}</div>
-                      </div>
-                    }
-                  } @else {
-                    <div class="px-3">Waiting for the bowler to bowl...</div>
-                  }
-                }
-              </div>
             }
+            <div>
+              <h3>Last Balls</h3>
+              @if (getBalls().length) {
+                @for (ball of getBalls(); track index; let index = $index) {
+                  <div class="d-flex justify-content-left px-2 balls-row fw-bold">
+                    <div class="px-2 ball">
+                      <span>{{ ball.over }}.</span>
+                      <span>{{ ball?.runs?.extras && (ball?.isNb || ball?.isWide) ? ball?.ball + 1 : ball?.ball }}</span>
+                    </div>
+                    <div [ngClass]="ball?.runs?.extras ? 'wide-ball' : ''">{{ getMessage(ball) }}</div>
+                  </div>
+                }
+              } @else {
+                <div class="px-3">Waiting for the bowler to bowl...</div>
+              }
+            </div>
           </div>
         </div>
       </div>

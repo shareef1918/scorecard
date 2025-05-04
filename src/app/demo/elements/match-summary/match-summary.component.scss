@@ -1,142 +1,153 @@
-.outer {
-  background: url('../../../../assets/images/summary-bg1.jpg');
-  background-size: cover;
-  padding: 7% 27%;
-  height: 100vh;
-}
-
-.team-pic-1 {
-  img {
-    width: 40px;
-    height: 40px;
+.main-div {
+  text-transform: uppercase;
+  margin: 0px 5%;
+  border-left: 10px solid #5692ce;
+  .board {
+    width: 73%;
   }
-  position: relative;
-  left: -20px;
-}
-.team-pic-2 {
-  img {
-    width: 40px;
-    height: 40px;
+  .pics {
+    width: 27%;
+    background: #c21356;
+    background: linear-gradient(226deg, rgba(194, 19, 86, 1) 0%, rgba(28, 43, 80, 1) 43%, rgba(24, 54, 117, 1) 100%);
+    .batter {
+      position: relative;
+      left: -15px;
+      img {
+        width: 270px;
+        height: 92%;
+      }
+    }
+    .b-runs {
+      color: #fff;
+      font-size: 23px;
+    }
+    .bowler {
+      position: relative;
+      left: -160px;
+      img {
+        width: 270px;
+        height: 92%;
+      }
+    }
   }
-  position: relative;
-  right: -20px;
-}
-
-.score-icon {
-  width: 25px;
-  height: 25px;
-  background-color: #fff;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-.left-p-ball {
-  position: relative;
-  left: -80px;
-  bottom: 2px;
-}
-.right-p-ball {
-  position: relative;
-  right: -87px;
-  bottom: 2px;
-}
-.left-p-bat {
-  position: relative;
-  left: -100px;
-  bottom: 2px;
-}
-.right-p-bat {
-  position: relative;
-  right: -104px;
-  bottom: 2px;
-}
-.card {
-  .header {
-    padding: 5px 15px;
+  .venue {
+    padding: 0px 20px;
+    font-weight: bold;
+    font-size: 18px;
   }
-
-  .batting-card {
+  .team-logos {
+    padding: 10px;
+    background: #eb3f28;
+    background: linear-gradient(106deg, rgba(235, 63, 40, 1) 0%, rgba(26, 11, 87, 1) 54%, rgba(235, 63, 40, 1) 100%);
     div {
-      width: 100%;
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      padding: 0px 20px;
     }
-
-    .name {
-      padding: 1px 15px;
+    .hash-tag {
+      font-size: 30px;
+      color: #fff;
+      text-align: center;
       font-weight: bold;
-      width: 60%;
-      background: linear-gradient(to right, #ccc, transparent 40%);
-    }
-
-    .runs {
-      width: 20%;
-      padding: 1px 15px;
-      text-align: right;
-      font-weight: bold;
-      background: linear-gradient(to right, #ccc, transparent 50%);
-    }
-    .wickets {
-      width: 20%;
-      padding: 1px 10px;
-      text-align: right;
-      font-weight: bold;
-      background: linear-gradient(to right, #ccc, transparent 50%);
-    }
-
-    .balls {
-      padding: 5px;
-      background: linear-gradient(to right, #ccc, transparent 50%);
-      width: 15%;
-      text-align: right;
-      font-size: 12px;
-    }
-
-    .inner {
-      width: 100%;
     }
   }
-
-  .team-name {
+  .toss {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+    margin-left: 20px;
+  }
+  .date {
+    font-size: 16px;
+  }
+  .match-info {
     font-size: 20px;
-    color: #161e4f;
-    font-weight: bold;
-  }
-
-  .location {
-    background-color: #22ab2a;
-    color: #000;
-    font-size: 15px;
-  }
-
-  .score {
-    background-color: #161e4f;
+    padding: 3px 20px 3px 20px;
     color: #fff;
-    font-weight: bold;
-    font-size: 18px;
-    .d-flex {
-      width: 50%;
+    background: #020024;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 64%, rgba(36, 33, 194, 1) 100%);
+  }
+  .title {
+    font-size: 33px;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    padding-left: 20px;
+    background: #2421c2;
+    background: linear-gradient(90deg, rgba(36, 33, 194, 1) 0%, rgba(9, 9, 121, 1) 17%, rgba(2, 0, 36, 1) 100%);
+  }
+  .team-details {
+    background: #c2213c;
+    background: linear-gradient(90deg, rgba(194, 33, 60, 1) 0%, rgba(9, 9, 121, 1) 70%, rgba(2, 0, 36, 1) 100%);
+  }
+  .overs-runs {
+    color: #fff;
+    .overs {
+      padding: 12px 30px 5px 15px;
+      text-shadow: 2px 2px #000;
+      font-size: 18px;
     }
-    .icon {
-      width: 20px;
-      height: 20px;
+    .score {
+      font-size: 30px;
+      padding-right: 20px;
+      text-shadow: 2px 2px #000;
     }
   }
-
+  .player-div {
+    text-transform: uppercase;
+    color: #fff;
+    .batter-div {
+      padding: 7px 10px;
+      width: 100%;
+      background: #2177c2;
+      background: linear-gradient(90deg, rgba(33, 119, 194, 1) 0%, rgba(9, 9, 121, 1) 23%, rgba(2, 0, 36, 1) 100%);
+      .p-row {
+        border-bottom: 2px solid silver;
+      }
+    }
+    .bowler-div {
+      width: 100%;
+      padding: 7px 10px;
+      background: #020026;
+      background: linear-gradient(90deg, rgba(2, 0, 38, 1) 0%, rgba(9, 9, 121, 1) 43%, rgba(179, 27, 130, 1) 100%);
+      .p-row {
+        border-bottom: 2px solid silver;
+      }
+    }
+  }
+  .name,
+  .runs,
+  .wickets {
+    font-size: 22px;
+  }
+  .balls,
+  .overs {
+    padding: 7px 10px 7px 15px;
+  }
+  .logo-name {
+    padding: 5px 20px;
+    color: #fff;
+    .team-name {
+      font-size: 28px;
+      padding-left: 20px;
+      text-shadow: 2px 2px #000;
+    }
+  }
+  .logo {
+    .logo-img {
+      width: 40px;
+      height: 40px;
+    }
+  }
   .result {
-    padding: 5px;
-    font-size: 18px;
+    font-size: 26px;
     font-weight: bold;
-    background-color: #161e4f;
-    color: #d3be35;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    color: #fff;
+    padding: 0px 20px;
+    text-shadow: 2px 2px #000;
+    background: #000000;
+    background: linear-gradient(106deg, rgba(0, 0, 0, 1) 0%, rgba(125, 19, 5, 1) 65%, rgba(204, 33, 10, 1) 100%);
   }
-}
-
-.message {
-  padding: 20px;
-  background-color: #fff;
-  color: #000;
-  font-size: 20px;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 10px;
 }

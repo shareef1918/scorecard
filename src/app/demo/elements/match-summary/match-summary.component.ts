@@ -32,14 +32,17 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
     this.store.dispatch(PlayersActions.loadPlayers());
     this.store.dispatch(MatchesActions.loadMatches());
     this.store.dispatch(InningsActions.loadInnings());
+    this.teams.getTeamsList().subscribe((teams: any) => {
+      this.teamsList = teams;
+    });
   }
 
   ngAfterViewInit(): void {
     // this.getTopBatsmanDetails(true);
   }
 
-  getTeamLogo(team) {
-    return team?.logo || 'assets/images/logos/lakeview.png';
+  getTeamLogo(t) {
+    return this.teamsList.find((team) => team.id === t)?.logo || 'assets/images/logos/lakeview.png';
   }
 
   getFirstInningsTeam(teamId) {
@@ -56,9 +59,7 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
     this.store.pipe(select(getLiveMatch)).subscribe((match) => (this.match = match));
     this.store.select(innings).subscribe((inng) => (this.bothInnings = inng));
     this.store.select(selectPlayers).subscribe((players) => (this.players = players));
-    this.teams.getTeamsList().subscribe((teams: any) => {
-      this.teamsList = teams;
-    });
+
     setTimeout(() => {
       this.generateMatchSummary();
     }, 200);
@@ -75,6 +76,24 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
   getScoreDetails(firstInnings) {
     const innings = (this.bothInnings || []).find((inn) => inn.currentInnings === firstInnings);
     return this.getInningsScore(innings) + '-' + this.getInningsWickets(innings);
+  }
+
+  getTopBatsman() {
+    const batsmans = [this.getTopBatsmanDetails(true)[0], this.getTopBatsmanDetails(false)[0]];
+    const player = (batsmans || [])?.sort((a, b) => b.runs - a.runs)?.[0];
+    return {
+      photo: this.players?.find((p) => p?.id === player.id)?.photo,
+      details: `${player?.runs}(${player.balls})`
+    };
+  }
+
+  getTopBowler() {
+    const bowlers = [this.getTopBowlersDetails(true)[0], this.getTopBowlersDetails(false)[0]];
+    const player = (bowlers || [])?.sort((a, b) => b.wickets - a.wickets)?.[0];
+    return {
+      photo: this.players?.find((p) => p?.id === player.id)?.photo,
+      details: `${player?.runs}-${player.wickets}(${player.overs})`
+    };
   }
 
   getInningsScore(innings) {
@@ -206,7 +225,7 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
     let bowlers = [];
     (players || []).forEach((player) => {
       const ids = bowlers.map((b) => b.id);
-      console.log(ids, player.id, ids.includes(player?.id));
+      // console.log(ids, player.id, ids.includes(player?.id));
       if (!ids.includes(player?.id)) {
         const filter = players?.filter((p) => p.wickets == player?.wickets);
         if (filter?.length > 1) {
