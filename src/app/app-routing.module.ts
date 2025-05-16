@@ -23,12 +23,16 @@ const routes: Routes = [
         loadComponent: () => import('./auction-admin/auction-admin.component').then((c) => c.AuctionAdminComponent)
       },
       {
-        path: 'scorecard',
+        path: 'batting-summary',
         loadComponent: () => import('./demo/elements/scorecard/scorecard.component')
       },
       {
         path: 'summary',
         loadComponent: () => import('./demo/elements/match-summary/match-summary.component')
+      },
+      {
+        path: 'bowler-summary',
+        loadComponent: () => import('./demo/elements/bowler-summary/bowler-summary.component')
       },
       {
         path: 'lakeviewboard',

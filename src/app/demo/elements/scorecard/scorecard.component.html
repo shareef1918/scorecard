@@ -6,7 +6,7 @@
           @if (getBattingTeamDetails(); as battingTeam) {
             <div class="d-flex">
               <div>
-                <img [src]="getTeamLogo(battingTeam.logo)" alt="India" class="team-logo" />
+                <img [src]="getTeamLogo(battingTeam)" alt="India" class="team-logo" />
               </div>
               <div>
                 <div class="d-flex justify-content-between">
@@ -27,8 +27,8 @@
                 <div class="d-flex justify-content-end pb-1">
                   <div>Vs &nbsp;&nbsp;</div>
                   <div>{{ getBowlingTeamDetails()?.name }}</div>
-                  <div class="venue">Location: {{ match?.venue }}</div>
-                  <div class="date">Date: {{ getDateFormat(match?.date) }}</div>
+                  <div class="venue">Venue: {{ match?.venue }}</div>
+                  <div class="date">{{ getDateFormat(match?.date) }}</div>
                 </div>
               </div>
             </div>
@@ -64,7 +64,7 @@
           <div class="total-score px-2">{{ getInningsScore() }}/{{ getInningsWickets() }}</div>
         </div>
       </div>
-      <div class="top-scorer-div" style="display: none">
+      <div class="top-scorer-div">
         @if (getTopScorerDetails(); as topScorerDetails) {
           <div>
             <div class="player-pic">
@@ -76,7 +76,7 @@
               {{ topScorerDetails?.name }}
             </div>
             <div>Runs: &nbsp;{{ topScorer?.runs }} ({{ topScorer?.balls }})</div>
-            <div>Strike Rate: {{ (topScorer?.runs / topScorer?.balls) * 100 }}</div>
+            <div>Strike Rate: {{ ((topScorer?.runs / topScorer?.balls) * 100).toFixed(2) }}</div>
             <div class="d-flex boundaries justify-content-around">
               @if (getTopperBoundaries(); as boundaries) {
                 <div>4s: {{ boundaries?.fours }}</div>

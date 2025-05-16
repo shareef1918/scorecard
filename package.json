@@ -31,6 +31,7 @@
     "@popperjs/core": "^2.11.8",
     "apexcharts": "^3.49.2",
     "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.9",
     "jquery": "^3.7.1",
     "json-server": "^1.0.0-beta.3",
     "moment": "^2.30.1",

@@ -1361,6 +1361,11 @@
   "resolved" "https://registry.npmjs.org/@jsonjoy.com/util/-/util-1.2.0.tgz"
   "version" "1.2.0"
 
+"@kurkle/color@^0.3.0":
+  "integrity" "sha512-M5UknZPHRu3DEDWoipU6sE8PdkZ6Z/S+v4dD+Ke8IaNlpdSQah50lz1KtcFBa2vsdOnwbbnxJwVM4wty6udA5w=="
+  "resolved" "https://registry.npmjs.org/@kurkle/color/-/color-0.3.4.tgz"
+  "version" "0.3.4"
+
 "@leichtgewicht/ip-codec@^2.0.1":
   "integrity" "sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw=="
   "resolved" "https://registry.npmjs.org/@leichtgewicht/ip-codec/-/ip-codec-2.0.5.tgz"
@@ -2506,6 +2511,13 @@
   "integrity" "sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA=="
   "resolved" "https://registry.npmjs.org/chardet/-/chardet-0.7.0.tgz"
   "version" "0.7.0"
+
+"chart.js@^4.4.9":
+  "integrity" "sha512-EyZ9wWKgpAU0fLJ43YAEIF8sr5F2W3LqbS40ZJyHIner2lY14ufqv2VMp69MAiZ2rpwxEUxEhIH/0U3xyRynxg=="
+  "resolved" "https://registry.npmjs.org/chart.js/-/chart.js-4.4.9.tgz"
+  "version" "4.4.9"
+  dependencies:
+    "@kurkle/color" "^0.3.0"
 
 "chokidar@^3.0.0", "chokidar@^3.5.1", "chokidar@^3.6.0", "chokidar@>=3.0.0 <4.0.0":
   "integrity" "sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw=="

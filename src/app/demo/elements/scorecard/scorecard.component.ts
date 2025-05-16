@@ -143,6 +143,7 @@ export default class ScorecardComponent implements OnInit {
 
   getBattingTeamDetails() {
     const battingTeam = this.match?.currentInnings;
+    console.log(this.match?.teams?.find((team) => team.id === battingTeam));
     return this.match?.teams?.find((team) => team.id === battingTeam);
   }
 

@@ -62,7 +62,7 @@ table {
     border-top: 1px solid silver;
     td {
       padding-left: 20px;
-      font-size: 1rem;
+      font-size: 20px;
     }
   }
 }
@@ -73,7 +73,7 @@ table {
   right: 3%;
   text-align: center;
   .type {
-    font-size: 22px;
+    font-size: 16px;
   }
 }
 
@@ -86,11 +86,18 @@ table {
   ) !important;
   color: #000 !important;
 }
+.player-details {
+  background-image: url('../../../../assets/images/bg7.jpg');
+  background-size: cover;
+  // color: #000;
+  padding: 10px;
+}
 .scorecard {
-  // background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
   font-weight: bold;
   color: #fff;
   padding: 15px;
+  position: relative;
+  left: -150px;
 }
 .main-div {
   background-image: url('../../../../assets/images/summary-bg.jpg');
@@ -149,8 +156,8 @@ table {
 
 .player-pic {
   img {
-    width: 200px;
-    height: 400px;
+    width: 230px;
+    height: 350px;
   }
 }
 
@@ -158,8 +165,8 @@ table {
   margin-top: 5px;
 
   div {
-    background-color: orange;
-    color: #000;
+    background-color: red;
+    color: #fff;
     padding: 7px;
     margin-right: 10px;
   }

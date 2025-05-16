@@ -15,7 +15,7 @@ import { MatchType } from '../scorecard/scorecard.component';
   templateUrl: './match-summary.component.html',
   styleUrl: './match-summary.component.scss'
 })
-export default class MatchSummaryComponent implements OnInit, AfterViewInit {
+export default class MatchSummaryComponent implements OnInit {
   innings$: Observable<any>;
   currentInnings: any;
   match: any;
@@ -37,10 +37,6 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit(): void {
-    // this.getTopBatsmanDetails(true);
-  }
-
   getTeamLogo(t) {
     return this.teamsList.find((team) => team.id === t)?.logo || 'assets/images/logos/lakeview.png';
   }
@@ -59,14 +55,6 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
     this.store.pipe(select(getLiveMatch)).subscribe((match) => (this.match = match));
     this.store.select(innings).subscribe((inng) => (this.bothInnings = inng));
     this.store.select(selectPlayers).subscribe((players) => (this.players = players));
-
-    setTimeout(() => {
-      this.generateMatchSummary();
-    }, 200);
-  }
-
-  generateMatchSummary() {
-    // this.getTopBatsmanDetails(true)
   }
 
   getTeamName(id: string) {
@@ -127,7 +115,7 @@ export default class MatchSummaryComponent implements OnInit, AfterViewInit {
     const keys = Object.keys(batsmen);
     if (keys.length) {
       const allPlayers = [...innings?.players?.batters, ...this.currentInnings?.players?.bowlers];
-      for (var player in batsmen) {
+      for (let player in batsmen) {
         players.push({
           id: player,
           runs: batsmen[player].runs,

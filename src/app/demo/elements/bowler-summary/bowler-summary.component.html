@@ -1,0 +1,82 @@
+<div class="outer">
+  @if (match?.firstInnings === null) {
+    <div class="message">Match hasn't started yet</div>
+  } @else {
+    @if (currentInnings?.balls?.length) {
+      <div class="bowler-main-div">
+        <div class="d-flex">
+          <div class="div-left">
+            <div class="info">{{ getMatchType(match?.type) }} {{ match?.matchInfo }}</div>
+            <div class="d-flex team-info">
+              <div class="team-logo"><img [src]="getTeamLogo(getFirstInningsTeam(match?.currentInnings))" alt="Team pic" /></div>
+              <div class="team-name">{{ getTeamName(getFirstInningsTeam(match?.currentInnings))?.name }}</div>
+            </div>
+            <div class="stats-div">
+              <div class="d-flex justify-content-between headers">
+                <div class="first-div"></div>
+                <div>Overs</div>
+                <div>Dots</div>
+                <div>Runs</div>
+                <div>Wickets</div>
+                <div>Economy</div>
+              </div>
+              @for (player of getTopBowlersDetails(true); track $index) {
+                <div class="d-flex justify-content-between player-div">
+                  <div class="name">{{ player.id !== null ? getPlayerName(player?.id) : '&nbsp;' }}</div>
+                  <div class="balls">{{ player?.overs !== null ? player?.overs : '&nbsp;' }}</div>
+                  <div class="balls">{{ player?.dots !== null && player?.id ? player?.dots : '' }}</div>
+                  <div class="runs">{{ player?.runs !== null ? player?.runs : '' }}</div>
+                  <div class="wickets">{{ player?.wickets >= 0 && player?.id ? player?.wickets ?? 0 : '' }}</div>
+                  <div class="wickets">{{ player?.economy ? player?.economy : '' }}</div>
+                </div>
+              }
+            </div>
+            <div>
+              <div class="fow-m">FALL OF WICKETS</div>
+              @if (getFallOfWicktes(); as fow) {
+                <div class="fow">
+                  <div class="d-flex wic-num">
+                    @for (item of fow; track item.wicket; let idx = $index) {
+                      <div>{{ idx + 1 }}{{ getExt(idx + 1) }}</div>
+                    }
+                  </div>
+                  <div class="d-flex wic">
+                    @for (item of fow; track item.wicket; let idx = $index) {
+                      <div>{{ item.runs }}</div>
+                    }
+                  </div>
+                </div>
+              }
+            </div>
+            <div class="extras-div">
+              @if (getScoreDetails(true)) {
+                <div class="d-flex justify-content-between">
+                  <div class="extras">Extras&nbsp; {{ getExtraRuns() }}</div>
+                  <div class="overs">Overs&nbsp; {{ getOverDetails(true) }}</div>
+                  <div class="d-flex total-div">
+                    <div class="total">Total&nbsp;</div>
+                    <div class="runs">{{ getScoreDetails(true) }}</div>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+          <div class="div-right">
+            @if (topBowlerDetails) {
+              <div class="bowler-pic">
+                <img [src]="getPlayerDetails(topBowlerDetails?.id)?.photo" alt="" />
+              </div>
+            }
+            <div class="">
+              <div style="height: 250px; width: 370px">
+                <canvas id="canvas" #chart>{{ chart }}</canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <div class="message">Innings has to start please wait...</div>
+    }
+  }
+</div>

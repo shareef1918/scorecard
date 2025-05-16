@@ -1,0 +1,180 @@
+.outer {
+  background: url('../../../../assets/images/bg2.jpg');
+  background-size: cover;
+  height: 100%;
+}
+.bowler-main-div {
+  border-left: 10px solid #017fa7;
+  .info {
+    background-color: #1a2632;
+    color: #fff;
+    padding: 8px 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .div-left {
+    width: 70%;
+  }
+  .div-right {
+    width: 30%;
+  }
+  .bowler-pic {
+    padding-left: 10%;
+    img {
+      width: 300px;
+      height: 500px;
+    }
+  }
+  .team-info {
+    color: #fff;
+    padding: 10px;
+    background: #8f0101;
+    background: linear-gradient(90deg, rgba(143, 1, 1, 1) 0%, rgba(19, 35, 48, 1) 80%);
+  }
+  .total-div {
+    padding-right: 20px;
+  }
+  .stats-div {
+    .headers {
+      background: #ff5e00;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 94, 0, 1) 0%,
+        rgba(19, 35, 48, 1) 17%,
+        rgba(19, 35, 48, 1) 67%,
+        rgba(255, 94, 0, 1) 100%
+      );
+      color: #fff;
+      font-size: 23px;
+      font-weight: bold;
+      text-transform: uppercase;
+      div {
+        padding-right: 10px;
+        text-align: center;
+        width: 15%;
+      }
+      border-bottom: 2px solid silver;
+      border-top: 2px solid #fff;
+    }
+    .d-flex {
+      width: 100%;
+    }
+    .player-div {
+      border-bottom: 2px solid silver;
+      background: #f7df00;
+      background: linear-gradient(
+        90deg,
+        rgba(247, 223, 0, 1) 0%,
+        rgba(19, 35, 48, 1) 23%,
+        rgba(19, 35, 48, 1) 80%,
+        rgba(247, 223, 0, 1) 100%
+      );
+      text-transform: uppercase;
+      font-size: 25px;
+      color: #fff;
+      font-weight: bold;
+      div {
+        width: 15%;
+        padding: 3px 10px;
+        text-align: center;
+      }
+      .name {
+        text-align: left;
+        padding-left: 3%;
+      }
+    }
+  }
+  .fow-m {
+    background-color: #142736;
+    color: #fff;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+  }
+  .extras-div {
+    text-transform: uppercase;
+    background-color: #19262f;
+    padding: 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    .total {
+      padding-top: 13px;
+      font-size: 30px;
+      padding-right: 20px;
+    }
+    .overs {
+      padding-top: 13px;
+      font-size: 25px;
+    }
+    .extras {
+      padding-top: 13px;
+      padding-left: 20px;
+      font-size: 25px;
+    }
+    .runs {
+      font-size: 45px;
+      color: yellow;
+    }
+  }
+  .fow {
+    .wic {
+      text-align: center;
+      background-color: #19262f;
+      color: #fff;
+      padding: 5px;
+      div {
+        border-right: 2px solid #fff;
+      }
+      border-bottom: 2px solid #ffdd21;
+    }
+    .wic-num {
+      text-align: center;
+      background: #d1c238;
+      background: linear-gradient(
+        180deg,
+        rgba(209, 194, 56, 1) 0%,
+        rgba(255, 221, 33, 1) 17%,
+        rgba(255, 221, 33, 1) 81%,
+        rgba(209, 194, 56, 1) 100%
+      );
+      padding: 4px;
+      div {
+        border-right: 2px solid silver;
+      }
+    }
+    .d-flex {
+      div {
+        width: 7%;
+        padding-left: 10px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+  .team-logo {
+    padding-left: 10px;
+    img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  .team-name {
+    font-size: 80px;
+    font-weight: bold;
+    padding-left: 20px;
+  }
+}
+
+#canvas {
+  width: 18%;
+}
+
+.message {
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+}
