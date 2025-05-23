@@ -44,6 +44,7 @@ export default class MatchSummaryComponent implements OnInit {
   getFirstInningsTeam(teamId) {
     return this.bothInnings?.find((innings) => innings?.id !== teamId)?.id;
   }
+  getSecondInningsTea
 
   getMatchType(type) {
     return MatchType[type];

@@ -9,7 +9,7 @@
       </div>
       <div class="flex-grow-1">
         <div class="d-flex row-1">
-          <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-between score-banner">
             <div class="d-flex batting-team team-name">{{ getPlayingTeamName(true) }}</div>
             <div class="px-2 d-flex score-div">
               <div class="score px-1 fw-bold">{{ getInningsScore() || 0 }}-{{ getInningsWickets() || 0 }}</div>
@@ -22,29 +22,33 @@
             @if (liveMatch$ | async; as match) {
               @if (match?.firstInnings) {
                 @if (getCurrentOver() > 0) {
-                  <div class="px-2">C.R: {{ getRunrate() }}</div>
-                  <div class="projected-score px-1">Projected Score: {{ getProjectedScore() || 0 }}</div>
+                  <div class="d-flex justify-content-around">
+                    <div class="px-1">Current Run Rate: {{ getRunrate() }}</div>
+                    <div class="projected-score px-1">Projected Score: {{ getProjectedScore() || 0 }}</div>
+                  </div>
                 } @else {
-                  <div class="px-2">
+                  <div class="px-1">
                     @if (getMatchDetails(); as type) {
                       {{ getMatchType() }}
                     }
                   </div>
                 }
               } @else if (!liveMatchDetails?.outCome) {
-                <div class="px-2">Target: {{ getChaseScore() }}</div>
-                <div class="px-2">Need {{ getTargetScore() }} runs from {{ getTargetBalls() }} Balls</div>
+                <div class="d-flex justify-content-between">
+                  <div class="px-1">Target: {{ getChaseScore() }}</div>
+                  <div class="px-1"> {{ getTargetScore() }} OF {{ getTargetBalls() }} TO WIN</div>
+                </div>
               } @else {
                 @if (liveMatchDetails?.outCome) {
                   @if (liveMatchDetails?.outCome?.targetChased) {
-                    <div class="px-5">
+                    <div class="px-1">
                       {{ getTeamName(liveMatchDetails?.outCome?.winner) }} {{ liveMatchDetails?.outCome?.by?.wickets }}
                     </div>
                   } @else {
                     @if (liveMatchDetails?.outCome?.matchTied) {
-                      <div class="px-5">Match Tied</div>
+                      <div class="px-1">Match Tied</div>
                     } @else {
-                      <div class="px-5">{{ getTeamName(liveMatchDetails?.outCome?.winner) }} {{ liveMatchDetails?.outCome?.by?.runs }}</div>
+                      <div class="px-1">{{ getTeamName(liveMatchDetails?.outCome?.winner) }} {{ liveMatchDetails?.outCome?.by?.runs }}</div>
                     }
                   }
                 }
@@ -55,7 +59,7 @@
         <div class="d-flex row-2">
           <div class="flex-grow-1">
             <div class="d-flex justify-content-left">
-              <div class="d-flex batting-team" style="font-size: 0.8rem">
+              <div class="d-flex batting-team">
                 @if (checkForBatsman(innings)) {
                   @if (getBatsmanDetails(innings); as players) {
                     @for (player of players; track player) {
@@ -74,19 +78,19 @@
                   }
                 }
               </div>
-              <div style="font-size: 0.8rem">
+              <div>
                 <div class="scroll-text">
                   @if (liveMatchDetails?.outCome) {
-                    <div style="width: 120%">
+                    <div>
                       @if (liveMatchDetails?.outCome?.targetChased) {
-                        <div class="px-5">
+                        <div class="px-1">
                           {{ getTeamName(liveMatchDetails?.outCome?.winner) }} {{ liveMatchDetails?.outCome?.by?.wickets }}
                         </div>
                       } @else {
                         @if (liveMatchDetails?.outCome?.matchTied) {
-                          <div class="px-5">Match Tied</div>
+                          <div class="px-1">Match Tied</div>
                         } @else {
-                          <div class="px-5">
+                          <div class="px-1">
                             {{ getTeamName(liveMatchDetails?.outCome?.winner) }} {{ liveMatchDetails?.outCome?.by?.runs }}
                           </div>
                         }
@@ -105,7 +109,7 @@
                           }
                           @if (getInningsScore() > 10 && getFoursAndSixes(); as boundaries) {
                             <div class="px-3 toss-own">
-                              Boundaries: Fours:{{ boundaries?.fours }} Sixes: {{ boundaries?.sixes }} Extras: {{ getExtraRuns() }}
+                              Fours: {{ boundaries?.fours }} Sixes: {{ boundaries?.sixes }} Extras: {{ getExtraRuns() }}
                             </div>
                           }
                           @if (getLastOutBatsman(); as batsman) {
@@ -133,12 +137,12 @@
               </div>
             </div>
           </div>
-          <div style="font-size: 0.8rem !important">
+          <div>
             <div class="d-flex player-details mr-2">
               @if (currentOverBalls(); as balls) {
                 @if (balls?.length) {
                   <div class="d-flex balls-text">
-                    <div>Over:</div>
+                    <!-- <div>Over:</div> -->
                     @for (ball of currentOverBalls(); track index; let index = $index) {
                       @if (ball?.isOut) {
                         <div class="ball-div mx-1">

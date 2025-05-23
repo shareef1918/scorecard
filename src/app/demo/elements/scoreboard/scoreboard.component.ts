@@ -68,11 +68,15 @@ export class ScoreboardComponent {
     });
     this.runOutPlayerForm = this.fb.group({
       id: new FormControl('', [Validators.required]),
-      runs: new FormControl(0, [Validators.required]),
+      runs: new FormControl('0', [Validators.required]),
       isBye: new FormControl(false),
       isNb: new FormControl(false),
       isWide: new FormControl(false)
     });
+  }
+
+  getRunsCompleted(){
+    return Array.from({ length: 6 }, (_, i) => i);
   }
 
   ngOnInit() {

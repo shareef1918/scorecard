@@ -169,7 +169,8 @@ export default class ScorecardComponent implements OnInit {
   }
 
   getTopperBoundaries() {
-    return this.currentInnings.balls?.reduce(
+    const balls = this.currentInnings?.balls.filter(ball => ball.striker === this.topScorer.id);
+    return balls?.reduce(
       (acc, ball) => {
         if (ball.runs.striker === 4) {
           acc.fours += 1;

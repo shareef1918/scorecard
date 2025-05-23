@@ -1,30 +1,39 @@
 
 .theme-a {
-  font-size: 1.1rem;
+  width:100%;
+  height: 20%;
+  font-size: 1.7rem;
   font-weight: bold;
   color: #fff;
+  .score-banner {
+    font-size: 2.5rem;;
+  }
   .team-name {
-    height: 30px;
+    height: 100%;
     padding-right: 20px !important;
     padding-left: 20px !important;
     background: linear-gradient(180deg, rgba(226, 14, 14, 1) 0%, rgba(162, 7, 28, 1) 58%);
   }
+  .batting-team{
+    // font-size: 2.5rem;
+  }
   .score-div {
-    font-size: 1.3rem;
+    // font-size: 2rem;
     position: relative;
     bottom: 3px;
   }
   .add-data {
-    // padding-top: 5px;
+    font-size: 2rem;
+    padding-left: 10px;
+    padding-top: 6px;
   }
   .row-2 {
-    // height: 40px;
-    // padding-top: 5px;
+    height: 45%;
     padding: 3px;
     background: linear-gradient(180deg, rgba(2, 144, 69, 1) 0%, rgba(2, 61, 30, 1) 58%);
   }
   .row-1 {
-    height: 30px;
+    height: 55%;
     background: linear-gradient(180deg, rgba(81, 88, 223, 1) 0%, rgba(7, 26, 162, 1) 58%);
   }
   .score,
@@ -36,6 +45,7 @@
     height: 13px;
     position: relative;
     top: -1px;
+    margin-left: 20px;
   }
 }
 
@@ -46,8 +56,8 @@
 .team-logo {
   padding: 2px;
   img {
-    width: 60px;
-    height: 55px;
+    width: 110px;
+    height: 120px;
   }
   background-color: #fff;
 }
@@ -56,7 +66,7 @@
   background-color: #fff;
   color: #000;
   padding: 1px 2px;
-  border-radius: 20px;
+  // border-radius: 20px;
 }
 
 .boundary-6 {
@@ -67,10 +77,16 @@
   background-color: yellow;
   // color: #fff;
 }
-
+.projected-score{
+  // margin-left: 5%;
+}
+.balls-text{
+  padding-top: 4px;
+  margin-right: 10px;
+}
 .scroll-text {
-  width: 300px;
-  margin-left: 5px;
+  font-size: 1.7rem;
+  padding-left: 20px;
 }
 
 .animate {
@@ -78,12 +94,12 @@
   top: 0px;
   background: linear-gradient(180deg, rgba(221,79,55,1) 0%, rgba(227,151,19,1) 46%, rgba(184,18,0,1) 100%);
   width: 100%;
-  height: 60px;
+  height: 100%;
   animation-duration: 1s;
   animation-name: animate-fade;
   animation-delay: 0.2s;
   animation-fill-mode: backwards;
-  font-size: 40px;  
+  font-size: 5rem;  
   z-index: 990;
   overflow-x: hidden;
   text-align: center ;

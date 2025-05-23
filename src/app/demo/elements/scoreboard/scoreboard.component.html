@@ -114,7 +114,7 @@
                         <div class="px-2">
                           <div class="card">
                             <div class="card-body">
-                              <h3>Run Out Batsman</h3>
+                              <h3 class="fw-bold">Run Out Batsman</h3>
                               <div [formGroup]="runOutPlayerForm">
                                 @for (batter of getCurrentPlayingBatsman(); track batter; let index = $index) {
                                   <div class="form-check bowler">
@@ -131,23 +131,21 @@
                                   </div>
                                 }
                                 <div class="w-50">
-                                  <h4>Runs:</h4>
-                                  <div class="form-floating">
-                                    <input
-                                      type="number"
-                                      min="0"
-                                      max="5"
-                                      formControlName="runs"
-                                      class="form-control"
-                                      id="runs"
-                                      placeholder="Venue"
-                                    />
-                                    <label for="runs">Runs:</label>
+                                  <h4 class="fw-bold">Runs Completed:</h4>
+                                  <div class="d-flex justify-content-left">
+                                    @for (runs of getRunsCompleted(); track runs; let index = $index) {
+                                    <div class="form-check bowler">
+                                      <input class="form-check-input" [value]="runs" type="radio" formControlName="runs" [id]="runs" />
+                                      <label class="form-check-label fw-bold" for="runs_completed">
+                                        {{runs}}
+                                      </label>
+                                    </div>
+                                    }
                                   </div>
                                 </div>
-                                <div class="d-flex justify-content-around">
+                                <div class="d-flex justify-content-left">
                                   <div class="w-75">
-                                    <h4>Extras:</h4>
+                                    <h4 class="fw-bold">Extras:</h4>
                                     <div class="d-flex justify-content-around w-100 extras-div">
                                       <div>
                                         <input class="form-check-input" value="true" type="checkbox" formControlName="isWide" id="isWide" />

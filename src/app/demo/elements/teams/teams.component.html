@@ -115,6 +115,7 @@
                 <tr>
                   <th class="pl-20">Sno</th>
                   <th scope="col">Name</th>
+                  <th scope="col">Photo</th>
                   <th scope="col">Team</th>
                   <th scope="col">Created On</th>
                   <th></th>
@@ -124,7 +125,8 @@
                 @for (player of players; track $index; let index = $index) {
                   <tr>
                     <td class="pl-20">{{ index + 1 }}</td>
-                    <td>{{ player.name }}</td>
+                    <td>{{ player.name }}{{player?.photo}}</td>
+                    <td><img [src]="player?.photo" alt="" class="player-pic"/></td>
                     <td>{{ getTeamName(player.team) }}</td>
                     <td>{{ generateTimeFormat(player.createdOn) }}</td>
                     <td>
